@@ -1,0 +1,853 @@
+/* ************************************************************************
+ * 주석 설명
+ * @see: 참고 사항
+* ************************************************************************/
+
+/* ========================================================================
+ * root 재정의
+*/
+:root {
+  --bs-primary: #00c2de;
+  --bs-primary-rgb: 0, 194, 222;
+  --bs-secondary-rgb: 235, 108, 66;
+  --bs-body-color: #333333;
+  --bs-border-radius: 0.313rem; // .rounded-2 을 6px -> 5px로 수정.
+  --bs-border-radius-lg: 0.625rem; // .rounded-3 을 8px -> 10px로 수정.
+  --bs-border-color: #dddddd;
+  --bs-body-line-height: 1.45;
+}
+
+/* ========================================================================
+ * reset / 공통 스타일
+*/
+* {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100dvh; /* 동적 뷰포트 높이 */
+}
+
+body {
+  width: 100%;
+  color: $gray-33;
+  min-height: 100vh; /* 최소 높이를 화면 전체로 설정합니다. */
+  display: flex;
+  flex-direction: column;
+  color: $gray-33;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  -webkit-font-smoothing: antialiased; // 피그마와 폰트 최대한 비슷하게: 글꼴의 경계선이 더 부드럽게 보이도록 하며, 글꼴의 두께가 약간 줄어들 수 있음
+  text-rendering: optimizeLegibility; // 피그마와 폰트 최대한 비슷하게: 가독성을 높이기 위해 글꼴의 형태를 더 잘 표현함
+  margin: 0;
+
+  @include media-breakpoint-down(lg) {
+    // * 모바일 상단 헤더 영역 고정
+    padding-top: 52px;
+  }
+
+  @include media-breakpoint-up(lg) {
+    // * 웹 상단 헤더 영역 고정
+    padding-top: 80px;
+  }
+
+  > main {
+    flex: 1; /* 푸터를 제외한 나머지 공간을 채우도록 설정합니다. */
+  }
+
+  .footer-section {
+    flex-shrink: 0; /* 푸터가 컨텐츠를 압축하지 않도록 설정합니다. */
+  }
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+svg {
+  width: 100%;
+  // height: auto; @see: 적용하면 copy 버튼이 엄청커지는 이슈있음
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+p {
+  margin-bottom: 0;
+}
+
+pre {
+  font-family: inherit;
+  font-size: inherit;
+  white-space: pre-wrap;
+  word-break: keep-all;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+  font-weight: 300;
+}
+
+// * 저장된 정보 입력시 인풋, 셀렉트 배경색상 수정
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+select:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+// * 셀렉트박스 selected 색상 변경
+select.form-select:invalid {
+  color: $gray-99;
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+// * input type number 일때 수량조절버튼 숨김
+/* Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+  margin-bottom: 0;
+  line-height: var(--bs-body-line-height);
+}
+
+summary {
+  list-style: none;
+
+  // 사파리 초기화
+  &::-webkit-details-marker,
+  &::marker {
+    display: none;
+  }
+}
+
+/* ========================================================================
+ * container, row gutter 재정의
+*/
+.container,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+  --bs-gutter-x: 32px; // 16px
+  @include media-breakpoint-up(lg) {
+    --bs-gutter-x: 48px; // 24px
+  }
+}
+
+.row,
+.row > * {
+  --bs-gutter-x: 32px; // 8px
+  @include media-breakpoint-up(lg) {
+    --bs-gutter-x: 24px; // 12px
+  }
+}
+
+/* ========================================================================
+ * 페이지 상하단 고정 간격
+*/
+.global-space-top {
+  padding-top: 20px;
+  @include media-breakpoint-up(lg) {
+    padding-top: 48px;
+  }
+}
+
+// * 모바일에서만 페이지 상단 고정 간격 없음
+.global-space-top-mobile-none {
+  @include media-breakpoint-down(lg) {
+    padding-top: 0 !important;
+  }
+}
+
+.global-space-bottom {
+  padding-bottom: 114px;
+  @include media-breakpoint-up(lg) {
+    padding-bottom: 160px;
+  }
+}
+
+// * 모바일 페이지 하단 컨텐츠에 배경 있는 경우 하단 간격
+.global-space-bottom__has-bg-last-content {
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 114px !important;
+  }
+}
+
+/* ========================================================================
+ * 컨테이너 양 옆 패딩 삭제
+*/
+.justify-margin {
+  @include media-breakpoint-down(lg) {
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+  }
+}
+
+/* ========================================================================
+ * width 커스텀
+*/
+.w-110px {
+  width: 100%;
+  max-width: 110px;
+}
+
+// * 버튼 크기
+.w-490 {
+  width: 100%;
+  max-width: 490px;
+}
+
+// * 공지사항, faq 검색 버튼
+.w-486 {
+  width: 100%;
+  max-width: 486px;
+}
+
+// * mypage 컨테이너 넓이
+.w-588 {
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    max-width: 588px;
+  }
+}
+
+// * 공지사항, faq 컨테이너 넓이
+.w-792 {
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    max-width: 792px;
+  }
+}
+
+// * 해외배송 가이드 상세 내용 넓이
+.w-720 {
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    max-width: 720px;
+  }
+}
+
+/* ========================================================================
+ * icon 아이콘
+*/
+.icon {
+  display: flex;
+  mask-size: contain;
+
+  &:hover {
+    text-decoration: none;
+    opacity: 0.5;
+    transition: all 0.25s ease;
+  }
+}
+
+.icon-sns {
+  display: flex;
+  width: 46px;
+  height: 46px;
+}
+
+/* ========================================================================
+ * 프로모션 배너
+*/
+// * dot
+.owl-theme .owl-dots .owl-dot span {
+  width: 8px;
+  height: 8px;
+  margin: 2px 6px 0;
+  background-color: $gray-e0 !important;
+  @include media-breakpoint-up(lg) {
+    width: 12px;
+    height: 12px;
+    margin: 10px 8px 0;
+  }
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background-color: $primary !important;
+}
+
+/* ========================================================================
+ * p 태그 앞에 4px 도트 있음
+*/
+.dot-p {
+  position: relative;
+  color: $gray-66;
+  padding-left: 6px;
+
+  &:before {
+    content: "";
+    width: 2px;
+    height: 2px;
+    display: inline-block;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background-color: $gray-66;
+    border-radius: 100%;
+  }
+
+  &.fc-333 {
+    color: $gray-33;
+
+    &:before {
+      background: $gray-33;
+    }
+  }
+
+  &.fc-secondary {
+    color: $secondary;
+
+    &:before {
+      background: $secondary;
+    }
+  }
+}
+
+/* ========================================================================
+ * 컨텐츠 구분선 divider
+*/
+.divider-1 {
+  border-color: $gray-f2;
+  opacity: 1;
+}
+
+.divider-10 {
+  height: 10px;
+  background-color: $gray-f2;
+  opacity: 1;
+  border: 0;
+}
+
+/* ========================================================================
+ * 구분선 위에 텍스트 (간편로그인 타이틀)
+*/
+.hr-sect {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+
+  &::before {
+    margin: 0 8px 0 0;
+  }
+
+  &::after {
+    margin: 0 0 0 8px;
+  }
+}
+
+.hr-sect::before,
+.hr-sect::after {
+  content: "";
+  flex-grow: 1;
+  background: #e0e0e0;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+}
+
+/* ========================================================================
+ * 토글 팝업 컨텐츠 내용 스타일
+ * @see: 별도의 스타일이 필요한경우 class="toggle-popup__wrap another-class" 다른 클래스 추가해서 사용
+*/
+.toggle-popup__wrap {
+  display: flex;
+  width: 100%;
+  max-width: 328px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  box-shadow: 0px 2px 10px 0px rgba(133, 133, 133, 0.2);
+  position: absolute;
+  z-index: 10000; // 모바일 하단 버튼에 가려져서 추가
+  top: 26px;
+}
+
+.toggle-popup__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.toggle-popup__title {
+  font-size: map-get($custom-font-size, 16);
+  margin-right: 20px;
+  font-weight: 700;
+}
+
+.toggle-popup__body {
+  font-size: map-get($custom-font-size, 14);
+  color: $gray-66;
+}
+
+/* ========================================================================
+ * 툴팁
+ */
+.tooltip__wrap {
+  position: relative;
+}
+
+.tooltip__body {
+  width: 260px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: -58px;
+  right: 0px;
+  padding: 10px;
+  color: white;
+  font-size: map-get($custom-font-size, 12);
+  border-radius: 5px;
+  background: rgba(51, 51, 51, 0.8);
+  box-shadow: 0px 2px 10px 0px rgba(133, 133, 133, 0.2);
+  @include media-breakpoint-up(lg) {
+    width: 324px;
+    font-size: map-get($custom-font-size, 16);
+  }
+}
+
+.tooltip__body::after {
+  content: "";
+  position: absolute;
+  bottom: -20px; /* Position above the tooltip */
+  right: 16px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(51, 51, 51, 0.8) transparent transparent transparent;
+}
+
+.tooltip__body > .btn-close {
+  --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  opacity: 1;
+  margin-left: 10px;
+}
+
+/* ========================================================================
+* 토스트 팝업
+*/
+.toast {
+  visibility: hidden;
+  min-width: 200px;
+  max-width: 328px;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.8);
+  color: $white;
+  padding: 10px 1rem;
+  border-radius: 5px;
+  position: fixed;
+  z-index: 99999;
+  left: 50%;
+  // top: calc(92vh - 40px);
+  transform: translateX(-50%);
+  font-size: map-get($custom-font-size, 12);
+  opacity: 0;
+
+  // CTA버튼 위에 있을때
+  &.toast__up-cta {
+    @include media-breakpoint-down(lg) {
+      bottom: 94px;
+    }
+  }
+
+  // 모바일 푸터 네비 위에 있을때
+  &.toast__up-mobile-footer-nav {
+    @include media-breakpoint-down(lg) {
+      bottom: 69px;
+    }
+  }
+
+  // 아무것도 없을때
+  &.toast__up-none {
+    @include media-breakpoint-down(lg) {
+      bottom: 10px;
+    }
+  }
+
+  // PC
+  @include media-breakpoint-up(lg) {
+    bottom: 48px;
+    padding: 1rem;
+    font-size: map-get($custom-font-size, 16);
+    text-align: center;
+    letter-spacing: -0.5px;
+    border-radius: 10px;
+  }
+}
+
+/* 토스트 팝업이 보일 때의 스타일 */
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 10002; // 모달 딤 위로 띄우기
+}
+
+/* ========================================================================
+ * 이용약관, 개인정보처리방침 스타일
+*/
+.terms-privacy {
+  .table th {
+    --bs-table-bg: #f2f2f2;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.ul-disc {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.ul-disc li {
+  margin-left: 20px;
+  padding-left: 10px;
+  margin-top: 0.5rem;
+}
+
+.ol-decimal {
+  list-style: decimal;
+  padding-left: 20px;
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.ol-decimal li {
+  margin-left: 20px;
+  padding-left: 10px;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .ul-disc,
+  .ol-decimal {
+    padding-left: 14px;
+  }
+
+  .ul-disc li,
+  .ol-decimal li {
+    margin-left: 6px;
+    padding-left: 6px;
+  }
+}
+
+/* ========================================================================
+ * 말줄임표 2줄
+*/
+.text-truncate-multi {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height: 3em;
+}
+
+/* ========================================================================
+ * card 재정의
+*/
+.card {
+  border: 0;
+}
+
+/* ========================================================================
+ * box-shadow
+*/
+.custom-shadow {
+  box-shadow: $custom-shadow;
+}
+
+.custom-shadow2 {
+  box-shadow: $custom-shadow2;
+}
+
+.box-shadow-none {
+  box-shadow: unset !important;
+}
+
+/* ========================================================================
+ * pagination 페이지네이션 재정의
+*/
+.pagination {
+  justify-content: center;
+  gap: 1rem;
+}
+
+.page-link {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 100px;
+  font-size: map-get($custom-font-size, 12);
+  font-weight: 500;
+}
+
+.page-link:focus {
+  box-shadow: none;
+}
+
+/* ========================================================================
+ * sns 공유 아이콘 사이즈
+*/
+.sns-share__icon {
+  display: flex;
+  mask-size: contain;
+  width: 40px;
+  height: 40px;
+}
+
+/* ========================================================================
+ * 페이지 내 탭메뉴
+*/
+.segment-control {
+  display: flex;
+  background-color: $gray-f2;
+  border-radius: $border-radius-sm;
+  padding: map-get($spacers, 1);
+}
+
+.segment-control__item {
+  width: 50%;
+  height: 40px;
+  color: $gray-66;
+  padding: 0;
+  border-radius: $border-radius-sm;
+  font-size: map-get($custom-font-size, 14);
+  font-weight: normal;
+  @include media-breakpoint-up(lg) {
+    height: 44px;
+    font-size: map-get($custom-font-size, 16);
+  }
+
+  &.active {
+    background-color: $white;
+    color: $gray-33;
+    box-shadow: $custom-shadow2;
+    font-weight: 500;
+  }
+}
+
+/* ========================================================================
+ * 모바일에서 버튼그룹 하단 고정, 웹에서 컨텐츠 아래에 위치하는 스타일
+*/
+.btn-group__mobile-bottom-fixed {
+  @include media-breakpoint-down(lg) {
+    display: flex;
+    width: 100%;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: unset;
+    gap: 16px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 1050;
+    padding: 10px 16px 24px;
+    background-color: $white;
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
+  }
+
+  @include media-breakpoint-up(lg) {
+    display: flex;
+    gap: 20px;
+    // padding: 10px 0 24px;
+  }
+
+  .btn {
+    flex: 1 0 calc(50% - 16px);
+    margin: 0;
+    border-radius: 6px;
+    font-size: map-get($custom-font-size, 16);
+
+    @include media-breakpoint-down(lg) {
+      letter-spacing: -0.5px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: map-get($custom-font-size, 18);
+    }
+  }
+}
+
+/* ========================================================================
+ * 목록 비었을때, 빈 목록
+*/
+.list__empty {
+  min-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .icon-list-empty-question-mark,
+  .icon-list-empty,
+  .icon-card-list-empty {
+    display: flex;
+    mask-size: contain;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ========================================================================
+ * details / summary 화살표 스타일
+ */
+// * details 태그
+.folding__detail-tag {
+  position: relative;
+  z-index: 1;
+}
+
+// * summary 태그
+.folding__detail-tag:after {
+  content: "";
+  opacity: 1;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M16.501 14.7002L12.001 10.2002L7.50098 14.7002' stroke='%23999999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M16.501 14.7002L12.001 10.2002L7.50098 14.7002' stroke='%23999999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #999;
+  transform: rotate(180deg);
+}
+
+.folding__detail-tag[open]:after {
+  transform: rotate(0);
+}
+
+/* ========================================================================
+ * 프로그래스바 progress bar 단계
+*/
+.progress-container {
+  background: rgba(0, 194, 222, 0.1);
+  overflow: hidden;
+  border-radius: $border-radius-pill;
+}
+
+.progress-bar {
+  height: 3px;
+  background: #00c2de;
+  transition: width 0.5s ease;
+  border-radius: $border-radius-pill;
+
+  // * 배송신청 6단계
+  @for $i from 1 through 5 {
+    &.progress#{$i} {
+      width: 20% * $i;
+    }
+  }
+
+  //* 구매대행 4단계
+  @for $i from 1 through 5 {
+    &.progress-25-#{$i} {
+      width: 25% * $i;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: 6px;
+  }
+}
+
+/* ========================================================================
+ * border-radius
+*/
+.rounded-m-none {
+  @include media-breakpoint-down(lg) {
+    border-radius: 0 !important;
+  }
+}
+
+.rounded-p-none {
+  @include media-breakpoint-up(lg) {
+    border-radius: 0 !important;
+  }
+}
+
+/* ========================================================================
+ * border-color
+*/
+.border-purple {
+  border: 1px solid #6300f7 !important;
+}
+
