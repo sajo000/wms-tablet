@@ -1,16 +1,64 @@
-<nav class="sidebar-nav px-3">
-  <div class="d-flex my-10">
+<nav class="sidebar-nav">
+  <div class="sidebar-nav__logo-wrap d-flex align-items-center">
     <a href="" class="sidebar-nav__logo">
       <img src="images/logo.png" alt="deleo WMS">
     </a>
     <button class="btn-sidebar-toggle bg-white">
-      <i class="icon icon-arrow-right icon-sidebar-toggle bg-333"></i>
+      <i class="icon icon-arrow-left icon-sidebar-toggle bg-333"></i>
     </button>
   </div>
-  <ul class="nav">
-    <li>
-      <i>아이콘</i>
-      <a href="">메뉴1</a>
+  <ul class="nav d-flex flex-column gap-3">
+    <li class="nav-item active">
+      <a href="" class="nav-link">
+        <i class="icon icon-sidebar-home icon-sidebar"></i>
+        <span>대시보드</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="" class="nav-link">
+        <i class="icon icon-sidebar-download icon-sidebar"></i>
+        <span>입고분류</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="" class="nav-link">
+        <i class="icon icon-sidebar-document icon-sidebar"></i>
+        <span>송장검증</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="" class="nav-link">
+        <i class="icon icon-sidebar-upload icon-sidebar"></i>
+        <span>출고마감</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="" class="nav-link">
+        <i class="icon icon-sidebar-box icon-sidebar"></i>
+        <span>박스적치</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="" class="nav-link">
+        <i class="icon icon-sidebar-calendar icon-sidebar"></i>
+        <span>재고이동</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="" class="nav-link">
+        <i class="icon icon-sidebar-search-document icon-sidebar"></i>
+        <span>재고실사</span>
+      </a>
     </li>
   </ul>
 </nav>
+
+<!-- 센터 이름 -->
+<div class="sidebar-center-name d-flex gap-10 align-items-center bg-f7 rounded-1 p-10 m-12">
+  <i class="icon-sidebar-warehouse icon-sidebar-solo"></i>
+  <div class="fs-m-16 fs-p-16 fw-medium">
+    <span class="fc-35">델레오</span><br>
+    <span class="fc-666">청라센터</span>
+  </div>
+</div>
+<!-- / 센터 이름 -->

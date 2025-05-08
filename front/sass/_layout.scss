@@ -2,7 +2,6 @@
  * LAYOUT
 */
 .layout-wrap {
-  border: 2px dashed blue;
   display: flex;
   height: 100%;
 }
@@ -11,6 +10,10 @@
   height: 100%;
 }
 
+/* ========================================================================
+ * SIDEBAR
+*/
+
 .left-side {
   width: 248px;
   transition: width 0.3s ease;
@@ -18,8 +21,129 @@
   overflow-x: hidden;
   background-color: white;
   border-radius: $border-radius;
+  box-shadow: $custom-shadow;
 }
 
+.sidebar-nav__logo-wrap {
+  height: 70px;
+  padding: 10px 16px;
+}
+
+.btn-sidebar-toggle {
+  width: 40px !important;
+  height: 40px !important;
+  flex: 0 0 40px;
+  border: 1px solid $gray-ee;
+  border-radius: $border-radius-pill;
+  padding: 0;
+
+  .icon-sidebar-toggle {
+    width: 10px;
+    height: 16px;
+    margin: auto;
+    background-color: $gray-33;
+  }
+}
+
+.sidebar-nav .nav {
+  padding: 1rem;
+}
+
+.sidebar-nav .nav-item .nav-link {
+  display: flex;
+  align-content: center;
+  gap: 10px;
+  color: $black-1e;
+  font-weight: $font-weight-medium;
+  font-size: map-get($custom-font-size, 18);
+  white-space: nowrap;
+  padding: 11px;
+  border: 1px solid white;
+  border-radius: $border-radius;
+}
+
+// * 사이드메뉴 호버했을때
+.sidebar-nav .nav-item:hover .nav-link {
+  border-color: $primary2;
+  background-color: $primary2;
+}
+
+// * 사이드메뉴 선택했을때 .active
+.sidebar-nav .nav-item.active .nav-link {
+  border-color: $primary;
+  background-color: $primary;
+  color: white;
+}
+
+// * 사이드바 접혔을때 너비
+.left-side.collapsed {
+  width: 64px;
+
+  // * 로고 패딩
+  .sidebar-nav__logo-wrap {
+    padding: 10px 12px;
+  }
+
+  // * 메뉴 패딩
+  .sidebar-nav .nav {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  // * 아이콘 사이즈
+  .sidebar-nav .nav-item .nav-link {
+    width: 50px;
+    height: 50px;
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // * 메뉴명 숨김
+  .nav-link span {
+    opacity: 0;
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .sidebar-center-name {
+    height: 66px;
+    gap: 0 !important;
+    padding: 10px !important;
+    margin: 4px !important;
+
+    // * 센터명 숨김
+    > div {
+      opacity: 0;
+      width: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+
+// * 사이드바 아이콘 사이즈
+.icon-sidebar {
+  background-color: $primary;
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-nav .nav-item.active .nav-link .icon-sidebar {
+  background-color: white;
+}
+
+// * 사이드바 하단 **센터
+.icon-sidebar-solo {
+  width: 36px;
+  height: 36px;
+}
+
+/* ========================================================================
+ * CONTENTS
+*/
 .right-side {
   display: flex;
   flex-direction: column;
@@ -34,71 +158,5 @@
   > main {
     flex-grow: 1; /* 남은 공간 모두 차지 */
     overflow-y: auto; /* 내용이 넘칠 때 스크롤 */
-    border: 2px dashed palevioletred;
   }
-
-  > footer {
-    height: 50px;
-    background-color: gray;
-  }
-}
-
-/* ========================================================================
- * SIDEBAR
-*/
-.sidebar-nav {
-  border: 2px dashed red;
-}
-
-.btn-sidebar-toggle {
-  width: 40px !important;
-  height: 40px !important;
-  flex: 0 0 40px;
-  border: 1px solid $gray-ee;
-  border-radius: $border-radius-pill;
-  padding: 0;
-}
-
-.icon-sidebar-toggle {
-  width: 10px;
-  height: 16px;
-  margin: auto;
-  background-color: $gray-33;
-}
-
-.sidebar-nav .nav {
-  padding: 1rem;
-}
-
-.left-side.collapsed .sidebar-nav .nav {
-  padding: 7px;
-}
-
-.left-side.collapsed {
-  width: 72px !important;
-}
-
-.sidebar-nav .nav li a {
-  //transition: opacity 0.3s ease;
-  white-space: nowrap;
-}
-
-.left-side.collapsed .nav li a {
-  opacity: 0;
-  width: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-// * 사이드바 아이콘 사이즈
-.is-sidebar {
-  width: 24px;
-  height: 24px;
-}
-
-/* ========================================================================
- * FOOTER
-*/
-.footer__wrap {
-  border: 2px dashed #e2a7ff;
 }

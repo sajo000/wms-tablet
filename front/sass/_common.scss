@@ -10,7 +10,7 @@
   --bs-primary: #00c2de;
   --bs-primary-rgb: 0, 194, 222;
   --bs-secondary-rgb: 235, 108, 66;
-  --bs-body-color: #333333;
+  --bs-body-color: #1E1E1E;
   --bs-border-radius: 0.313rem; // .rounded-2 을 6px -> 5px로 수정.
   --bs-border-radius-lg: 0.625rem; // .rounded-3 을 8px -> 10px로 수정.
   --bs-border-color: #dddddd;
@@ -32,7 +32,6 @@ body {
 
 body {
   width: 100%;
-  color: $gray-33;
   min-height: 100vh; /* 최소 높이를 화면 전체로 설정합니다. */
   display: flex;
   flex-direction: column;
@@ -40,6 +39,8 @@ body {
   -webkit-font-smoothing: antialiased; // 피그마와 폰트 최대한 비슷하게: 글꼴의 경계선이 더 부드럽게 보이도록 하며, 글꼴의 두께가 약간 줄어들 수 있음
   text-rendering: optimizeLegibility; // 피그마와 폰트 최대한 비슷하게: 가독성을 높이기 위해 글꼴의 형태를 더 잘 표현함
   margin: 0;
+  color: #1E1E1E;
+  background-color: $gray-ee;
 }
 
 figure {
