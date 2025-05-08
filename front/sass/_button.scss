@@ -1,0 +1,269 @@
+/* ========================================================================
+ * button 버튼 스타일 재정의
+*/
+.btn {
+  height: 46px;
+  --bs-btn-padding-x: 1rem;
+  --bs-btn-active-border-color: transparent;
+  --bs-btn-line-height: 1.45;
+  font-weight: 500;
+  font-size: map-get($custom-font-size, 14);
+  @include media-breakpoint-up(lg) {
+    height: 50px;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $gray-e0;
+    border-color: $gray-dd;
+    color: $gray-99;
+  }
+}
+
+.btn-xs,
+.btn-group-xs > .btn {
+  --bs-btn-padding-x: 0.625rem;
+  height: 32px;
+  font-size: map-get($custom-font-size, 12);
+  @include media-breakpoint-up(lg) {
+    height: 40px;
+    font-size: map-get($custom-font-size, 14);
+  }
+}
+
+.btn-sm,
+.btn-group-sm > .btn {
+  height: 36px;
+  font-size: map-get($custom-font-size, 14);
+  @include media-breakpoint-up(lg) {
+    height: 40px;
+  }
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+  height: 50px;
+  --bs-btn-border-radius: var(--bs-border-radius);
+  font-size: map-get($custom-font-size, 16);
+  @include media-breakpoint-up(lg) {
+    height: 56px;
+    font-size: map-get($custom-font-size, 18);
+  }
+}
+
+.btn-primary {
+  --bs-btn-color: #fff; // 버튼 컬러 색상
+  --bs-btn-bg: #00c2de; // 버튼 배경
+  --bs-btn-border-color: #00c2de; // 버튼 보더
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #00b7d1; // 호버 배경
+  --bs-btn-hover-border-color: #00b7d1; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #00a6bd; // 액티브 배경
+  --bs-btn-active-border-color: #00a6bd; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #00c2de; // 버튼 컬러 색상
+  --bs-btn-bg: #ffffff; // 버튼 배경
+  --bs-btn-border-color: #00c2de; // 버튼 보더
+  --bs-btn-hover-color: #00c2de;
+  --bs-btn-hover-bg: #f7fdfe; // 호버 배경
+  --bs-btn-hover-border-color: #00c2de; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #00c2de;
+  --bs-btn-active-bg: #e5f9fc; // 액티브 배경
+  --bs-btn-active-border-color: #00c2de; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-dark {
+  --bs-btn-color: #fff; // 버튼 컬러 색상
+  --bs-btn-bg: #333; // 버튼 배경
+  --bs-btn-border-color: #333; // 버튼 보더
+  --bs-btn-hover-color: #00c2de;
+  --bs-btn-hover-bg: #f7fdfe; // 호버 배경
+  --bs-btn-hover-border-color: #00c2de; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #00c2de;
+  --bs-btn-active-bg: #e5f9fc; // 액티브 배경
+  --bs-btn-active-border-color: #00c2de; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-outline-dark {
+  --bs-btn-color: #333; // 버튼 컬러 색상
+  --bs-btn-bg: #fff; // 버튼 배경
+  --bs-btn-border-color: #666; // 버튼 보더
+  --bs-btn-hover-color: #333;
+  --bs-btn-hover-bg: #f7fdfe; // 호버 배경
+  --bs-btn-hover-border-color: #666; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #333;
+  --bs-btn-active-bg: #e5f9fc; // 액티브 배경
+  --bs-btn-active-border-color: #666; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-gray {
+  --bs-btn-color: #666; // 버튼 컬러 색상
+  --bs-btn-bg: #f2f2f2; // 버튼 배경
+  --bs-btn-border-color: #f2f2f2; // 버튼 보더
+  --bs-btn-hover-color: #666;
+  --bs-btn-hover-bg: #f7f7f7; // 호버 배경
+  --bs-btn-hover-border-color: #f2f2f2; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #666;
+  --bs-btn-active-bg: #f7f7f7; // 액티브 배경
+  --bs-btn-active-border-color: #f2f2f2; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-outline-gray {
+  --bs-btn-color: #666; // 버튼 컬러 색상
+  --bs-btn-bg: #fff; // 버튼 배경
+  --bs-btn-border-color: #ddd; // 버튼 보더
+  --bs-btn-hover-color: #666;
+  --bs-btn-hover-bg: #f7fdfe; // 호버 배경
+  --bs-btn-hover-border-color: #ddd; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #666;
+  --bs-btn-active-bg: #e5f9fc; // 액티브 배경
+  --bs-btn-active-border-color: #ddd; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-white {
+  --bs-btn-color: #666666; // 버튼 컬러 색상
+  --bs-btn-bg: #ffffff; // 버튼 배경
+  --bs-btn-border-color: #ffffff; // 버튼 보더
+  --bs-btn-hover-color: #666666;
+  --bs-btn-hover-bg: #f7fdfe; // 호버 배경
+  --bs-btn-hover-border-color: #f7fdfe; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #666666;
+  --bs-btn-active-bg: #e5f9fc; // 액티브 배경
+  --bs-btn-active-border-color: #e5f9fc; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-kakao {
+  --bs-btn-color: #000000; // 버튼 컬러 색상
+  --bs-btn-bg: #fee500; // 버튼 배경
+  --bs-btn-border-color: #fee500; // 버튼 보더
+  --bs-btn-hover-color: #000000;
+  --bs-btn-hover-bg: #fee500; // 호버 배경
+  --bs-btn-hover-border-color: #fee500; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #000000;
+  --bs-btn-active-bg: #fee500; // 액티브 배경
+  --bs-btn-active-border-color: #fee500; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-naver {
+  --bs-btn-color: #ffffff; // 버튼 컬러 색상
+  --bs-btn-bg: #03c75a; // 버튼 배경
+  --bs-btn-border-color: #03c75a; // 버튼 보더
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #03c75a; // 호버 배경
+  --bs-btn-hover-border-color: #03c75a; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #03c75a; // 액티브 배경
+  --bs-btn-active-border-color: #03c75a; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-apple {
+  --bs-btn-color: #ffffff; // 버튼 컬러 색상
+  --bs-btn-bg: #000000; // 버튼 배경
+  --bs-btn-border-color: #000000; // 버튼 보더
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #000000; // 호버 배경
+  --bs-btn-hover-border-color: #000000; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #000000; // 액티브 배경
+  --bs-btn-active-border-color: #000000; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-clear {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.btn-group {
+  margin-top: 24px;
+  border-radius: 0;
+  @include media-breakpoint-up(lg) {
+    margin-top: 48px;
+  }
+
+  .btn {
+    border-radius: inherit;
+  }
+}
+
+// * 주소입력 인풋과 함께 있는 주소 검색 버튼 width
+.btn-search-address {
+  width: 85px;
+  @include media-breakpoint-up(lg) {
+    width: 100px;
+  }
+}
+
+// * 버튼 그룹 안에 버튼이 2개 있는 경우. pc -> width: 328px / 버튼width: 235px 인것!
+.btn-group-two {
+  width: 328px;
+  flex-direction: column-reverse;
+  margin-top: 70px;
+  margin-left: auto;
+  margin-right: auto;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include media-breakpoint-up(lg) {
+    width: 490px;
+    flex-direction: row;
+    margin-top: 48px;
+  }
+}

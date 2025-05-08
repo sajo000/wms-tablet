@@ -36,29 +36,10 @@ body {
   min-height: 100vh; /* 최소 높이를 화면 전체로 설정합니다. */
   display: flex;
   flex-direction: column;
-  color: $gray-33;
   font-family: "Montserrat", "Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased; // 피그마와 폰트 최대한 비슷하게: 글꼴의 경계선이 더 부드럽게 보이도록 하며, 글꼴의 두께가 약간 줄어들 수 있음
   text-rendering: optimizeLegibility; // 피그마와 폰트 최대한 비슷하게: 가독성을 높이기 위해 글꼴의 형태를 더 잘 표현함
   margin: 0;
-
-  @include media-breakpoint-down(lg) {
-    // * 모바일 상단 헤더 영역 고정
-    padding-top: 52px;
-  }
-
-  @include media-breakpoint-up(lg) {
-    // * 웹 상단 헤더 영역 고정
-    padding-top: 80px;
-  }
-
-  > main {
-    flex: 1; /* 푸터를 제외한 나머지 공간을 채우도록 설정합니다. */
-  }
-
-  .footer-section {
-    flex-shrink: 0; /* 푸터가 컨텐츠를 압축하지 않도록 설정합니다. */
-  }
 }
 
 figure {

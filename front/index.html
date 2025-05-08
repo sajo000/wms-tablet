@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -12,17 +12,55 @@
           crossorigin="anonymous"></script>
 
   <!-- CSS -->
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="css/app.css">
 
   <script type="text/javascript" src="./layout.js"></script>
+  <script type="text/javascript" src="./function.js"></script>
 </head>
 
 <body>
-<header id="header"></header>
+<div class="vh-100 container-fluid p-3 bg-eee">
+  <div class="layout-wrap">
+    <section class="left-side"> <!-- 접기: collapse -->
+      <!-- 사이드바 -->
+      <div id="sidebar">
+        <nav class="sidebar-nav">
+          <div class="d-flex px-3 py-10">
+            <a href="" class="sidebar-nav__logo">
+              <img src="images/logo.png" alt="deleo WMS">
+            </a>
+            <button class="btn-sidebar-toggle bg-white">
+              <i class="icon icon-arrow-left icon-sidebar-toggle bg-333"></i>
+            </button>
+          </div>
+          <ul class="nav">
+            <li>
+              <i class="icon icon-sidebar-home is-sidebar bg-primary">아이콘</i>
+              <a href="">메뉴1</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- / 사이드바 -->
+    </section>
 
-<main>
-  <p>test</p>
-</main>
+    <section class="right-side">
+      <!-- 메인 컨텐츠 -->
+      <main>
+        <div class="">
+          test<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+      </main>
+      <!-- / 메인 컨텐츠 -->
+
+      <!-- 풋터 -->
+      <footer id="footer"></footer>
+      <!-- / 풋터 -->
+    </section>
+  </div>
+</div>
+
 </body>
 
 </html>

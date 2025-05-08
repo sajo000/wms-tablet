@@ -1,6 +1,7 @@
 // 1. Bootstrap의 core 기능, mixin 및 함수 로드
 @import "../node_modules/bootstrap/scss/functions";
-@import "../node_modules/bootstrap/scss/variables"; // 기본 변수 파일 (커스텀 변수를 적용하기 전에 필수)
+@import "../node_modules/bootstrap/scss/variables";
+// 기본 변수 파일 (커스텀 변수를 적용하기 전에 필수)
 @import "../node_modules/bootstrap/scss/mixins";
 
 // 2. 커스텀 변수 파일 로드
@@ -10,4 +11,13 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // 4. 커스텀 css
+@import "_layout";
+
+// 5. 공통 css
+@import "_common";
+@import "_font";
+@import "_button";
+@import "_icons";
+
+// 6. 페이지별 css
 @import "pages/test";

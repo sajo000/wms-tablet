@@ -1,0 +1,219 @@
+/* =================================================
+ * Font
+ * 한글 : Noto Sans KR 
+ * 한글만 해당 글꼴로 적용하는 유니코드 : U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+*/
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url("../fonts/NotoSansKR-Light.woff2") format("woff2"); /* WOFF2 폰트를 첫 번째로 시도 */
+    src: url("../fonts/NotoSansKR-Light.woff") format("woff"); /* WOFF 폰트를 폴백으로 설정 */
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300;
+    line-height: 1.45;
+}
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url("../fonts/NotoSansKR-Regular.woff2") format("woff2");
+    src: url("../fonts/NotoSansKR-Regular.woff") format("woff");
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    line-height: 1.45;
+}
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url("../fonts/NotoSansKR-Medium.woff2") format("woff2");
+    src: url("../fonts/NotoSansKR-Medium.woff") format("woff");
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500;
+    line-height: 1.45;
+}
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url("../fonts/NotoSansKR-SemiBold.woff2") format("woff2");
+    src: url("../fonts/NotoSansKR-SemiBold.woff") format("woff");
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+    line-height: 1.45;
+}
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url("../fonts/NotoSansKR-Bold.woff2") format("woff2");
+    src: url("../fonts/NotoSansKR-Bold.woff") format("woff");
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+    line-height: 1.45;
+}
+@font-face {
+    font-family: "Noto Sans KR";
+    src: url("../fonts/NotoSansKR-ExtraBold.woff2") format("woff2");
+    src: url("../fonts/NotoSansKR-ExtraBold.woff") format("woff");
+    unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3, U+D7B0-D7FF;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 800;
+    line-height: 1.45;
+}
+
+/* =================================================
+ * Font
+ * 영문, 숫자 : Montserrat
+ * 유니코드 지정하지 않음
+*/
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Light.woff2") format("woff2");
+    src: url("../fonts/Montserrat-Light.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 300;
+    line-height: 1.21;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
+    src: url("../fonts/Montserrat-Regular.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    line-height: 1.21;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Medium.woff2") format("woff2");
+    src: url("../fonts/Montserrat-Medium.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 500;
+    line-height: 1.21;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2");
+    src: url("../fonts/Montserrat-SemiBold.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+    line-height: 1.21;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-Bold.woff2") format("woff2");
+    src: url("../fonts/Montserrat-Bold.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+    line-height: 1.21;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../fonts/Montserrat-ExtraBold.woff2") format("woff2");
+    src: url("../fonts/Montserrat-ExtraBold.woff") format("woff");
+    font-style: normal;
+    font-display: swap;
+    font-weight: 800;
+    line-height: 1.21;
+}
+/* ========================================================================
+ * line-height 
+*/
+.lh-145 {
+    line-height: 1.45; // 145%
+}
+
+.lh-121 {
+    line-height: 1.21; // 121%
+}
+
+/* ========================================================================
+ * font-color
+*/
+.fc-primary {
+    color: $primary;
+}
+.fc-secondary {
+    color: $secondary;
+}
+.fc-666 {
+    color: $gray-66;
+}
+.fc-888 {
+    color: $gray-88;
+}
+.fc-999 {
+    color: $gray-99;
+}
+.fc-be {
+    color: #bebebe;
+}
+.fc-white {
+    color: $white;
+}
+.fc-black {
+    color: $black;
+}
+.fc-purple1 {
+    color: $purple1;
+}
+.fc-ddd {
+    color: $gray-dd;
+}
+.fc-9a {
+    color: #9a9c9c;
+}
+.fc-purple {
+    color: $purple1;
+}
+
+/* ========================================================================
+ * background-color
+*/
+.bg-f7 {
+    background-color: $gray-f7;
+}
+.bg-lg-f7 {
+    @include media-breakpoint-up(lg) {
+        background-color: $gray-f7;
+    }
+}
+.bg-f2 {
+    background-color: $gray-f2;
+}
+.bg-333 {
+    background-color: $gray-33;
+}
+.bg-666 {
+    background-color: $gray-66;
+}
+.bg-999 {
+    background-color: $gray-99;
+}
+.bg-ddd {
+    background-color: $gray-dd;
+}
+.bg-eee {
+    background-color: #eeeeee;
+}
+.bg-white {
+    background-color: $white;
+}
+.bg-lg-white {
+    @include media-breakpoint-up(lg) {
+        background-color: $white;
+    }
+}
+.bg-primary2 {
+    background-color: $primary2;
+}
+.bg-purple2 {
+    background-color: $purple2;
+}
