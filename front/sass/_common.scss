@@ -163,56 +163,22 @@ summary {
 /* ========================================================================
  * container, row gutter 재정의
 */
-.container,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm {
-  --bs-gutter-x: 32px; // 16px
-  @include media-breakpoint-up(lg) {
-    --bs-gutter-x: 48px; // 24px
-  }
-}
+//.container,
+//.container-xxl,
+//.container-xl,
+//.container-lg,
+//.container-md,
+//.container-sm {
+//  --bs-gutter-x: 32px; // 16px
+//  @include media-breakpoint-up(lg) {
+//    --bs-gutter-x: 48px; // 24px
+//  }
+//}
 
-.row,
-.row > * {
-  --bs-gutter-x: 32px; // 8px
-  @include media-breakpoint-up(lg) {
-    --bs-gutter-x: 24px; // 12px
-  }
-}
-
-/* ========================================================================
- * 페이지 상하단 고정 간격
-*/
-.global-space-top {
-  padding-top: 20px;
-  @include media-breakpoint-up(lg) {
-    padding-top: 48px;
-  }
-}
-
-// * 모바일에서만 페이지 상단 고정 간격 없음
-.global-space-top-mobile-none {
-  @include media-breakpoint-down(lg) {
-    padding-top: 0 !important;
-  }
-}
-
-.global-space-bottom {
-  padding-bottom: 114px;
-  @include media-breakpoint-up(lg) {
-    padding-bottom: 160px;
-  }
-}
-
-// * 모바일 페이지 하단 컨텐츠에 배경 있는 경우 하단 간격
-.global-space-bottom__has-bg-last-content {
-  @include media-breakpoint-down(lg) {
-    padding-bottom: 114px !important;
-  }
-}
+//.row,
+//.row > * {
+//  --bs-gutter-x: 40px; // 8px
+//}
 
 /* ========================================================================
  * 컨테이너 양 옆 패딩 삭제
@@ -221,50 +187,6 @@ summary {
   @include media-breakpoint-down(lg) {
     margin-left: -16px !important;
     margin-right: -16px !important;
-  }
-}
-
-/* ========================================================================
- * width 커스텀
-*/
-.w-110px {
-  width: 100%;
-  max-width: 110px;
-}
-
-// * 버튼 크기
-.w-490 {
-  width: 100%;
-  max-width: 490px;
-}
-
-// * 공지사항, faq 검색 버튼
-.w-486 {
-  width: 100%;
-  max-width: 486px;
-}
-
-// * mypage 컨테이너 넓이
-.w-588 {
-  @include media-breakpoint-up(lg) {
-    width: 100%;
-    max-width: 588px;
-  }
-}
-
-// * 공지사항, faq 컨테이너 넓이
-.w-792 {
-  @include media-breakpoint-up(lg) {
-    width: 100%;
-    max-width: 792px;
-  }
-}
-
-// * 해외배송 가이드 상세 내용 넓이
-.w-720 {
-  @include media-breakpoint-up(lg) {
-    width: 100%;
-    max-width: 720px;
   }
 }
 
@@ -282,81 +204,17 @@ summary {
   }
 }
 
-.icon-sns {
-  display: flex;
-  width: 46px;
-  height: 46px;
-}
-
-/* ========================================================================
- * 프로모션 배너
-*/
-// * dot
-.owl-theme .owl-dots .owl-dot span {
-  width: 8px;
-  height: 8px;
-  margin: 2px 6px 0;
-  background-color: $gray-e0 !important;
-  @include media-breakpoint-up(lg) {
-    width: 12px;
-    height: 12px;
-    margin: 10px 8px 0;
-  }
-}
-
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-  background-color: $primary !important;
-}
-
-/* ========================================================================
- * p 태그 앞에 4px 도트 있음
-*/
-.dot-p {
-  position: relative;
-  color: $gray-66;
-  padding-left: 6px;
-
-  &:before {
-    content: "";
-    width: 2px;
-    height: 2px;
-    display: inline-block;
-    position: absolute;
-    top: 9px;
-    left: 0;
-    background-color: $gray-66;
-    border-radius: 100%;
-  }
-
-  &.fc-333 {
-    color: $gray-33;
-
-    &:before {
-      background: $gray-33;
-    }
-  }
-
-  &.fc-secondary {
-    color: $secondary;
-
-    &:before {
-      background: $secondary;
-    }
-  }
-}
-
 /* ========================================================================
  * 컨텐츠 구분선 divider
 */
 .divider-1 {
-  border-color: $gray-f2;
+  border-color: $gray-e6;
   opacity: 1;
 }
 
 .divider-10 {
   height: 10px;
-  background-color: $gray-f2;
+  background-color: $gray-e6;
   opacity: 1;
   border: 0;
 }
@@ -642,110 +500,6 @@ summary {
 }
 
 /* ========================================================================
- * sns 공유 아이콘 사이즈
-*/
-.sns-share__icon {
-  display: flex;
-  mask-size: contain;
-  width: 40px;
-  height: 40px;
-}
-
-/* ========================================================================
- * 페이지 내 탭메뉴
-*/
-.segment-control {
-  display: flex;
-  background-color: $gray-f2;
-  border-radius: $border-radius-sm;
-  padding: map-get($spacers, 1);
-}
-
-.segment-control__item {
-  width: 50%;
-  height: 40px;
-  color: $gray-66;
-  padding: 0;
-  border-radius: $border-radius-sm;
-  font-size: map-get($custom-font-size, 14);
-  font-weight: normal;
-  @include media-breakpoint-up(lg) {
-    height: 44px;
-    font-size: map-get($custom-font-size, 16);
-  }
-
-  &.active {
-    background-color: $white;
-    color: $gray-33;
-    box-shadow: $custom-shadow2;
-    font-weight: 500;
-  }
-}
-
-/* ========================================================================
- * 모바일에서 버튼그룹 하단 고정, 웹에서 컨텐츠 아래에 위치하는 스타일
-*/
-.btn-group__mobile-bottom-fixed {
-  @include media-breakpoint-down(lg) {
-    display: flex;
-    width: 100%;
-    flex-shrink: 0;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: unset;
-    gap: 16px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 1050;
-    padding: 10px 16px 24px;
-    background-color: $white;
-    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.15);
-  }
-
-  @include media-breakpoint-up(lg) {
-    display: flex;
-    gap: 20px;
-    // padding: 10px 0 24px;
-  }
-
-  .btn {
-    flex: 1 0 calc(50% - 16px);
-    margin: 0;
-    border-radius: 6px;
-    font-size: map-get($custom-font-size, 16);
-
-    @include media-breakpoint-down(lg) {
-      letter-spacing: -0.5px;
-    }
-
-    @include media-breakpoint-up(lg) {
-      font-size: map-get($custom-font-size, 18);
-    }
-  }
-}
-
-/* ========================================================================
- * 목록 비었을때, 빈 목록
-*/
-.list__empty {
-  min-height: 72vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  .icon-list-empty-question-mark,
-  .icon-list-empty,
-  .icon-card-list-empty {
-    display: flex;
-    mask-size: contain;
-    width: 80px;
-    height: 80px;
-  }
-}
-
-/* ========================================================================
  * details / summary 화살표 스타일
  */
 // * details 태그
@@ -810,26 +564,3 @@ summary {
     height: 6px;
   }
 }
-
-/* ========================================================================
- * border-radius
-*/
-.rounded-m-none {
-  @include media-breakpoint-down(lg) {
-    border-radius: 0 !important;
-  }
-}
-
-.rounded-p-none {
-  @include media-breakpoint-up(lg) {
-    border-radius: 0 !important;
-  }
-}
-
-/* ========================================================================
- * border-color
-*/
-.border-purple {
-  border: 1px solid #6300f7 !important;
-}
-

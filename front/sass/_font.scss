@@ -140,11 +140,8 @@
 .fc-primary {
     color: $primary;
 }
-.fc-secondary {
-    color: $secondary;
-}
 .fc-35 {
-    color: $black-35;
+    color: $gray-35;
 }
 .fc-666 {
     color: $gray-66;
@@ -155,68 +152,34 @@
 .fc-999 {
     color: $gray-99;
 }
-.fc-be {
-    color: #bebebe;
-}
 .fc-white {
     color: $white;
 }
 .fc-black {
     color: $black;
 }
-.fc-purple1 {
-    color: $purple1;
-}
 .fc-ddd {
     color: $gray-dd;
-}
-.fc-9a {
-    color: #9a9c9c;
-}
-.fc-purple {
-    color: $purple1;
 }
 
 /* ========================================================================
  * background-color
 */
+.bg-eee {
+    background-color: #eeeeee;
+}
 .bg-f7 {
     background-color: $gray-f7;
-}
-.bg-lg-f7 {
-    @include media-breakpoint-up(lg) {
-        background-color: $gray-f7;
-    }
-}
-.bg-f2 {
-    background-color: $gray-f2;
-}
-.bg-333 {
-    background-color: $gray-33;
 }
 .bg-666 {
     background-color: $gray-66;
 }
-.bg-999 {
-    background-color: $gray-99;
-}
-.bg-ddd {
-    background-color: $gray-dd;
-}
-.bg-eee {
-    background-color: #eeeeee;
+.bg-d6 {
+    background-color: $gray-d6;
 }
 .bg-white {
     background-color: $white;
 }
-.bg-lg-white {
-    @include media-breakpoint-up(lg) {
-        background-color: $white;
-    }
-}
 .bg-primary2 {
     background-color: $primary2;
-}
-.bg-purple2 {
-    background-color: $purple2;
 }

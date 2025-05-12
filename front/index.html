@@ -29,13 +29,130 @@
     </section>
 
     <section class="right-side">
-      <!-- 메인 컨텐츠 -->
+      <!-- 메인 -->
       <main>
-        <div class="">
-          test<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>ㅇㅇ
+        <!-- 타이틀 -->
+        <div class="bg-white pt-4 px-4 pb-10">
+          <h2 class="fs-32 fw-bold lh-145">타이틀</h2>
         </div>
+        <!-- / 타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="bg-primary2 flex-grow-1 rounded-bottom-2 p-4">
+          컨텐츠 전체높이 / 높이 1/n으로 나누려면 감싼 div(div class="bg-white <b>flex-grow-1</b> rounded-2 p-4 mt-3" 등) flex-grow-1 클래스 추가하면 됨.
+        </div>
+
+        <div class="bg-white flex-grow-1 rounded-2 p-4 mt-3">
+          <div class="row">
+            <div class="col-6 bg-success">
+              <div class="bg-warning">col-6</div>
+            </div>
+            <div class="col-6 bg-info">
+              <div class="bg-warning">col-6</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">icons</h3>
+          <div class="d-flex gap-3">
+            <i class="icon icon-sidebar-arrow-left is-24 bg-black"></i>
+            <i class="icon icon-sidebar-arrow-right is-24 bg-black"></i>
+            <i class="icon icon-sidebar-warehouse is-24 bg-black"></i>
+            <i class="icon icon-sidebar-home is-24 bg-black"></i>
+            <i class="icon icon-sidebar-download is-24 bg-black"></i>
+            <i class="icon icon-sidebar-document is-24 bg-black"></i>
+            <i class="icon icon-sidebar-upload is-24 bg-black"></i>
+            <i class="icon icon-sidebar-box is-24 bg-black"></i>
+            <i class="icon icon-sidebar-calendar is-24 bg-black"></i>
+            <i class="icon icon-sidebar-search-document is-24 bg-black"></i>
+            <i class="icon icon-close is-24 bg-black"></i>
+            <i class="icon icon-trash-can is-24 bg-black"></i>
+            <i class="icon icon-plus is-24 bg-black"></i>
+            <i class="icon icon-check is-24 bg-black"></i>
+            <i class="icon icon-search is-24 bg-black"></i>
+            <i class="icon icon-save is-24 bg-black"></i>
+            <i class="icon icon-exit is-24 bg-black"></i>
+            <i class="icon icon-document-box is-24 bg-black"></i>
+            <i class="icon icon-warning is-24 bg-black"></i>
+            <i class="icon icon-arrow-right is-24 bg-black"></i>
+            <i class="icon icon-arrow-left is-24 bg-black"></i>
+            <i class="icon icon-arrow-top is-24 bg-black"></i>
+            <i class="icon icon-arrow-bottom is-24 bg-black"></i>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">input</h3>
+          <div>
+            <div class="form-group">
+              <label for="" class="form-label">default</label>
+              <input type="text" class="form-control" placeholder="placeholder">
+            </div>
+
+            <div class="form-group">
+              <label for="" class="form-label">filled</label>
+              <input type="text" class="form-control" placeholder="placeholder" value="내용이 들어있어요">
+            </div>
+
+            <div class="form-group">
+              <label for="" class="form-label">disabled</label>
+              <input type="text" class="form-control" placeholder="placeholder" disabled>
+            </div>
+          </div>
+
+          <h3 class="text-uppercase">search</h3>
+          <div>
+            <div class="form-group">
+              <label for="" class="form-label">search</label>
+              <div class="position-relative">
+                <input type="" class="form-control form-search">
+                <div class="form-group-append">
+                  <button class="btn-clear togglePassword" type="button">
+                    <i class="icon icon-search is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="" class="form-label">search</label>
+              <div class="position-relative">
+                <input type="" class="form-control form-search-lg">
+                <div class="form-group-append">
+                  <button class="btn-clear togglePassword" type="button">
+                    <i class="icon icon-search is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group mt-lg-32">
+              <label for="courier-select" style="display:block; margin-bottom:8px;">Lable</label>
+              <div class="custom-select-wrap">
+                <div class="custom-select" tabindex="0">
+                  <span class="custom-select-selected">선택</span>
+                  <span class="custom-select-arrow">&#9662;</span>
+                </div>
+                <ul class="custom-select-list">
+                  <li data-value="">선택</li>
+                  <li data-value="DHL">DHL</li>
+                  <li data-value="FedEx">FeDex</li>
+                  <li data-value="UPS">UPS</li>
+                  <li data-value="GSPostbox">GSPostbox택배</li>
+                  <li data-value="CanadaPost">Canada Post</li>
+                  <li data-value="AMS">AMS</li>
+                </ul>
+                <input type="hidden" name="courier" id="courier-select" value="">
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- / 컨텐츠 -->
       </main>
-      <!-- / 메인 컨텐츠 -->
+      <!-- / 메인 -->
     </section>
   </div>
 </div>

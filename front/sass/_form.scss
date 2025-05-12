@@ -1,0 +1,155 @@
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+// * form-group input 안에 아이콘 있는 경우 button 감싸고 있는 div
+.form-group-append {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  padding-right: 32px;
+}
+
+.form-label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: map-get($custom-font-size, 20);
+}
+
+.form-control,
+.form-select {
+  height: 70px;
+  padding: 32px 1rem;
+  border: 1px solid $gray-f7;
+  background-color: $gray-f7;
+  font-size: map-get($custom-font-size, 26);
+  border-radius: var(--bs-border-radius-sm);
+
+  &::placeholder {
+    color: $gray-94;
+  }
+
+  &:hover {
+    border-color: $primary;
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: $gray-d6;
+    border-color: $gray-d6;
+    color: $gray-94;
+  }
+
+  &.success {
+    border-color: $success;
+  }
+
+  &.warning {
+    border-color: $warning;
+  }
+
+  &.error {
+    border-color: $danger;
+  }
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: none;
+  }
+}
+
+.form-search-lg {
+  height: 80px;
+}
+
+/* ========================================================================
+ * 커스텀 셀렉트
+*/
+.custom-select-wrap {
+  position: relative;
+  width: 320px;
+  margin-bottom: 40px;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+}
+
+.custom-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fafbfc;
+  border: 1.5px solid #e3e8ee;
+  border-radius: 10px;
+  padding: 16px 20px;
+  cursor: pointer;
+  min-height: 48px;
+  font-size: 18px;
+  color: #222;
+  transition: border 0.2s;
+}
+
+.custom-select.open,
+.custom-select:focus {
+  border: 1.5px solid #00c2de;
+  outline: none;
+}
+
+.custom-select-arrow {
+  font-size: 18px;
+  color: #888;
+  margin-left: 8px;
+}
+
+.custom-select-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid #00c2de;
+  border-radius: 10px;
+  margin-top: 4px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  z-index: 100;
+  padding: 0;
+  list-style: none;
+  font-size: 18px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.custom-select.open + .custom-select-list,
+.custom-select:focus + .custom-select-list {
+  display: block;
+}
+
+.custom-select-list li {
+  padding: 14px 20px;
+  cursor: pointer;
+  color: #222;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.custom-select-list li.selected {
+  background: #e6fafd;
+  color: #00c2de;
+  font-weight: 600;
+  position: relative;
+}
+.custom-select-list li.selected::after {
+  content: '✔';
+  color: #00c2de;
+  font-size: 18px;
+  position: absolute;
+  right: 20px;
+}
+
+.custom-select-list li:hover {
+  background: #f2f6fa;
+}
+
