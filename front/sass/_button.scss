@@ -2,83 +2,107 @@
  * button 버튼 스타일 재정의
 */
 .btn {
-  height: 46px;
-  --bs-btn-padding-x: 1rem;
+  height: 70px;
+  --bs-btn-padding-x: 24px;
+  --bs-btn-padding-y: 1rem;
   --bs-btn-active-border-color: transparent;
   --bs-btn-line-height: 1.45;
-  font-weight: 500;
-  font-size: map-get($custom-font-size, 14);
-  @include media-breakpoint-up(lg) {
-    height: 50px;
-  }
+  --bs-btn-border-radius: var(--bs-border-radius);
+  font-weight: 700;
+  font-size: map-get($custom-font-size, 26);
 
   &:disabled,
   &.disabled {
-    background-color: $gray-ee;
-    border-color: $gray-dd;
-    color: $gray-99;
+    background-color: $gray-d6;
+    border-color: $gray-d6;
+    color: $gray-94;
   }
 }
 
 .btn-xs,
 .btn-group-xs > .btn {
-  --bs-btn-padding-x: 0.625rem;
-  height: 32px;
-  font-size: map-get($custom-font-size, 12);
-  @include media-breakpoint-up(lg) {
-    height: 40px;
-    font-size: map-get($custom-font-size, 14);
-  }
+  height: 62px;
+  font-size: map-get($custom-font-size, 22);
+  font-weight: 700;
 }
 
 .btn-sm,
 .btn-group-sm > .btn {
-  height: 36px;
-  font-size: map-get($custom-font-size, 14);
-  @include media-breakpoint-up(lg) {
-    height: 40px;
-  }
+  height: 66px;
+  font-size: map-get($custom-font-size, 26);
+  font-weight: 700;
 }
 
-.btn-lg,
-.btn-group-lg > .btn {
-  height: 50px;
-  --bs-btn-border-radius: var(--bs-border-radius);
-  font-size: map-get($custom-font-size, 16);
-  @include media-breakpoint-up(lg) {
-    height: 56px;
-    font-size: map-get($custom-font-size, 18);
-  }
-}
+//.btn-lg,
+//.btn-group-lg > .btn {
+//  height: 50px;
+//  --bs-btn-border-radius: var(--bs-border-radius);
+//  font-size: map-get($custom-font-size, 16);
+//}
 
 .btn-primary {
   --bs-btn-color: #fff; // 버튼 컬러 색상
   --bs-btn-bg: #00c2de; // 버튼 배경
   --bs-btn-border-color: #00c2de; // 버튼 보더
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #00b7d1; // 호버 배경
-  --bs-btn-hover-border-color: #00b7d1; // 호버 보더
+  --bs-btn-hover-bg: #00B6D1; // 호버 배경
+  --bs-btn-hover-border-color: #00B6D1; // 호버 보더
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #00a6bd; // 액티브 배경
-  --bs-btn-active-border-color: #00a6bd; // 액티브 보더
+  --bs-btn-active-bg: #00AFC8; // 액티브 배경
+  --bs-btn-active-border-color: #00AFC8; // 액티브 보더
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: #d6d6d6; // 비활성화 컬러
+  --bs-btn-disabled-bg: #d6d6d6; // 비활성화 배경
+  --bs-btn-disabled-border-color: #949494; // 비활성화 보더
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #00C2DE; // 버튼 컬러 색상
+  --bs-btn-bg: #ffffff; // 버튼 배경
+  --bs-btn-border-color: #00C2DE; // 버튼 보더
+  --bs-btn-hover-color: #00C2DE;
+  --bs-btn-hover-bg: #F0FBFD; // 호버 배경
+  --bs-btn-hover-border-color: #1E1E1E; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #00C2DE;
+  --bs-btn-active-bg: #F0FBFD; // 액티브 배경
+  --bs-btn-active-border-color: #1E1E1E; // 액티브 보더
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff; // 비활성화 컬러
   --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
   --bs-btn-disabled-border-color: #999; // 비활성화 보더
 }
 
-.btn-outline-primary {
-  --bs-btn-color: #00c2de; // 버튼 컬러 색상
-  --bs-btn-bg: #ffffff; // 버튼 배경
-  --bs-btn-border-color: #00c2de; // 버튼 보더
-  --bs-btn-hover-color: #00c2de;
-  --bs-btn-hover-bg: #f7fdfe; // 호버 배경
-  --bs-btn-hover-border-color: #00c2de; // 호버 보더
+.btn-black {
+  --bs-btn-color: #ffffff; // 버튼 컬러 색상
+  --bs-btn-bg: #1E1E1E; // 버튼 배경
+  --bs-btn-border-color: #1E1E1E; // 버튼 보더
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #2e2e2e; // 호버 배경
+  --bs-btn-hover-border-color: #2e2e2e; // 호버 보더
   --bs-btn-focus-shadow-rgb: 13, 110, 253;
-  --bs-btn-active-color: #00c2de;
-  --bs-btn-active-bg: #e5f9fc; // 액티브 배경
-  --bs-btn-active-border-color: #00c2de; // 액티브 보더
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #2f2f2f; // 액티브 배경
+  --bs-btn-active-border-color: #2f2f2f; // 액티브 보더
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff; // 비활성화 컬러
+  --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
+  --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+
+.btn-outline-black {
+  --bs-btn-color: #1E1E1E; // 버튼 컬러 색상
+  --bs-btn-bg: transparent; // 버튼 배경
+  --bs-btn-border-color: #1E1E1E; // 버튼 보더
+  --bs-btn-hover-color: #1E1E1E;
+  --bs-btn-hover-bg: #f7f7f7; // 호버 배경
+  --bs-btn-hover-border-color: #1E1E1E; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #1E1E1E;
+  --bs-btn-active-bg: #f7f7f7; // 액티브 배경
+  --bs-btn-active-border-color: #1E1E1E; // 액티브 보더
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff; // 비활성화 컬러
   --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경

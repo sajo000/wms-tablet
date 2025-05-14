@@ -230,3 +230,21 @@
 @include arrow-icon("bottom", "90deg"); // 아래 방향
 @include arrow-icon("left", "180deg"); // 왼쪽 방향
 @include arrow-icon("top", "-90deg"); // 위쪽 방향
+
+/* ========================================================================
+ * TOAST, MODAL STATE 아이콘
+*/
+.icon-state-warning {
+  opacity: 1;
+  background: url("../images/icons/icon-state-warning.svg") no-repeat center center / contain;
+}
+
+.icon-state-error {
+  opacity: 1;
+  background: url("../images/icons/icon-state-error.svg") no-repeat center center / contain;
+}
+
+.icon-state-success {
+  opacity: 1;
+  background: url("../images/icons/icon-state-success.svg") no-repeat center center / contain;
+}

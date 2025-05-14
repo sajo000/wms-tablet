@@ -86,6 +86,7 @@ $custom-font-size: 1rem !default;
 
 $custom-font-size: (
     44: 2.75rem,
+    38: 2.375rem,
     36: 2.25rem,
     32: 2rem,
     22: 1.375rem,
@@ -104,6 +105,7 @@ $custom-font-size: (
     font-size: $value !important;
   }
 }
+
 // 폰트사이즈 생성
 
 // 아이콘 사이즈 생성
@@ -124,6 +126,7 @@ $custom-icon-size: (
     height: $value;
   }
 }
+
 // 아이콘 사이즈 생성
 
 // 프로그레스 바 재정의

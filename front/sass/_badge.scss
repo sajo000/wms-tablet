@@ -1,0 +1,44 @@
+/* ========================================================================
+ * badge 뱃지 재정의
+ * 알약 모양
+*/
+.badge {
+  --bs-badge-font-weight: 700;
+  --bs-badge-border-radius: var(--bs-border-radius-sm);
+}
+
+.badge-sm {
+  --bs-badge-padding-x: 16px;
+  --bs-badge-padding-y: 10px;
+  --bs-badge-font-size: 16px;
+}
+
+.badge-lg {
+  --bs-badge-padding-x: 16px;
+  --bs-badge-padding-y: 10px;
+  --bs-badge-font-size: 22px;
+}
+
+.badge-primary {
+  color: $primary2;
+  background-color: $primary-lite;
+  border: 1px solid $primary-lite;
+}
+
+.badge-danger {
+  color: $danger;
+  background-color: #FFE8EC;
+  border: 1px solid #FFE8EC;
+}
+
+.badge-gray {
+  color: $gray-55;
+  background-color: #EFEFEF;
+  border: 1px solid #EFEFEF;
+}
+
+.badge-notice {
+  color: $notice;
+  background-color: #E9EBFF;
+  border: 1px solid #E9EBFF;
+}

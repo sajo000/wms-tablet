@@ -22,7 +22,7 @@
 .form-control,
 .form-select {
   height: 70px;
-  padding: 32px 1rem;
+  padding: 16px 32px;
   border: 1px solid $gray-f7;
   background-color: $gray-f7;
   font-size: map-get($custom-font-size, 26);
@@ -68,88 +68,88 @@
 /* ========================================================================
  * 커스텀 셀렉트
 */
-.custom-select-wrap {
+.form-select-wrap {
   position: relative;
-  width: 320px;
-  margin-bottom: 40px;
-  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
 }
 
-.custom-select {
+.form-select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fafbfc;
-  border: 1.5px solid #e3e8ee;
-  border-radius: 10px;
-  padding: 16px 20px;
+  background: $gray-f7;
+  border: 1px solid $gray-f7;
+  border-radius: $border-radius;
+  padding: 16px 32px;
   cursor: pointer;
-  min-height: 48px;
-  font-size: 18px;
-  color: #222;
+  height: 70px;
+  font-size: map-get($custom-font-size, 26);
   transition: border 0.2s;
-}
 
-.custom-select.open,
-.custom-select:focus {
-  border: 1.5px solid #00c2de;
-  outline: none;
-}
+  &.open,
+  &:focus,
+  &:hover {
+    border: 1px solid $primary;
+    outline: none;
+  }
 
-.custom-select-arrow {
-  font-size: 18px;
-  color: #888;
-  margin-left: 8px;
+  &.open {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
 }
-
-.custom-select-list {
+.form-select-list-wrap {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   background: #fff;
-  border: 1.5px solid #00c2de;
-  border-radius: 10px;
-  margin-top: 4px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  border: 1px solid $primary;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
   z-index: 100;
   padding: 0;
   list-style: none;
-  font-size: 18px;
-  max-height: 320px;
+  font-size: map-get($custom-font-size, 22);
+  overflow: hidden;
+}
+
+.form-select-list {
+  max-height: 475px;
   overflow-y: auto;
 }
 
-.custom-select.open + .custom-select-list,
-.custom-select:focus + .custom-select-list {
+//.form-select.open + .form-select-list,
+//.form-select:focus + .form-select-list {
+.form-select.open + .form-select-list {
   display: block;
 }
 
-.custom-select-list li {
-  padding: 14px 20px;
+.form-select-list li {
+  padding: 10px 54px 10px 32px;
   cursor: pointer;
-  color: #222;
   transition: background 0.2s;
   display: flex;
   align-items: center;
+  word-break: break-all;
 }
 
-.custom-select-list li.selected {
-  background: #e6fafd;
-  color: #00c2de;
-  font-weight: 600;
+.form-select-list li.selected {
+  background: $primary-lite2;
+  color: $primary;
+  font-weight: 500;
   position: relative;
 }
-.custom-select-list li.selected::after {
-  content: '✔';
-  color: #00c2de;
+.form-select-list li.selected::after {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M5 12L10 17L20 7' stroke='%2300C2DE' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  width: 24px;
+  height: 24px;
   font-size: 18px;
   position: absolute;
   right: 20px;
 }
 
-.custom-select-list li:hover {
-  background: #f2f6fa;
+.form-select-list li:hover {
+  background: $primary-lite2;
 }
-

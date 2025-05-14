@@ -3,6 +3,10 @@
   font-size: 2.75rem !important;
 }
 
+.fs-38 {
+  font-size: 2.375rem !important;
+}
+
 .fs-36 {
   font-size: 2.25rem !important;
 }
@@ -16387,6 +16391,7 @@ textarea.form-control-lg {
   gap: 0 !important;
   padding: 10px !important;
   margin: 4px !important;
+  justify-content: center;
 }
 .left-side.collapsed .sidebar-center-name > div {
   opacity: 0;
@@ -16408,12 +16413,14 @@ textarea.form-control-lg {
 .icon-sidebar-solo {
   width: 36px;
   height: 36px;
+  flex-shrink: 0;
 }
 
 /* ========================================================================
  * CONTENTS
 */
 .right-side {
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -16422,6 +16429,7 @@ textarea.form-control-lg {
 }
 
 .right-side > main {
+  height: 100%;
   display: flex;
   flex-direction: column;
   flex-grow: 1; /* 남은 공간 모두 차지 */
@@ -16432,62 +16440,33 @@ textarea.form-control-lg {
  * button 버튼 스타일 재정의
 */
 .btn {
-  height: 46px;
-  --bs-btn-padding-x: 1rem;
+  height: 70px;
+  --bs-btn-padding-x: 24px;
+  --bs-btn-padding-y: 1rem;
   --bs-btn-active-border-color: transparent;
   --bs-btn-line-height: 1.45;
-  font-weight: 500;
-  font-size: 0.875rem;
-}
-@media (min-width: 992px) {
-  .btn {
-    height: 50px;
-  }
+  --bs-btn-border-radius: var(--bs-border-radius);
+  font-weight: 700;
+  font-size: 1.625rem;
 }
 .btn:disabled, .btn.disabled {
-  background-color: #eeeeee;
-  border-color: #dddddd;
-  color: #999999;
+  background-color: #d6d6d6;
+  border-color: #d6d6d6;
+  color: #949494;
 }
 
 .btn-xs,
 .btn-group-xs > .btn {
-  --bs-btn-padding-x: 0.625rem;
-  height: 32px;
-  font-size: 0.75rem;
-}
-@media (min-width: 992px) {
-  .btn-xs,
-  .btn-group-xs > .btn {
-    height: 40px;
-    font-size: 0.875rem;
-  }
+  height: 62px;
+  font-size: 1.375rem;
+  font-weight: 700;
 }
 
 .btn-sm,
 .btn-group-sm > .btn {
-  height: 36px;
-  font-size: 0.875rem;
-}
-@media (min-width: 992px) {
-  .btn-sm,
-  .btn-group-sm > .btn {
-    height: 40px;
-  }
-}
-
-.btn-lg,
-.btn-group-lg > .btn {
-  height: 50px;
-  --bs-btn-border-radius: var(--bs-border-radius);
-  font-size: 1rem;
-}
-@media (min-width: 992px) {
-  .btn-lg,
-  .btn-group-lg > .btn {
-    height: 56px;
-    font-size: 1.125rem;
-  }
+  height: 66px;
+  font-size: 1.625rem;
+  font-weight: 700;
 }
 
 .btn-primary {
@@ -16495,29 +16474,63 @@ textarea.form-control-lg {
   --bs-btn-bg: #00c2de;
   --bs-btn-border-color: #00c2de;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #00b7d1;
-  --bs-btn-hover-border-color: #00b7d1;
+  --bs-btn-hover-bg: #00B6D1;
+  --bs-btn-hover-border-color: #00B6D1;
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #00a6bd;
-  --bs-btn-active-border-color: #00a6bd;
+  --bs-btn-active-bg: #00AFC8;
+  --bs-btn-active-border-color: #00AFC8;
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: #d6d6d6;
+  --bs-btn-disabled-bg: #d6d6d6;
+  --bs-btn-disabled-border-color: #949494;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: #00C2DE;
+  --bs-btn-bg: #ffffff;
+  --bs-btn-border-color: #00C2DE;
+  --bs-btn-hover-color: #00C2DE;
+  --bs-btn-hover-bg: #F0FBFD;
+  --bs-btn-hover-border-color: #1E1E1E;
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #00C2DE;
+  --bs-btn-active-bg: #F0FBFD;
+  --bs-btn-active-border-color: #1E1E1E;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #e0e0e0;
   --bs-btn-disabled-border-color: #999;
 }
 
-.btn-outline-primary {
-  --bs-btn-color: #00c2de;
-  --bs-btn-bg: #ffffff;
-  --bs-btn-border-color: #00c2de;
-  --bs-btn-hover-color: #00c2de;
-  --bs-btn-hover-bg: #f7fdfe;
-  --bs-btn-hover-border-color: #00c2de;
+.btn-black {
+  --bs-btn-color: #ffffff;
+  --bs-btn-bg: #1E1E1E;
+  --bs-btn-border-color: #1E1E1E;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-bg: #2e2e2e;
+  --bs-btn-hover-border-color: #2e2e2e;
   --bs-btn-focus-shadow-rgb: 13, 110, 253;
-  --bs-btn-active-color: #00c2de;
-  --bs-btn-active-bg: #e5f9fc;
-  --bs-btn-active-border-color: #00c2de;
+  --bs-btn-active-color: #ffffff;
+  --bs-btn-active-bg: #2f2f2f;
+  --bs-btn-active-border-color: #2f2f2f;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #e0e0e0;
+  --bs-btn-disabled-border-color: #999;
+}
+
+.btn-outline-black {
+  --bs-btn-color: #1E1E1E;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #1E1E1E;
+  --bs-btn-hover-color: #1E1E1E;
+  --bs-btn-hover-bg: #f7f7f7;
+  --bs-btn-hover-border-color: #1E1E1E;
+  --bs-btn-focus-shadow-rgb: 13, 110, 253;
+  --bs-btn-active-color: #1E1E1E;
+  --bs-btn-active-bg: #f7f7f7;
+  --bs-btn-active-border-color: #1E1E1E;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #e0e0e0;
@@ -16558,7 +16571,7 @@ textarea.form-control-lg {
 
 html,
 body {
-  height: 100dvh; /* 동적 뷰포트 높이 */
+  height: 100vh; /* 동적 뷰포트 높이 */
 }
 
 body {
@@ -16680,6 +16693,32 @@ summary {
 }
 summary::-webkit-details-marker, summary::marker {
   display: none;
+}
+
+/* ========================================================================
+ * scrollbar 스크롤바 스타일
+*/
+/* Webkit 계열 브라우저 (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 14px; /* 스크롤바 너비 */
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999999; /* 스크롤 핸들(thumb) 색상 */
+  border-radius: 8px; /* 둥근 모서리 */
+}
+
+::-webkit-scrollbar-track {
+  background: #eeeeee; /* 스크롤 트랙(배경) 색상 */
+  border-radius: 8px;
+  margin: 40px 0; /* 트랙 위아래 여백 (상단/하단 둥글게) */
+}
+
+/* Firefox */
+html, body, * {
+  scrollbar-width: thin; /* 얇은 스크롤바 */
+  scrollbar-color: #999999 #eeeeee; /* thumb, track */
 }
 
 /* ========================================================================
@@ -16838,44 +16877,69 @@ summary::-webkit-details-marker, summary::marker {
 */
 .toast {
   visibility: hidden;
-  min-width: 200px;
-  max-width: 328px;
-  width: 100%;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: #ffffff;
-  padding: 10px 1rem;
-  border-radius: 5px;
-  position: fixed;
-  z-index: 99999;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 0.75rem;
+  width: 274px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 1.375rem;
   opacity: 0;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+  border: 0;
 }
-@media (max-width: 991.98px) {
-  .toast.toast__up-cta {
-    bottom: 94px;
-  }
+.toast .toast-body {
+  border: 0;
+  padding: 1rem;
 }
-@media (max-width: 991.98px) {
-  .toast.toast__up-mobile-footer-nav {
-    bottom: 69px;
-  }
+
+.toast-state {
+  width: 890px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+  border: 0;
 }
-@media (max-width: 991.98px) {
-  .toast.toast__up-none {
-    bottom: 10px;
-  }
+.toast-state .toast-body {
+  border: 0;
+  padding: 40px;
 }
-@media (min-width: 992px) {
-  .toast {
-    bottom: 48px;
-    padding: 1rem;
-    font-size: 1rem;
-    text-align: center;
-    letter-spacing: -0.5px;
-    border-radius: 10px;
-  }
+
+.toast-state-btn {
+  width: 890px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+  border: 0;
+}
+.toast-state-btn .toast-body {
+  padding: 40px 40px 0;
+}
+.toast-state-btn .toast-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 30px 40px 40px;
+}
+.toast-state-btn .toast-footer > .btn {
+  height: 80px;
+  flex: 1 0 48%;
 }
 
 /* 토스트 팝업이 보일 때의 스타일 */
@@ -16883,6 +16947,28 @@ summary::-webkit-details-marker, summary::marker {
   visibility: visible;
   opacity: 1;
   z-index: 10002;
+}
+
+.toast-state-warning {
+  background: #FFF2E6;
+}
+
+.toast-state-error {
+  background: #FFEBEE;
+}
+
+.toast-state-success {
+  background: #D9F6FA;
+}
+
+.toast-body__title {
+  min-height: 110px;
+  align-content: center;
+}
+
+.toast-body__body {
+  min-height: 138px;
+  align-content: center;
 }
 
 /* ========================================================================
@@ -17291,7 +17377,7 @@ summary::-webkit-details-marker, summary::marker {
 .form-control,
 .form-select {
   height: 70px;
-  padding: 32px 1rem;
+  padding: 16px 32px;
   border: 1px solid #f7f7f7;
   background-color: #f7f7f7;
   font-size: 1.625rem;
@@ -17337,90 +17423,86 @@ summary::-webkit-details-marker, summary::marker {
 /* ========================================================================
  * 커스텀 셀렉트
 */
-.custom-select-wrap {
+.form-select-wrap {
   position: relative;
-  width: 320px;
-  margin-bottom: 40px;
-  font-family: "Pretendard", "Noto Sans KR", sans-serif;
 }
 
-.custom-select {
+.form-select {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fafbfc;
-  border: 1.5px solid #e3e8ee;
-  border-radius: 10px;
-  padding: 16px 20px;
+  background: #f7f7f7;
+  border: 1px solid #f7f7f7;
+  border-radius: 0.625rem !important;
+  padding: 16px 32px;
   cursor: pointer;
-  min-height: 48px;
-  font-size: 18px;
-  color: #222;
+  height: 70px;
+  font-size: 1.625rem;
   transition: border 0.2s;
 }
-
-.custom-select.open,
-.custom-select:focus {
-  border: 1.5px solid #00c2de;
+.form-select.open, .form-select:focus, .form-select:hover {
+  border: 1px solid #00c2de;
   outline: none;
 }
-
-.custom-select-arrow {
-  font-size: 18px;
-  color: #888;
-  margin-left: 8px;
+.form-select.open {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
 }
 
-.custom-select-list {
+.form-select-list-wrap {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
   background: #fff;
-  border: 1.5px solid #00c2de;
-  border-radius: 10px;
-  margin-top: 4px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid #00c2de;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
   z-index: 100;
   padding: 0;
   list-style: none;
-  font-size: 18px;
-  max-height: 320px;
+  font-size: 1.375rem;
+  overflow: hidden;
+}
+
+.form-select-list {
+  max-height: 475px;
   overflow-y: auto;
 }
 
-.custom-select.open + .custom-select-list,
-.custom-select:focus + .custom-select-list {
+.form-select.open + .form-select-list {
   display: block;
 }
 
-.custom-select-list li {
-  padding: 14px 20px;
+.form-select-list li {
+  padding: 10px 54px 10px 32px;
   cursor: pointer;
-  color: #222;
   transition: background 0.2s;
   display: flex;
   align-items: center;
+  word-break: break-all;
 }
 
-.custom-select-list li.selected {
-  background: #e6fafd;
+.form-select-list li.selected {
+  background: #ECFBFF;
   color: #00c2de;
-  font-weight: 600;
+  font-weight: 500;
   position: relative;
 }
 
-.custom-select-list li.selected::after {
-  content: "✔";
-  color: #00c2de;
+.form-select-list li.selected::after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M5 12L10 17L20 7' stroke='%2300C2DE' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  width: 24px;
+  height: 24px;
   font-size: 18px;
   position: absolute;
   right: 20px;
 }
 
-.custom-select-list li:hover {
-  background: #f2f6fa;
+.form-select-list li:hover {
+  background: #ECFBFF;
 }
 
 /* ========================================================================
@@ -17676,4 +17758,130 @@ summary::-webkit-details-marker, summary::marker {
   mask-size: contain;
   -webkit-mask-size: contain;
   transform: rotate(-90deg);
+}
+
+/* ========================================================================
+ * TOAST, MODAL STATE 아이콘
+*/
+.icon-state-warning {
+  opacity: 1;
+  background: url("../images/icons/icon-state-warning.svg") no-repeat center center/contain;
+}
+
+.icon-state-error {
+  opacity: 1;
+  background: url("../images/icons/icon-state-error.svg") no-repeat center center/contain;
+}
+
+.icon-state-success {
+  opacity: 1;
+  background: url("../images/icons/icon-state-success.svg") no-repeat center center/contain;
+}
+
+/* ========================================================================
+ * badge 뱃지 재정의
+ * 알약 모양
+*/
+.badge {
+  --bs-badge-font-weight: 700;
+  --bs-badge-border-radius: var(--bs-border-radius-sm);
+}
+
+.badge-sm {
+  --bs-badge-padding-x: 16px;
+  --bs-badge-padding-y: 10px;
+  --bs-badge-font-size: 16px;
+}
+
+.badge-lg {
+  --bs-badge-padding-x: 16px;
+  --bs-badge-padding-y: 10px;
+  --bs-badge-font-size: 22px;
+}
+
+.badge-primary {
+  color: #00CFE8;
+  background-color: #D6F7FF;
+  border: 1px solid #D6F7FF;
+}
+
+.badge-danger {
+  color: #FF3558;
+  background-color: #FFE8EC;
+  border: 1px solid #FFE8EC;
+}
+
+.badge-gray {
+  color: #555555;
+  background-color: #EFEFEF;
+  border: 1px solid #EFEFEF;
+}
+
+.badge-notice {
+  color: #344FFF;
+  background-color: #E9EBFF;
+  border: 1px solid #E9EBFF;
+}
+
+/* ========================================================================
+ * modal 모달 재정의
+ */
+.modal {
+  --bs-modal-width: 580px;
+  --bs-modal-inner-border-radius: 20px;
+}
+
+.modal-content {
+  --bs-modal-border-radius: 20px;
+  border: 0;
+}
+
+.modal-footer {
+  border: 0;
+}
+
+.modal-footer > * {
+  margin: 0;
+}
+
+/* ========================================================================
+ * 헤더 있는 모달
+ */
+.modal-content-has-header .modal-header {
+  padding: 30px 30px 24px;
+}
+.modal-content-has-header .modal-title {
+  font-size: 1.625rem;
+  font-weight: 700;
+}
+.modal-content-has-header .modal-close {
+  width: 32px;
+  height: 32px;
+}
+.modal-content-has-header .modal-body {
+  padding: 24px 30px;
+}
+
+/* ========================================================================
+ * 얼럿 모달, 컨펌 모달 스타일
+ */
+.modal-body {
+  padding: 30px;
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.modal-footer {
+  padding: 0 30px 30px;
+  gap: 1rem;
+}
+.modal-footer > .btn {
+  flex: 1 0 48%;
+}
+
+.icon-for-state {
+  display: flex;
+  width: 90px;
+  height: 90px;
 }

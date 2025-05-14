@@ -27,7 +27,7 @@
 
 html,
 body {
-  height: 100dvh; /* 동적 뷰포트 높이 */
+  height: 100vh; /* 동적 뷰포트 높이 */
 }
 
 body {
@@ -159,6 +159,33 @@ summary {
     display: none;
   }
 }
+
+/* ========================================================================
+ * scrollbar 스크롤바 스타일
+*/
+/* Webkit 계열 브라우저 (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 14px; /* 스크롤바 너비 */
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999999; /* 스크롤 핸들(thumb) 색상 */
+  border-radius: 8px; /* 둥근 모서리 */
+}
+
+::-webkit-scrollbar-track {
+  background: #eeeeee; /* 스크롤 트랙(배경) 색상 */
+  border-radius: 8px;
+  margin: 40px 0; /* 트랙 위아래 여백 (상단/하단 둥글게) */
+}
+
+/* Firefox */
+html, body, * {
+  scrollbar-width: thin; /* 얇은 스크롤바 */
+  scrollbar-color: #999999 #eeeeee; /* thumb, track */
+}
+
 
 /* ========================================================================
  * container, row gutter 재정의
@@ -334,50 +361,77 @@ summary {
 */
 .toast {
   visibility: hidden;
-  min-width: 200px;
-  max-width: 328px;
-  width: 100%;
-  background-color: rgba(51, 51, 51, 0.8);
-  color: $white;
-  padding: 10px 1rem;
-  border-radius: 5px;
-  position: fixed;
-  z-index: 99999;
-  left: 50%;
-  // top: calc(92vh - 40px);
-  transform: translateX(-50%);
-  font-size: map-get($custom-font-size, 12);
+  width: 274px;
+  height: auto;
+  background-color: $white;
+  border-radius: 20px;
+  font-size: map-get($custom-font-size, 22);
   opacity: 0;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: $custom-shadow2;
+  border: 0;
 
-  // CTA버튼 위에 있을때
-  &.toast__up-cta {
-    @include media-breakpoint-down(lg) {
-      bottom: 94px;
-    }
-  }
-
-  // 모바일 푸터 네비 위에 있을때
-  &.toast__up-mobile-footer-nav {
-    @include media-breakpoint-down(lg) {
-      bottom: 69px;
-    }
-  }
-
-  // 아무것도 없을때
-  &.toast__up-none {
-    @include media-breakpoint-down(lg) {
-      bottom: 10px;
-    }
-  }
-
-  // PC
-  @include media-breakpoint-up(lg) {
-    bottom: 48px;
+  .toast-body {
+    border: 0;
     padding: 1rem;
-    font-size: map-get($custom-font-size, 16);
-    text-align: center;
-    letter-spacing: -0.5px;
-    border-radius: 10px;
+  }
+}
+
+// * 토스트 팝업 - 상태
+.toast-state {
+  width: 890px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  //font-size: 1.375rem;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: $custom-shadow2;
+  border: 0;
+
+  .toast-body {
+    border: 0;
+    padding: 40px;
+  }
+}
+
+// * 버튼 있는 토스트 팝업 - 상태
+.toast-state-btn {
+  width: 890px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  //font-size: 1.375rem;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: $custom-shadow2;
+  border: 0;
+
+  .toast-body {
+    padding: 40px 40px 0;
+  }
+
+  .toast-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 30px 40px 40px;
+
+    > .btn {
+      height: 80px;
+      flex: 1 0 48%;
+    }
   }
 }
 
@@ -386,6 +440,30 @@ summary {
   visibility: visible;
   opacity: 1;
   z-index: 10002; // 모달 딤 위로 띄우기
+}
+
+// * 토스트 팝업 - 상태 배경색상
+.toast-state-warning {
+  background: #FFF2E6;
+}
+
+.toast-state-error {
+  background: #FFEBEE;
+}
+
+.toast-state-success {
+  background: #D9F6FA;
+}
+
+// * 토스트 팝업 바디 안에 타이틀과 바디 최소 높이
+.toast-body__title {
+  min-height: 110px;
+  align-content: center;
+}
+
+.toast-body__body {
+  min-height: 138px;
+  align-content: center;
 }
 
 /* ========================================================================
