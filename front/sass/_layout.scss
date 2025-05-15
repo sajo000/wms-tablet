@@ -146,7 +146,7 @@
 .global-dropdown-menu {
   display: none;
   position: fixed;
-  z-index: 2000;
+  z-index: 100;
   border: 1px solid $primary;
   box-shadow: $custom-shadow2;
   background: white;

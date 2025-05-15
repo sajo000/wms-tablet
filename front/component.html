@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title>메인</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
+
+  <link rel="stylesheet" href="css/app.css">
+
+  <script type="text/javascript" src="./layout.js"></script>
+  <script type="text/javascript" src="./function.js"></script>
+</head>
+
+<body>
+<div class="vh-100 container-fluid p-3">
+  <div class="layout-wrap">
+    <section class="left-side"> <!-- 접기: collapse -->
+      <!-- 사이드바 -->
+      <div id="sidebar"></div>
+      <!-- / 사이드바 -->
+    </section>
+
+    <!-- 사이드바 하단 센터명 클릭시 나타나는 메뉴 -->
+    <ul class="global-dropdown-menu">
+      <li>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#sideBarMyAccountModal">
+          <i class="icon-user-circle is-24 bg-1e"></i>
+          My account
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="icon-exit is-24 bg-1e"></i>
+          Log out
+        </a>
+      </li>
+    </ul>
+    <!-- / 사이드바에 센터명 클릭시 나타나는 메뉴 -->
+
+    <section class="right-side">
+      <!-- 메인 -->
+      <main>
+        <!-- 타이틀 -->
+        <div class="bg-white pt-4 px-4 pb-10">
+          <h2 class="fs-32 fw-bold lh-145">타이틀</h2>
+        </div>
+        <!-- / 타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="bg-primary2 flex-grow-1 rounded-bottom-2 p-4">
+          컨텐츠 전체높이 / 높이 1/n으로 나누려면 감싼 div(div class="bg-white <b>flex-grow-1</b> rounded-2 p-4 mt-3" 등) flex-grow-1 클래스 추가하면 됨.
+        </div>
+
+        <div class="bg-white flex-grow-1 rounded-2 p-4 mt-3">
+          <div class="row">
+            <div class="col-6 bg-success">
+              <div class="bg-warning">col-6</div>
+            </div>
+            <div class="col-6 bg-info">
+              <div class="bg-warning">col-6</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">icons</h3>
+          <div class="d-flex gap-3">
+            <i class="icon icon-sidebar-arrow-left is-24 bg-black"></i>
+            <i class="icon icon-sidebar-arrow-right is-24 bg-black"></i>
+            <i class="icon icon-sidebar-warehouse is-24 bg-black"></i>
+            <i class="icon icon-sidebar-home is-24 bg-black"></i>
+            <i class="icon icon-sidebar-download is-24 bg-black"></i>
+            <i class="icon icon-sidebar-document is-24 bg-black"></i>
+            <i class="icon icon-sidebar-upload is-24 bg-black"></i>
+            <i class="icon icon-sidebar-box is-24 bg-black"></i>
+            <i class="icon icon-sidebar-calendar is-24 bg-black"></i>
+            <i class="icon icon-sidebar-search-document is-24 bg-black"></i>
+            <i class="icon icon-close is-24 bg-black"></i>
+            <i class="icon icon-trash-can is-24 bg-black"></i>
+            <i class="icon icon-plus is-24 bg-black"></i>
+            <i class="icon icon-check is-24 bg-black"></i>
+            <i class="icon icon-search is-24 bg-black"></i>
+            <i class="icon icon-save is-24 bg-black"></i>
+            <i class="icon icon-exit is-24 bg-black"></i>
+            <i class="icon icon-document-box is-24 bg-black"></i>
+            <i class="icon icon-warning is-24 bg-black"></i>
+            <i class="icon icon-arrow-right is-24 bg-black"></i>
+            <i class="icon icon-arrow-left is-24 bg-black"></i>
+            <i class="icon icon-arrow-top is-24 bg-black"></i>
+            <i class="icon icon-arrow-bottom is-24 bg-black"></i>
+            <i class="icon icon-state-warning is-24"></i>
+            <i class="icon icon-state-error is-24"></i>
+            <i class="icon icon-state-success is-24"></i>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">input</h3>
+          <div>
+            <div class="form-group">
+              <label for="" class="form-label">default</label>
+              <input type="text" class="form-control" placeholder="placeholder">
+            </div>
+
+            <div class="form-group">
+              <label for="" class="form-label">filled</label>
+              <input type="text" class="form-control" placeholder="placeholder" value="내용이 들어있어요">
+            </div>
+
+            <div class="form-group">
+              <label for="" class="form-label">disabled</label>
+              <input type="text" class="form-control" placeholder="placeholder" disabled>
+            </div>
+          </div>
+
+          <h3 class="text-uppercase">search</h3>
+          <div>
+            <div class="form-group">
+              <label for="" class="form-label">search</label>
+              <div class="position-relative">
+                <input type="" class="form-control form-search">
+                <div class="form-group-append">
+                  <button class="btn-clear togglePassword" type="button">
+                    <i class="icon icon-search is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="" class="form-label">search</label>
+              <div class="position-relative">
+                <input type="" class="form-control form-search form-search-lg">
+                <div class="form-group-append">
+                  <button class="btn-clear togglePassword" type="button">
+                    <i class="icon icon-search is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">select</h3>
+          <div>
+            <div class="form-group mt-lg-32">
+              <label for="" class="form-label">Lable</label>
+              <div class="form-select-wrap">
+                <div class="form-select" tabindex="0">
+                  <span class="form-select-selected">선택</span>
+                  <i class="icon icon-arrow-bottom is-32 bg-666"></i>
+                </div>
+                <div class="form-select-list-wrap">
+                  <ul class="form-select-list">
+                    <li data-value="">선택</li>
+                    <li data-value="DHL">DHL</li>
+                    <li data-value="FedEx">FeDex</li>
+                    <li data-value="UPS">UPS</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="CanadaPost">Canada Post</li>
+                    <li data-value="AMS">AMS</li>
+                  </ul>
+                </div>
+                <input type="hidden" name="courier" id="courier-select" value="">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">buttons</h3>
+          <div class="mt-3">
+            <button class="btn btn-primary">primary</button>
+            <button class="btn btn-sm btn-primary">primary</button>
+            <button class="btn btn-xs btn-primary">primary</button>
+            <button class="btn btn-xs btn-primary" disabled>primary</button>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn btn-outline-black">primary</button>
+            <button class="btn btn-sm btn-outline-black">primary</button>
+            <button class="btn btn-xs btn-outline-black">primary</button>
+            <button class="btn btn-xs btn-outline-black" disabled>primary</button>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn btn-outline-primary">primary</button>
+            <button class="btn btn-sm btn-outline-primary">primary</button>
+            <button class="btn btn-xs btn-outline-primary">primary</button>
+            <button class="btn btn-xs btn-outline-primary" disabled>primary</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">badge</h3>
+          <div class="mt-4">
+            <span class="badge badge-sm badge-primary text-capitalize">badge</span>
+            <span class="badge badge-lg badge-primary text-capitalize">badge</span>
+            <span class="badge badge-sm badge-danger text-capitalize">badge</span>
+            <span class="badge badge-lg badge-danger text-capitalize">badge</span>
+            <span class="badge badge-sm badge-gray text-capitalize">badge</span>
+            <span class="badge badge-lg badge-gray text-capitalize">badge</span>
+            <span class="badge badge-sm badge-notice text-capitalize">badge</span>
+            <span class="badge badge-lg badge-notice text-capitalize">badge</span>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">toast</h3>
+          <div class="mt-4">
+            <!-- 토스트 테스트 버튼 -->
+            <div class="d-flex gap-3 flex-wrap">
+              <button class="btn btn-primary showToastButton" data-toast-target="toastTest">토스트 팝업</button>
+            </div>
+            <!-- / 토스트 테스트 버튼 -->
+
+            <!-- 기본 토스트 팝업 -->
+            <div class="toast" id="toastTest" style="display: none;">
+              <div class="toast-body">
+                <div class="d-flex gap-10 align-items-start">
+                  <div class="bg-primary rounded-circle">
+                    <i class="icon icon-check bg-white is-24"></i>
+                  </div>
+                  <div class="fs-22 fw-medium">
+                    재고이동 하였습니다.
+                    재고가 이동되었습니다.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- / 기본 토스트 팝업 -->
+          </div>
+
+          <div class="mt-4">
+            <!-- 상태 토스트 테스트 버튼 -->
+            <div>
+              <button class="btn btn-primary showToastButtonState" data-toast-target="toastState1">토스트 상태 팝업 warning</button>
+              <button class="btn btn-primary showToastButtonState" data-toast-target="toastState2">토스트 상태 팝업 error</button>
+              <button class="btn btn-primary showToastButtonState" data-toast-target="toastState3">토스트 상태 팝업 success</button>
+            </div>
+            <!-- / 상태 토스트 테스트 버튼 -->
+
+            <!-- 경고 상태 토스트 팝업 -->
+            <div class="toast-state toast-state-warning" id="toastState1" style="display: none;">
+              <div class="toast-body">
+                <i class="icon-state-warning icon-for-state mx-auto"></i>
+                <div class="fs-38 toast-body__title fw-bold mt-3">
+                  Title<br/>
+                  Title
+                </div>
+                <div class="fs-32 toast-body__body fw-medium mt-3">
+                  Body<br/>
+                  Body<br/>
+                  Body<br/>
+                </div>
+              </div>
+            </div>
+            <!-- / 경고 상태 토스트 팝업 -->
+
+            <!-- 에러 상태 토스트 팝업 -->
+            <div class="toast-state toast-state-error" id="toastState2" style="display: none;">
+              <div class="toast-body">
+                <i class="icon-state-error icon-for-state mx-auto"></i>
+                <div class="fs-38 toast-body__title fw-bold mt-3">
+                  해당 바코드의 상품정보가 존재하지 않습니다
+                </div>
+                <div class="fs-32 toast-body__body fw-medium mt-3">
+                  DDFF
+                </div>
+              </div>
+            </div>
+            <!-- / 에러 상태 토스트 팝업 -->
+
+            <!-- 에러 상태 토스트 팝업 -->
+            <div class="toast-state toast-state-success" id="toastState3" style="display: none;">
+              <div class="toast-body">
+                <i class="icon-state-success icon-for-state mx-auto"></i>
+                <div class="fs-38 toast-body__title fw-bold mt-3">
+                  Title<br/>
+                  Title
+                </div>
+                <div class="fs-32 toast-body__body fw-medium mt-3">
+                  Body<br/>
+                  Body<br/>
+                  Body<br/>
+                </div>
+              </div>
+            </div>
+            <!-- / 에러 상태 토스트 팝업 -->
+          </div>
+
+          <div class="mt-4">
+            <!-- 버튼 있는 토스트 팝업 -->
+            <button type="button" class="btn btn-primary showToastBtn" data-toast-target="myToast1">버튼 있는 토스트 팝업 warning</button>
+            <button type="button" class="btn btn-primary showToastBtn" data-toast-target="myToast2">버튼 있는 토스트 팝업 error</button>
+            <button type="button" class="btn btn-primary showToastBtn" data-toast-target="myToast3">버튼 있는 토스트 팝업 success</button>
+
+            <!-- warning -->
+            <div class="toast toast-state-btn toast-state-warning" id="myToast1" data-bs-autohide="false" role="alert"
+                 aria-live="assertive" aria-atomic="true">
+              <div class="toast-body">
+                <i class="icon-state-warning icon-for-state mx-auto"></i>
+                <div class="fs-38 toast-body__title fw-bold mt-3" style="min-height: 110px">
+                  Title<br/>
+                  Title
+                </div>
+                <div class="fs-32 toast-body__body fw-medium mt-3" style="min-height: 138px">
+                  Body<br/>
+                  Body<br/>
+                  Body<br/>
+                </div>
+              </div>
+              <div class="toast-footer">
+                <button type="button" class="btn btn-sm btn-outline-black" data-bs-dismiss="toast">text</button>
+                <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">text</button>
+              </div>
+            </div>
+            <!-- / warning -->
+
+            <!-- error -->
+            <div class="toast toast-state-btn toast-state-error" id="myToast2" data-bs-autohide="false" role="alert"
+                 aria-live="assertive" aria-atomic="true">
+              <div class="toast-body">
+                <i class="icon-state-error icon-for-state mx-auto"></i>
+                <div class="fs-38 toast-body__title fw-bold mt-3">
+                  Title<br/>
+                  Title
+                </div>
+                <div class="fs-32 toast-body__body fw-medium mt-3">
+                  Body<br/>
+                  Body<br/>
+                  Body<br/>
+                </div>
+              </div>
+              <div class="toast-footer">
+                <button type="button" class="btn btn-sm btn-outline-black" data-bs-dismiss="toast">text</button>
+                <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">text</button>
+              </div>
+            </div>
+            <!-- / error -->
+
+            <!-- success -->
+            <div class="toast toast-state-btn toast-state-success" id="myToast3" data-bs-autohide="false" role="alert"
+                 aria-live="assertive" aria-atomic="true">
+              <div class="toast-body">
+                <i class="icon-state-success icon-for-state mx-auto"></i>
+                <div class="fs-38 toast-body__title fw-bold mt-3">
+                  Title<br/>
+                  Title
+                </div>
+                <div class="fs-32 toast-body__body fw-medium mt-3">
+                  Body<br/>
+                  Body<br/>
+                  Body<br/>
+                </div>
+              </div>
+              <div class="toast-footer">
+                <button type="button" class="btn btn-sm btn-outline-black" data-bs-dismiss="toast">text</button>
+                <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">text</button>
+              </div>
+            </div>
+            <!-- / success -->
+            <!-- / 버튼 있는 토스트 팝업 -->
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2 p-4 mt-3">
+          <h3 class="text-uppercase">modal</h3>
+          <div class="mt-4">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alertAndConfirmModal">
+              얼럿/컨펌 모달
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="alertAndConfirmModal" tabindex="-1" aria-labelledby="alertAndConfirmModalLabel"
+                 aria-hidden="true" data-bs-backdrop="static">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-body">
+                    body<br/>
+                    body
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">text123</button>
+                    <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">text</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 헤더 있는 모달 -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alertAndConfirmModal1">
+              헤더 있는 모달
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="alertAndConfirmModal1" tabindex="-1" aria-labelledby="alertAndConfirmModalLabel"
+                 aria-hidden="true" data-bs-backdrop="static">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content modal-content-has-header">
+                  <div class="modal-header">
+                    <h5 class="modal-title">아이템 수량 설정</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <input type="number" placeholder="수량 입력" class="form-control">
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">완료</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- / 헤더 있는 모달 -->
+          </div>
+        </div>
+
+        <!-- / 컨텐츠 -->
+      </main>
+      <!-- / 메인 -->
+    </section>
+
+    <!-- 사이드 바에서 my account 클릭하면 나타나는 모달 -->
+    <div class="modal fade" id="sideBarMyAccountModal" tabindex="-1" aria-labelledby="sideBarMyAccountModal"
+         aria-hidden="true" data-bs-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-content-has-header">
+          <div class="modal-header">
+            <h5 class="modal-title">내 정보</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="" class="form-label">아이디</label>
+              <input type="text" placeholder="deleo" class="form-control">
+            </div>
+            <div class="form-group mb-0">
+              <label for="" class="form-label">센터</label>
+              <input type="text" value="청라센터" class="form-control" readonly>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">완료</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- / 사이드 바에서 my account 클릭하면 나타나는 모달 -->
+  </div>
+</div>
+
+</body>
+
+</html>

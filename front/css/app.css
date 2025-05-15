@@ -16419,7 +16419,7 @@ textarea.form-control-lg {
 .global-dropdown-menu {
   display: none;
   position: fixed;
-  z-index: 2000;
+  z-index: 100;
   border: 1px solid #00c2de;
   box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
   background: white;
@@ -17906,7 +17906,6 @@ html, body, * {
  */
 .modal-body {
   padding: 30px;
-  text-align: center;
   font-size: 1.375rem;
   font-weight: 500;
 }
