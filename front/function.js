@@ -36,7 +36,7 @@ $(document).on('click', '.btn-sidebar-toggle', function () {
   // 드롭다운 메뉴 위치 조정 및 표시
   $menu.css({
     left: offset.left,
-    top: offset.top + height + 4, // 4px 아래로 여백
+    top: offset.top + height, // 바로 아래에 위치
     display: 'block'
   });
 

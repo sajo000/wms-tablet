@@ -124,7 +124,6 @@
   }
 }
 
-
 // * 사이드바 아이콘 사이즈
 .icon-sidebar {
   background-color: $primary;
@@ -141,6 +140,35 @@
   width: 36px;
   height: 36px;
   flex-shrink: 0;
+}
+
+// * 사이드바 하단 센터명 클릭시 나타나는 메뉴
+.global-dropdown-menu {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  border: 1px solid $primary;
+  box-shadow: $custom-shadow2;
+  background: white;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  li {
+    width: 224px;
+
+    a {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 15px 32px;
+      font-size: map-get($custom-font-size, 18);
+      font-weight: 500;
+    }
+
+    &:hover {
+      background-color: $primary-lite2;
+    }
+  }
 }
 
 /* ========================================================================
