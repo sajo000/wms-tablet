@@ -5,37 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
-  <title>메인</title>
+  <title>example</title>
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
           integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
           crossorigin="anonymous"></script>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
-  <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="./node_modules/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
 
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="../css/app.css">
 
-  <script type="text/javascript" src="./layout.js"></script>
-  <script type="text/javascript" src="./function.js"></script>
-
-  <style>
-    ul li {
-      font-size: 30px;
-      font-weight: 500;
-    }
-
-    ul li a {
-      display: block;
-    }
-
-    ul li:hover a {
-      text-decoration: underline;
-    }
-  </style>
+  <script type="text/javascript" src="../layout.js"></script>
+  <script type="text/javascript" src="../function.js"></script>
 </head>
 
 <body>
@@ -50,7 +35,7 @@
     <!-- 사이드바 하단 센터명 클릭시 나타나는 메뉴 -->
     <ul class="global-dropdown-menu">
       <li>
-        <a href="#">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#sideBarMyAccountModal">
           <i class="icon-user-circle is-24 bg-1e"></i>
           My account
         </a>
@@ -75,28 +60,7 @@
 
         <!-- 컨텐츠 -->
         <div class="bg-primary2 flex-grow-1 rounded-bottom-2 p-4">
-          <ul>
-            <li>
-              <a href="./pages/component.html">component</a>
-            </li>
-            <li>
-              <a href="./pages/example.html">example</a>
-            </li>
-            <li>
-              <a href="./pages/login.html">login</a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bg-white flex-grow-1 rounded-2 p-4 mt-3">
-          <div class="row">
-            <div class="col-6 bg-success">
-              <div class="bg-warning">col-6</div>
-            </div>
-            <div class="col-6 bg-info">
-              <div class="bg-warning">col-6</div>
-            </div>
-          </div>
+          컨텐츠 전체높이 / 높이 1/n으로 나누려면 감싼 div(div class="bg-white <b>flex-grow-1</b> rounded-2 p-4 mt-3" 등) flex-grow-1 클래스 추가하면 됨.
         </div>
         <!-- / 컨텐츠 -->
       </main>

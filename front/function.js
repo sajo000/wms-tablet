@@ -23,15 +23,16 @@ $(document).on('click', '.btn-sidebar-toggle', function () {
 
 /**
  * SIDEBAR 센터 드롭다운 메뉴
- */$(document).on('click', '.sidebar-center-name', function (e) {
+ */
+$(document).on('click', '.sidebar-center-name', function (e) {
   e.preventDefault();
 
-  var $toggle = $(this);
-  var $menu = $('.global-dropdown-menu');
+  const $toggle = $(this);
+  const $menu = $('.global-dropdown-menu');
 
   // 현재 토글 위치와 크기 계산
-  var offset = $toggle.offset();
-  var height = $toggle.outerHeight();
+  const offset = $toggle.offset();
+  const height = $toggle.outerHeight();
 
   // 드롭다운 메뉴 위치 조정 및 표시
   $menu.css({
@@ -74,9 +75,9 @@ $(function () {
 
   // 옵션 선택
   $(document).on('click', '.form-select-list li', function (e) {
-    var $wrap = $(this).closest('.form-select-wrap');
-    var value = $(this).data('value');
-    var text = $(this).text();
+    const $wrap = $(this).closest('.form-select-wrap');
+    const value = $(this).data('value');
+    const text = $(this).text();
     $wrap.find('.form-select-selected').text(text);
     $wrap.find('input[type="hidden"]').val(value);
     $wrap.find('.form-select-list li').removeClass('selected');
@@ -97,25 +98,90 @@ $(function () {
  * SEARCH INPUT ICON 바뀌는 스크립트
  */
 $(document).ready(function () {
-  // 입력값에 따라 아이콘 변경
-  $('.form-search').on('input', function () {
-    var $group = $(this).closest('.position-relative');
-    var $icon = $group.find('.form-group-append i');
-    if ($(this).val().length > 0) {
-      $icon.removeClass('icon-search').addClass('icon-close');
+  // (1) form-control + form-select (검색 input)
+  $('.form-search').each(function () {
+    const $input = $(this);
+    const $group = $input.closest('.position-relative');
+    const $icon = $group.find('.form-group-append i');
+    const $btn = $group.find('.btn-clear');
+
+    // --- [추가] 페이지 로드시 value가 있으면 icon-close, 없으면 icon-search ---
+    if ($input.val().length > 0) {
+      $icon.removeClass('icon-search').addClass('icon-close').show();
     } else {
-      $icon.removeClass('icon-close').addClass('icon-search');
+      $icon.removeClass('icon-close').addClass('icon-search').show();
     }
+
+    $input.on('input', function () {
+      if ($input.val().length > 0) {
+        $icon.removeClass('icon-search').addClass('icon-close').show();
+      } else {
+        // 입력 내용 없을 때 포커스 여부에 따라 아이콘 변경
+        if ($input.is(':focus')) {
+          $icon.removeClass('icon-search').addClass('icon-close').show();
+        } else {
+          $icon.removeClass('icon-close').addClass('icon-search').show();
+        }
+      }
+    });
+
+    $input.on('focus', function () {
+      // 포커스 시 무조건 icon-close
+      $icon.removeClass('icon-search').addClass('icon-close').show();
+    });
+
+    $input.on('blur', function () {
+      // 포커스 해제 시 내용이 없으면 icon-search, 있으면 icon-close 유지
+      if ($input.val().length === 0) {
+        $icon.removeClass('icon-close').addClass('icon-search').show();
+      }
+    });
+
+    $btn.on('click', function () {
+      $input.val('').trigger('input').focus();
+      $icon.removeClass('icon-close').addClass('icon-search').show();
+    });
   });
 
-  // 닫기 버튼 클릭 시 input 비우고 아이콘 복원
-  $('.btn-clear.togglePassword').on('click', function () {
-    var $group = $(this).closest('.position-relative');
-    var $input = $group.find('.form-search');
-    var $icon = $(this).find('i');
-    $input.val('').trigger('input');
-    // 아이콘은 input 이벤트에서 자동으로 처리됨
-    $input.focus();
+  // (2) form-control만 있는 경우
+  $('.form-input-only').each(function () {
+    const $input = $(this);
+    const $group = $input.closest('.position-relative');
+    const $icon = $group.find('.form-group-append i');
+    const $btn = $group.find('.btn-clear');
+    const $append = $group.find('.form-group-append');
+
+    // --- [추가] 페이지 로드시 value가 있으면 x버튼 보이기, 없으면 숨김 ---
+    if ($input.val().length > 0) {
+      $icon.removeClass('icon-search').addClass('icon-close');
+      $append.show();
+    } else {
+      $append.hide();
+    }
+
+    $input.on('input', function () {
+      if ($input.val().length > 0) {
+        $icon.removeClass('icon-search').addClass('icon-close');
+        $append.show();
+      } else {
+        if ($input.is(':focus')) {
+          $icon.removeClass('icon-search').addClass('icon-close');
+          $append.show();
+        } else {
+          $append.hide();
+        }
+      }
+    });
+
+    $input.on('focus', function () {
+      $icon.removeClass('icon-search').addClass('icon-close');
+      $append.show();
+    });
+
+    $btn.on('click', function () {
+      $input.val('').trigger('input').focus();
+      $append.hide();
+    });
   });
 });
 
@@ -124,16 +190,16 @@ $(document).ready(function () {
  */
 $(document).ready(function () {
   // 각 버튼에 클릭 이벤트를 바인딩
-  $(".showToastButton").on("click", function () {
+  $('.showToastButton').on('click', function () {
     // 버튼의 data-toast-target 속성에서 대상 토스트의 ID를 가져옴
-    var toastId = $(this).data("toast-target");
-    var $toast = $("#" + toastId);
+    const toastId = $(this).data('toast-target');
+    const $toast = $('#' + toastId);
 
     // 토스트 팝업이 존재하는지 확인
     if ($toast.length) {
-      $toast.fadeIn(200).addClass("show"); // 토스트 팝업을 페이드인으로 표시
+      $toast.fadeIn(200).addClass('show'); // 토스트 팝업을 페이드인으로 표시
       setTimeout(function () {
-        $toast.fadeOut(200).removeClass("show"); // 2초 후 페이드아웃으로 숨김
+        $toast.fadeOut(200).removeClass('show'); // 2초 후 페이드아웃으로 숨김
       }, 3000); // 3초 동안 보여줌
     }
   });
@@ -144,16 +210,16 @@ $(document).ready(function () {
  */
 $(document).ready(function () {
   // 각 버튼에 클릭 이벤트를 바인딩
-  $(".showToastButtonState").on("click", function () {
+  $('.showToastButtonState').on('click', function () {
     // 버튼의 data-toast-target 속성에서 대상 토스트의 ID를 가져옴
-    var toastId = $(this).data("toast-target");
-    var $toast = $("#" + toastId);
+    const toastId = $(this).data('toast-target');
+    const $toast = $('#' + toastId);
 
     // 토스트 팝업이 존재하는지 확인
     if ($toast.length) {
-      $toast.fadeIn(200).addClass("show"); // 토스트 팝업을 페이드인으로 표시
+      $toast.fadeIn(200).addClass('show'); // 토스트 팝업을 페이드인으로 표시
       setTimeout(function () {
-        $toast.fadeOut(200).removeClass("show"); // 2초 후 페이드아웃으로 숨김
+        $toast.fadeOut(200).removeClass('show'); // 2초 후 페이드아웃으로 숨김
       }, 1500); // 1.5초 동안 보여줌
     }
   });
@@ -165,16 +231,13 @@ $(document).ready(function () {
 $(document).ready(function () {
   // 모든 토스트 트리거 버튼에 이벤트 바인딩
   $('.showToastBtn').on('click', function () {
-    var toastId = $(this).data('toast-target');
-    var $toastEl = $('#' + toastId);
+    const toastId = $(this).data('toast-target');
+    const $toastEl = $('#' + toastId);
 
     if ($toastEl.length) {
-      var toast = bootstrap.Toast.getOrCreateInstance($toastEl[0],
+      const toast = bootstrap.Toast.getOrCreateInstance($toastEl,
           {autohide: false});
       toast.show();
     }
   });
 });
-
-
-

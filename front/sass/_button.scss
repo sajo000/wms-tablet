@@ -1,7 +1,8 @@
 /* ========================================================================
  * button 버튼 스타일 재정의
 */
-.btn {
+.btn,
+.btn-group > .btn {
   height: 70px;
   --bs-btn-padding-x: 24px;
   --bs-btn-padding-y: 1rem;

@@ -16,6 +16,7 @@
 
 .left-side {
   width: 248px;
+  flex: 0 0 auto;
   transition: width 0.3s ease;
   margin-right: 20px;
   overflow-x: hidden;
@@ -26,7 +27,11 @@
 
 .sidebar-nav__logo-wrap {
   height: 70px;
-  padding: 10px 16px;
+  padding: 10px 21px;
+}
+
+.sidebar-nav__logo {
+  display: flex;
 }
 
 .btn-sidebar-toggle {
@@ -43,10 +48,6 @@
     margin: auto;
     background-color: $gray-33;
   }
-}
-
-.sidebar-nav .nav {
-  padding: 1rem;
 }
 
 .sidebar-nav .nav-item .nav-link {
@@ -77,17 +78,12 @@
 
 // * 사이드바 접혔을때 너비
 .left-side.collapsed {
-  width: 64px;
+  width: 82px;
 
-  // * 로고 패딩
-  .sidebar-nav__logo-wrap {
-    padding: 10px 12px;
-  }
-
-  // * 메뉴 패딩
-  .sidebar-nav .nav {
-    padding-left: 7px;
-    padding-right: 7px;
+  // * 로고 이미지
+  .sidebar-nav__logo {
+    display: none;
+    transition: width 0.3s ease;
   }
 
   // * 아이콘 사이즈
@@ -110,8 +106,6 @@
   .sidebar-center-name {
     height: 66px;
     gap: 0 !important;
-    padding: 10px !important;
-    margin: 4px !important;
     justify-content: center;
 
     // * 센터명 숨김
@@ -121,6 +115,11 @@
       padding: 0;
       overflow: hidden;
     }
+  }
+
+  // * 센터명 말줄임
+  .sidebar-center-truncate {
+    background-color: red;
   }
 }
 

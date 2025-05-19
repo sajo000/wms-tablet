@@ -122,8 +122,8 @@ $custom-icon-size: (
 
 @each $key, $value in $custom-icon-size {
   .is-#{$key} {
-    width: $value;
-    height: $value;
+    width: $value !important;
+    height: $value !important;
   }
 }
 

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title>로그인</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
+
+  <link rel="stylesheet" href="../css/app.css">
+
+  <script type="text/javascript" src="../layout.js"></script>
+  <script type="text/javascript" src="../function.js"></script>
+</head>
+
+<body>
+<div class="vh-100 container-fluid p-3">
+  <main class="h-100 d-flex flex-column flex-grow-1 overflow-y-auto p-3">
+    <div class="login-container">
+      <div class="login-wrap p-30">
+        <div class="login-logo mx-auto">
+          <img src="/front/images/logo.png" alt="deleo WMS">
+        </div>
+
+        <div class="mt-40">
+          <div class="form-group">
+            <label class="form-label">아이디</label>
+            <div class="position-relative">
+              <input type="text" maxlength="50" class="form-control form-input-only" placeholder="아이디">
+              <div class="form-group-append" style="display:none;">
+                <button class="btn-clear" type="button" tabindex="-1">
+                  <i class="icon icon-close is-32 bg-666"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">비밀번호</label>
+            <div class="position-relative">
+              <input type="password" maxlength="50" class="form-control form-input-only" placeholder="비밀번호">
+              <div class="form-group-append" style="display:none;">
+                <button class="btn-clear" type="button" tabindex="-1">
+                  <i class="icon icon-close is-32 bg-666"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="" class="form-label">센터</label>
+            <div class="form-select-wrap">
+              <div class="form-select" tabindex="0">
+                <span class="form-select-selected">선택</span>
+                <i class="icon icon-arrow-bottom is-32 bg-666"></i>
+              </div>
+              <div class="form-select-list-wrap">
+                <ul class="form-select-list">
+                  <li data-value="">선택</li>
+                  <li data-value="DHL">청라센터</li>
+                  <li data-value="FedEx">드림트랜스센터</li>
+                  <li data-value="UPS">한익스프레스</li>
+                  <li data-value="GSPostbox">KSE Japan</li>
+                </ul>
+              </div>
+              <input type="hidden" name="courier" id="courier-select" value="">
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-40">
+          <div class="btn-group w-100">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState2">
+              로그인
+            </button>
+          </div>
+        </div>
+      </div>
+      <p class="fs-18 fw-medium fc-94 text-center mt-32">Copyright 2020 deleo. All Rights Reserved.</p>
+    </div>
+  </main>
+
+  <!-- 로그인 실패 모달 -->
+  <div class="toast-state toast-state-error" id="toastState2" style="display: none;">
+    <div class="toast-body">
+      <i class="icon-state-error icon-for-state mx-auto"></i>
+      <div class="fs-38 toast-body__title fw-bold mt-3">
+        유효한 로그인 정보가 아닙니다.<br>
+        ID와 PW, 센터정보를 확인해주세요
+      </div>
+      <div class="fs-32 toast-body__body fw-medium mt-3">
+        확인 후 다시 시도해주세요.
+      </div>
+    </div>
+  </div>
+  <!-- / 로그인 실패 모달 -->
+</div>
+
+</body>
+
+</html>

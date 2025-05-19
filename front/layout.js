@@ -1,5 +1,5 @@
 // 사이드바 연결
-fetch("pages/layout/sidebar.html")
+fetch("/front/pages/layout/sidebar.html")
 .then((response) => {
   return response.text();
 })

@@ -13,6 +13,11 @@
   padding-right: 32px;
 }
 
+// * input에 닫기버튼 있는경우 focus 되었을때 icon-close primary 색상으로 변경
+.position-relative:focus-within .form-group-append .icon-close {
+  background-color: #00c2de !important;
+}
+
 .form-label {
   margin-bottom: 8px;
   font-weight: 500;
@@ -65,6 +70,7 @@
   height: 80px;
 }
 
+
 /* ========================================================================
  * 커스텀 셀렉트
 */
@@ -97,6 +103,7 @@
     border-bottom-right-radius: 0 !important;
   }
 }
+
 .form-select-list-wrap {
   display: none;
   position: absolute;
@@ -119,8 +126,6 @@
   overflow-y: auto;
 }
 
-//.form-select.open + .form-select-list,
-//.form-select:focus + .form-select-list {
 .form-select.open + .form-select-list {
   display: block;
 }
@@ -140,6 +145,7 @@
   font-weight: 500;
   position: relative;
 }
+
 .form-select-list li.selected::after {
   content: '';
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M5 12L10 17L20 7' stroke='%2300C2DE' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
