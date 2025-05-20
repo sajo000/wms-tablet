@@ -1,0 +1,29 @@
+/* ========================================================================
+* 테이블 자체에 border-radius 있고,
+* tr, td간 border 가 패딩 안쪽까지 다 생기는 테이블.
+*/
+.table-full {
+  background-color: $white;
+  border-radius: $border-radius;
+  overflow: hidden;
+
+  th {
+    width: 214px;
+    font-size: map-get($custom-font-size, 26);
+    font-weight: 700;
+    padding: 20px 24px;
+    border-right: 1px solid $gray-e6;
+    vertical-align: middle;
+  }
+
+  td {
+    padding: 16px 32px;
+    font-size: map-get($custom-font-size, 32);
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  tr {
+    border-top: 1px solid $gray-e6;
+  }
+}

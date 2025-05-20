@@ -16749,9 +16749,6 @@ html, body, * {
 }
 
 /* ========================================================================
- * container, row gutter 재정의
-*/
-/* ========================================================================
  * 컨테이너 양 옆 패딩 삭제
 */
 @media (max-width: 991.98px) {
@@ -16775,277 +16772,6 @@ html, body, * {
 }
 
 /* ========================================================================
- * 컨텐츠 구분선 divider
-*/
-.divider-1 {
-  border-color: #E6E6E6;
-  opacity: 1;
-}
-
-.divider-10 {
-  height: 10px;
-  background-color: #E6E6E6;
-  opacity: 1;
-  border: 0;
-}
-
-/* ========================================================================
- * 구분선 위에 텍스트 (간편로그인 타이틀)
-*/
-.hr-sect {
-  display: flex;
-  flex-basis: 100%;
-  align-items: center;
-}
-.hr-sect::before {
-  margin: 0 8px 0 0;
-}
-.hr-sect::after {
-  margin: 0 0 0 8px;
-}
-
-.hr-sect::before,
-.hr-sect::after {
-  content: "";
-  flex-grow: 1;
-  background: #e0e0e0;
-  height: 1px;
-  font-size: 0px;
-  line-height: 0px;
-}
-
-/* ========================================================================
- * 토글 팝업 컨텐츠 내용 스타일
- * @see: 별도의 스타일이 필요한경우 class="toggle-popup__wrap another-class" 다른 클래스 추가해서 사용
-*/
-.toggle-popup__wrap {
-  display: flex;
-  width: 100%;
-  max-width: 328px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
-  background: #fff;
-  box-shadow: 0px 2px 10px 0px rgba(133, 133, 133, 0.2);
-  position: absolute;
-  z-index: 10000;
-  top: 26px;
-}
-
-.toggle-popup__header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-
-.toggle-popup__title {
-  font-size: 1rem;
-  margin-right: 20px;
-  font-weight: 700;
-}
-
-.toggle-popup__body {
-  font-size: 0.875rem;
-  color: #666666;
-}
-
-/* ========================================================================
- * 툴팁
- */
-.tooltip__wrap {
-  position: relative;
-}
-
-.tooltip__body {
-  width: 260px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  position: absolute;
-  top: -58px;
-  right: 0px;
-  padding: 10px;
-  color: white;
-  font-size: 0.75rem;
-  border-radius: 5px;
-  background: rgba(51, 51, 51, 0.8);
-  box-shadow: 0px 2px 10px 0px rgba(133, 133, 133, 0.2);
-}
-@media (min-width: 992px) {
-  .tooltip__body {
-    width: 324px;
-    font-size: 1rem;
-  }
-}
-
-.tooltip__body::after {
-  content: "";
-  position: absolute;
-  bottom: -20px; /* Position above the tooltip */
-  right: 16px;
-  border-width: 10px;
-  border-style: solid;
-  border-color: rgba(51, 51, 51, 0.8) transparent transparent transparent;
-}
-
-.tooltip__body > .btn-close {
-  --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
-  opacity: 1;
-  margin-left: 10px;
-}
-
-/* ========================================================================
-* 토스트 팝업
-*/
-.toast {
-  visibility: hidden;
-  width: 274px;
-  height: auto;
-  background-color: #ffffff;
-  border-radius: 20px;
-  font-size: 1.375rem;
-  opacity: 0;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  z-index: 99999;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
-  border: 0;
-}
-.toast .toast-body {
-  border: 0;
-  padding: 1rem;
-}
-
-.toast-state {
-  width: 890px;
-  height: auto;
-  background-color: #ffffff;
-  border-radius: 20px;
-  text-align: center;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  z-index: 99999;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
-  border: 0;
-}
-.toast-state .toast-body {
-  border: 0;
-  padding: 40px;
-}
-
-.toast-state-btn {
-  width: 890px;
-  height: auto;
-  background-color: #ffffff;
-  border-radius: 20px;
-  text-align: center;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-  z-index: 99999;
-  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
-  border: 0;
-}
-.toast-state-btn .toast-body {
-  padding: 40px 40px 0;
-}
-.toast-state-btn .toast-footer {
-  display: flex;
-  gap: 1rem;
-  padding: 30px 40px 40px;
-}
-.toast-state-btn .toast-footer > .btn {
-  height: 80px;
-  flex: 1 0 48%;
-}
-
-/* 토스트 팝업이 보일 때의 스타일 */
-.toast.show {
-  visibility: visible;
-  opacity: 1;
-  z-index: 10002;
-}
-
-.toast-state-warning {
-  background: #FFF2E6;
-}
-
-.toast-state-error {
-  background: #FFEBEE;
-}
-
-.toast-state-success {
-  background: #D9F6FA;
-}
-
-.toast-body__title {
-  min-height: 110px;
-  align-content: center;
-}
-
-.toast-body__body {
-  min-height: 138px;
-  align-content: center;
-}
-
-/* ========================================================================
- * 이용약관, 개인정보처리방침 스타일
-*/
-.terms-privacy .table th {
-  --bs-table-bg: #f2f2f2;
-}
-.terms-privacy p {
-  margin-bottom: 1rem;
-}
-
-.ul-disc {
-  list-style: disc;
-  padding-left: 20px;
-  margin-top: 0.5rem;
-  line-height: 1.5;
-}
-
-.ul-disc li {
-  margin-left: 20px;
-  padding-left: 10px;
-  margin-top: 0.5rem;
-}
-
-.ol-decimal {
-  list-style: decimal;
-  padding-left: 20px;
-  margin-top: 0.5rem;
-  line-height: 1.5;
-}
-
-.ol-decimal li {
-  margin-left: 20px;
-  padding-left: 10px;
-  margin-top: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .ul-disc,
-  .ol-decimal {
-    padding-left: 14px;
-  }
-  .ul-disc li,
-  .ol-decimal li {
-    margin-left: 6px;
-    padding-left: 6px;
-  }
-}
-/* ========================================================================
  * 말줄임표 2줄
 */
 .text-truncate-multi {
@@ -17056,13 +16782,6 @@ html, body, * {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   max-height: 3em;
-}
-
-/* ========================================================================
- * card 재정의
-*/
-.card {
-  border: 0;
 }
 
 /* ========================================================================
@@ -17102,87 +16821,6 @@ html, body, * {
 
 .page-link:focus {
   box-shadow: none;
-}
-
-/* ========================================================================
- * details / summary 화살표 스타일
- */
-.folding__detail-tag {
-  position: relative;
-  z-index: 1;
-}
-
-.folding__detail-tag:after {
-  content: "";
-  opacity: 1;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M16.501 14.7002L12.001 10.2002L7.50098 14.7002' stroke='%23999999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='25' viewBox='0 0 24 25' fill='none'%3E%3Cpath d='M16.501 14.7002L12.001 10.2002L7.50098 14.7002' stroke='%23999999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-  background-color: #999;
-  transform: rotate(180deg);
-}
-
-.folding__detail-tag[open]:after {
-  transform: rotate(0);
-}
-
-/* ========================================================================
- * 프로그래스바 progress bar 단계
-*/
-.progress-container {
-  background: rgba(0, 194, 222, 0.1);
-  overflow: hidden;
-  border-radius: 50rem;
-}
-
-.progress-bar {
-  height: 3px;
-  background: #00c2de;
-  transition: width 0.5s ease;
-  border-radius: 50rem;
-}
-.progress-bar.progress1 {
-  width: 20%;
-}
-.progress-bar.progress2 {
-  width: 40%;
-}
-.progress-bar.progress3 {
-  width: 60%;
-}
-.progress-bar.progress4 {
-  width: 80%;
-}
-.progress-bar.progress5 {
-  width: 100%;
-}
-.progress-bar.progress-25-1 {
-  width: 25%;
-}
-.progress-bar.progress-25-2 {
-  width: 50%;
-}
-.progress-bar.progress-25-3 {
-  width: 75%;
-}
-.progress-bar.progress-25-4 {
-  width: 100%;
-}
-.progress-bar.progress-25-5 {
-  width: 125%;
-}
-@media (min-width: 992px) {
-  .progress-bar {
-    height: 6px;
-  }
 }
 
 /* =================================================
@@ -17933,6 +17571,132 @@ html, body, * {
   display: flex;
   width: 90px;
   height: 90px;
+}
+
+/* ========================================================================
+* 토스트 팝업
+*/
+.toast {
+  visibility: hidden;
+  width: 274px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  font-size: 1.375rem;
+  opacity: 0;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+  border: 0;
+}
+.toast .toast-body {
+  border: 0;
+  padding: 1rem;
+}
+
+.toast-state {
+  width: 890px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+  border: 0;
+}
+.toast-state .toast-body {
+  border: 0;
+  padding: 40px;
+}
+
+.toast-state-btn {
+  width: 890px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+  border: 0;
+}
+.toast-state-btn .toast-body {
+  padding: 40px 40px 0;
+}
+.toast-state-btn .toast-footer {
+  display: flex;
+  gap: 1rem;
+  padding: 30px 40px 40px;
+}
+.toast-state-btn .toast-footer > .btn {
+  height: 80px;
+  flex: 1 0 48%;
+}
+
+/* 토스트 팝업이 보일 때의 스타일 */
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 10002;
+}
+
+.toast-state-warning {
+  background: #FFF2E6;
+}
+
+.toast-state-error {
+  background: #FFEBEE;
+}
+
+.toast-state-success {
+  background: #D9F6FA;
+}
+
+.toast-body__title {
+  min-height: 110px;
+  align-content: center;
+}
+
+.toast-body__body {
+  min-height: 138px;
+  align-content: center;
+}
+
+/* ========================================================================
+* 테이블 자체에 border-radius 있고,
+* tr, td간 border 가 패딩 안쪽까지 다 생기는 테이블.
+*/
+.table-full {
+  background-color: #ffffff;
+  border-radius: 0.625rem !important;
+  overflow: hidden;
+}
+.table-full th {
+  width: 214px;
+  font-size: 1.625rem;
+  font-weight: 700;
+  padding: 20px 24px;
+  border-right: 1px solid #E6E6E6;
+  vertical-align: middle;
+}
+.table-full td {
+  padding: 16px 32px;
+  font-size: 2rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.table-full tr {
+  border-top: 1px solid #E6E6E6;
 }
 
 .login-container {

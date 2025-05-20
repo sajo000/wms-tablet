@@ -1,0 +1,109 @@
+/* ========================================================================
+* 토스트 팝업
+*/
+.toast {
+  visibility: hidden;
+  width: 274px;
+  height: auto;
+  background-color: $white;
+  border-radius: 20px;
+  font-size: map-get($custom-font-size, 22);
+  opacity: 0;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: $custom-shadow2;
+  border: 0;
+
+  .toast-body {
+    border: 0;
+    padding: 1rem;
+  }
+}
+
+// * 토스트 팝업 - 상태
+.toast-state {
+  width: 890px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  //font-size: 1.375rem;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: $custom-shadow2;
+  border: 0;
+
+  .toast-body {
+    border: 0;
+    padding: 40px;
+  }
+}
+
+// * 버튼 있는 토스트 팝업 - 상태
+.toast-state-btn {
+  width: 890px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 20px;
+  //font-size: 1.375rem;
+  text-align: center;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  z-index: 99999;
+  box-shadow: $custom-shadow2;
+  border: 0;
+
+  .toast-body {
+    padding: 40px 40px 0;
+  }
+
+  .toast-footer {
+    display: flex;
+    gap: 1rem;
+    padding: 30px 40px 40px;
+
+    > .btn {
+      height: 80px;
+      flex: 1 0 48%;
+    }
+  }
+}
+
+/* 토스트 팝업이 보일 때의 스타일 */
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+  z-index: 10002; // 모달 딤 위로 띄우기
+}
+
+// * 토스트 팝업 - 상태 배경색상
+.toast-state-warning {
+  background: #FFF2E6;
+}
+
+.toast-state-error {
+  background: #FFEBEE;
+}
+
+.toast-state-success {
+  background: #D9F6FA;
+}
+
+// * 토스트 팝업 바디 안에 타이틀과 바디 최소 높이
+.toast-body__title {
+  min-height: 110px;
+  align-content: center;
+}
+
+.toast-body__body {
+  min-height: 138px;
+  align-content: center;
+}
