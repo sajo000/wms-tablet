@@ -16457,7 +16457,6 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: column;
   flex-grow: 1; /* 남은 공간 모두 차지 */
-  overflow-y: auto; /* 내용이 넘칠 때 스크롤 */
 }
 
 /* ========================================================================
@@ -16493,6 +16492,13 @@ textarea.form-control-lg {
 .btn-group-sm > .btn {
   height: 66px;
   font-size: 1.625rem;
+  font-weight: 700;
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+  height: 88px;
+  font-size: 2.375rem;
   font-weight: 700;
 }
 
@@ -16562,6 +16568,57 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #e0e0e0;
   --bs-btn-disabled-border-color: #999;
+}
+
+.btn-purple {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #5D1CAA;
+  --bs-btn-border-color: #5D1CAA;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #7A2EE6;
+  --bs-btn-hover-border-color: #7A2EE6;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #43157C;
+  --bs-btn-active-border-color: #43157C;
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: #d6d6d6;
+  --bs-btn-disabled-bg: #d6d6d6;
+  --bs-btn-disabled-border-color: #949494;
+}
+
+.btn-dark-blue {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #0288D1;
+  --bs-btn-border-color: #0288D1;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #03A9F4;
+  --bs-btn-hover-border-color: #03A9F4;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #02669A;
+  --bs-btn-active-border-color: #02669A;
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: #d6d6d6;
+  --bs-btn-disabled-bg: #d6d6d6;
+  --bs-btn-disabled-border-color: #949494;
+}
+
+.btn-gray {
+  --bs-btn-color: #555;
+  --bs-btn-bg: #eeeeee;
+  --bs-btn-border-color: #eeeeee;
+  --bs-btn-hover-color: #555;
+  --bs-btn-hover-bg: #dddddd;
+  --bs-btn-hover-border-color: #dddddd;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #555;
+  --bs-btn-active-bg: #cccccc;
+  --bs-btn-active-border-color: #cccccc;
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: #d6d6d6;
+  --bs-btn-disabled-bg: #d6d6d6;
+  --bs-btn-disabled-border-color: #949494;
 }
 
 .btn-clear {
@@ -17519,6 +17576,10 @@ html, body, * {
   --bs-modal-header-border-color: #e6e6e6;
 }
 
+.modal-lg {
+  max-width: 1000px;
+}
+
 .modal-content {
   --bs-modal-border-radius: 20px;
   border: 0;
@@ -17557,6 +17618,14 @@ html, body, * {
   padding: 30px;
   font-size: 1.375rem;
   font-weight: 500;
+  height: 100%;
+}
+
+.modal-body-inner {
+  min-height: 110px;
+  align-content: center;
+  text-align: center;
+  height: 100%;
 }
 
 .modal-footer {
@@ -17574,6 +17643,9 @@ html, body, * {
 }
 
 /* ========================================================================
+ * 로케이션 조회 모달 안에 있는 작업자명, 작업 상태등 모달 안에 카테고리 형식 스타일
+ */
+/* ========================================================================
 * 토스트 팝업
 */
 .toast {
@@ -17581,7 +17653,7 @@ html, body, * {
   width: 274px;
   height: auto;
   background-color: #ffffff;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 1.375rem;
   opacity: 0;
   position: fixed;
@@ -17678,8 +17750,15 @@ html, body, * {
 */
 .table-full {
   background-color: #ffffff;
+  border: 1px solid #E6E6E6;
   border-radius: 0.625rem !important;
   overflow: hidden;
+}
+.table-full tr {
+  border-top: 1px solid #E6E6E6;
+}
+.table-full tr:first-child {
+  border-top: none;
 }
 .table-full th {
   width: 214px;
@@ -17695,8 +17774,8 @@ html, body, * {
   font-weight: 700;
   vertical-align: middle;
 }
-.table-full tr {
-  border-top: 1px solid #E6E6E6;
+.table-full .table > :not(caption) > * > * {
+  border-bottom: none;
 }
 
 .login-container {

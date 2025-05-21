@@ -34,12 +34,12 @@
   font-weight: 700;
 }
 
-//.btn-lg,
-//.btn-group-lg > .btn {
-//  height: 50px;
-//  --bs-btn-border-radius: var(--bs-border-radius);
-//  font-size: map-get($custom-font-size, 16);
-//}
+.btn-lg,
+.btn-group-lg > .btn {
+  height: 88px;
+  font-size: map-get($custom-font-size, 38);
+  font-weight: 700;
+}
 
 .btn-primary {
   --bs-btn-color: #fff; // 버튼 컬러 색상
@@ -108,6 +108,57 @@
   --bs-btn-disabled-color: #fff; // 비활성화 컬러
   --bs-btn-disabled-bg: #e0e0e0; // 비활성화 배경
   --bs-btn-disabled-border-color: #999; // 비활성화 보더
+}
+
+.btn-purple {
+  --bs-btn-color: #fff; // 버튼 컬러 색상
+  --bs-btn-bg: #5D1CAA; // 버튼 배경
+  --bs-btn-border-color: #5D1CAA; // 버튼 보더
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #7A2EE6; // 호버 배경
+  --bs-btn-hover-border-color: #7A2EE6; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #43157C; // 액티브 배경
+  --bs-btn-active-border-color: #43157C; // 액티브 보더
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: #d6d6d6; // 비활성화 컬러
+  --bs-btn-disabled-bg: #d6d6d6; // 비활성화 배경
+  --bs-btn-disabled-border-color: #949494; // 비활성화 보더
+}
+
+.btn-dark-blue {
+  --bs-btn-color: #fff; // 버튼 컬러 색상
+  --bs-btn-bg: #0288D1; // 버튼 배경
+  --bs-btn-border-color: #0288D1; // 버튼 보더
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #03A9F4; // 호버 배경
+  --bs-btn-hover-border-color: #03A9F4; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #02669A; // 액티브 배경
+  --bs-btn-active-border-color: #02669A; // 액티브 보더
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: #d6d6d6; // 비활성화 컬러
+  --bs-btn-disabled-bg: #d6d6d6; // 비활성화 배경
+  --bs-btn-disabled-border-color: #949494; // 비활성화 보더
+}
+
+.btn-gray {
+  --bs-btn-color: #555; // 버튼 컬러 색상
+  --bs-btn-bg: #eeeeee; // 버튼 배경
+  --bs-btn-border-color: #eeeeee; // 버튼 보더
+  --bs-btn-hover-color: #555;
+  --bs-btn-hover-bg: #dddddd; // 호버 배경
+  --bs-btn-hover-border-color: #dddddd; // 호버 보더
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #555;
+  --bs-btn-active-bg: #cccccc; // 액티브 배경
+  --bs-btn-active-border-color: #cccccc; // 액티브 보더
+  --bs-btn-active-shadow: unset;
+  --bs-btn-disabled-color: #d6d6d6; // 비활성화 컬러
+  --bs-btn-disabled-bg: #d6d6d6; // 비활성화 배경
+  --bs-btn-disabled-border-color: #949494; // 비활성화 보더
 }
 
 .btn-clear {

@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title>모달&토스트팝업</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
+
+  <link rel="stylesheet" href="../css/app.css">
+
+  <script type="text/javascript" src="../layout.js"></script>
+  <script type="text/javascript" src="../function.js"></script>
+</head>
+
+<body>
+<div class="vh-100 container-fluid p-3">
+  <div class="layout-wrap">
+    <section class="left-side"> <!-- 접기: collapse -->
+      <!-- 사이드바 -->
+      <div id="sidebar"></div>
+      <!-- / 사이드바 -->
+    </section>
+
+    <!-- 사이드바 하단 센터명 클릭시 나타나는 메뉴 -->
+    <ul class="global-dropdown-menu">
+      <li>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#sideBarMyAccountModal">
+          <i class="icon-user-circle is-24 bg-1e"></i>
+          My account
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="icon-exit is-24 bg-1e"></i>
+          Log out
+        </a>
+      </li>
+    </ul>
+    <!-- / 사이드바에 센터명 클릭시 나타나는 메뉴 -->
+
+    <section class="right-side">
+      <!-- 메인 -->
+      <main class="overflow-y-auto">
+        <!-- 타이틀 -->
+        <div class="bg-white pt-4 px-4 pb-10">
+          <h2 class="fs-32 fw-bold lh-145">모달&토스트팝업</h2>
+        </div>
+        <!-- / 타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="bg-white flex-grow-1 rounded-bottom-2 p-4">
+
+          <!-- 입고분류-유효하지 않은 송장번호 입력 조회 시 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inboundInvalidInvoiceModal">
+            입고분류-유효하지 않은 송장번호 입력 조회 시 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="inboundInvalidInvoiceModal" tabindex="-1" aria-labelledby="inboundInvalidInvoiceModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    [24091203]<br/>
+                    검색한 입고정보를 찾을 수 없습니다.<br/>
+                    다시 확인해주세요<br/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 입고분류-유효하지 않은 송장번호 입력 조회 시 모달 -->
+
+          <hr>
+
+          <!-- 존재하지 않는 데이터 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#notFoundModal">
+            존재하지 않는 데이터 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="notFoundModal" tabindex="-1" aria-labelledby="notFoundModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    존재하지 않는 데이터입니다.<br/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 존재하지 않는 데이터 모달 -->
+
+          <hr>
+
+          <!-- 검증목록 초기화 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#resetValidationListModal">
+            검증목록 초기화 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="resetValidationListModal" tabindex="-1" aria-labelledby="resetValidationListModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    <b class="fs-26 mb-10">검증목록을 초기화 하시겠습니까?</b><br/>
+                    <br/>
+                    <span class="fw-normal">작업결과는 초기화되지 않습니다</span><br/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 검증목록 초기화 모달 -->
+
+          <hr>
+
+          <!-- 기존 출고마감 작업 이어서 진행 여부 확인 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#continueClosingModal">
+            기존 출고마감 작업 이어서 진행 여부 확인 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="continueClosingModal" tabindex="-1" aria-labelledby="continueClosingModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    기존 작업하던 출고마감 작업을<br/>
+                    이어서 진행하시겠습니까?
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">새로하기</button>
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">이어하기</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 기존 출고마감 작업 이어서 진행 여부 확인 -->
+
+          <hr>
+
+          <!-- 조사 시작 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#startInvestigationModal">
+            조사 시작 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="startInvestigationModal" tabindex="-1" aria-labelledby="startInvestigationModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    조사를 시작하시겠습니까?
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">시작</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 조사 시작 확인 -->
+
+          <hr>
+
+          <!-- 조사 반영 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#applyInvestigationResultModal">
+            조사 반영 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="applyInvestigationResultModal" tabindex="-1" aria-labelledby="applyInvestigationResultModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    A00-0104<br/>
+                    조사 결과를 반영하시겠습니까?<br/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 조사 반영 모달 -->
+
+          <hr>
+
+          <!-- 재고검사 수량이 0일 경우 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#zeroQuantityConfirmModal">
+            재고검사 수량이 0일 경우 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="zeroQuantityConfirmModal" tabindex="-1" aria-labelledby="zeroQuantityConfirmModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    A00-0104<br/>
+                    재고검수 수량이 0이 있습니다.<br/>
+                    계속하시겠습니까?<br/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">확인</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 재고검사 수량이 0일 경우 모달 -->
+
+          <hr>
+
+          <!-- 아이템 삭제 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#deleteItemConfirmModal">
+            아이템 삭제 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="deleteItemConfirmModal" tabindex="-1" aria-labelledby="deleteItemConfirmModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    해당 상품을 삭제하시겠습니까?<br/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">삭제</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 아이템 삭제 모달 -->
+
+          <hr>
+
+          <!-- 아이템 수량 설정 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#alertAndConfirmModal1">
+            아이템 수량 설정 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="alertAndConfirmModal1" tabindex="-1" aria-labelledby="alertAndConfirmModalLabel"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content modal-content-has-header">
+                <div class="modal-header">
+                  <h5 class="modal-title">아이템 수량 설정</h5>
+                  <button type="button" class="btn-close is-32 p-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div>
+                    <input type="number" placeholder="수량 입력" class="form-control">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">완료</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 아이템 수량 설정 모달 -->
+
+          <hr>
+
+          <!-- 조사 종료 확인 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#endInvestigationConfirmModal">
+            조사 종료 확인 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="endInvestigationConfirmModal" tabindex="-1" aria-labelledby="endInvestigationConfirmModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    조사를 종료하시겠습니까?<br/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">종료</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 조사 종료 확인 모달 -->
+
+          <hr>
+
+          <!-- 조사 진행중일때 종료 확인 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                  data-bs-target="#investigationInProgressEndConfirmModal">
+            조사 진행중일때 종료 확인 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="investigationInProgressEndConfirmModal" tabindex="-1"
+               aria-labelledby="investigationInProgressEndConfirmModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="modal-body-inner">
+                    현재 작업이 진행중 입니다.<br/>
+                    조사를 종료하시겠습니까?<br/>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">취소</button>
+                  <button type="button" class="btn btn-xs btn-primary" data-bs-dismiss="modal">종료</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 조사 진행중일때 종료 확인 모달 -->
+
+          <hr>
+
+          <!-- 반영되었습니다 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-dark-blue showToastButton" data-toast-target="updateSuccessToast">반영되었습니다 토스트 팝업</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast" id="updateSuccessToast" style="display: none;">
+            <div class="toast-body">
+              <div class="d-flex gap-10 align-items-center">
+                <div class="bg-primary rounded-circle">
+                  <i class="icon icon-check bg-white is-32"></i>
+                </div>
+                <div class="fs-22 fw-medium">
+                  반영되었습니다.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 반영되었습니다 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 삭제되었습니다 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-dark-blue showToastButton" data-toast-target="deleteSuccessToast">삭제되었습니다 토스트 팝업</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast" id="deleteSuccessToast" style="display: none;">
+            <div class="toast-body">
+              <div class="d-flex gap-10 align-items-center">
+                <div class="bg-primary rounded-circle">
+                  <i class="icon icon-check bg-white is-32"></i>
+                </div>
+                <div class="fs-22 fw-medium">
+                  삭제되었습니다.
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 삭제되었습니다 토스트 팝업 -->
+
+          <hr>
+
+        </div>
+        <!-- / 컨텐츠 -->
+      </main>
+      <!-- / 메인 -->
+    </section>
+  </div>
+</div>
+
+</body>
+
+</html>

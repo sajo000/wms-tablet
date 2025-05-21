@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title>입고분류</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
+
+  <link rel="stylesheet" href="../css/app.css">
+
+  <script type="text/javascript" src="../layout.js"></script>
+  <script type="text/javascript" src="../function.js"></script>
+</head>
+
+<body>
+<div class="vh-100 container-fluid p-3">
+  <div class="layout-wrap">
+    <section class="left-side"> <!-- 접기: collapse -->
+      <!-- 사이드바 -->
+      <div id="sidebar"></div>
+      <!-- / 사이드바 -->
+    </section>
+
+    <!-- 사이드바 하단 센터명 클릭시 나타나는 메뉴 -->
+    <ul class="global-dropdown-menu">
+      <li>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#sideBarMyAccountModal">
+          <i class="icon-user-circle is-24 bg-1e"></i>
+          My account
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="icon-exit is-24 bg-1e"></i>
+          Log out
+        </a>
+      </li>
+    </ul>
+    <!-- / 사이드바에 센터명 클릭시 나타나는 메뉴 -->
+
+    <section class="right-side">
+      <!-- 메인 -->
+      <main>
+        <!-- 타이틀 -->
+        <div class="bg-white pt-4 px-4 pb-10">
+          <h2 class="fs-32 fw-bold lh-145">입고분류</h2>
+        </div>
+        <!-- / 타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="bg-white rounded-bottom-2 p-4">
+          <div class="form-group">
+            <div class="position-relative">
+              <input type="" class="form-control form-search form-search-lg" placeholder="송장,차량,전표번호,작업라벨">
+              <div class="form-group-append">
+                <button class="btn-clear" type="button">
+                  <i class="icon icon-search is-32 bg-666"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 원배송 바로출고 -->
+        <div class="btn-group w-100 my-3">
+          <button class="btn btn-lg btn-purple">원배송 바로출고</button>
+        </div>
+
+        <div class="bg-white rounded-2 table-full table-responsive overflow-y-auto">
+          <table class="table mb-0">
+            <tbody>
+            <tr>
+              <th>고객사명</th>
+              <td>지더블유코퍼레이션</td>
+            </tr>
+            <tr>
+              <th>주문번호</th>
+              <td>O20231106070477</td>
+            </tr>
+            <tr>
+              <th>입고송장<small class="fs-16 d-block mt-1">(작업라벨)</small></th>
+              <td>
+                <div>581510061696</div>
+                <div class="mt-10">IN2023110706608</div>
+              </td>
+            </tr>
+            <tr>
+              <th>배송사</th>
+              <td>KOKUSAI</td>
+            </tr>
+            <tr>
+              <th>국가</th>
+              <td>JP</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- / 원배송 바로출고 -->
+
+        <!-- 원배송 풀필먼트 -->
+        <div class="btn-group w-100 my-3">
+          <button class="btn btn-lg btn-dark-blue">원배송 풀필먼트</button>
+        </div>
+
+        <div class="bg-white rounded-2 table-full table-responsive overflow-y-auto">
+          <table class="table mb-0">
+            <tbody>
+            <tr>
+              <th>고객사명</th>
+              <td>주식회사 헤어플러스</td>
+            </tr>
+            <tr>
+              <th>전표번호<small class="fs-16 d-block mt-1">(입고송장)</small></th>
+              <td>
+                <div>I20241028026467</div>
+                <div class="mt-10">[CJ대한통운] 596958166390</div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- / 원배송 풀필먼트 -->
+
+        <!-- 쉽배송 재포장 대상 -->
+        <div class="btn-group w-100 my-3">
+          <button class="btn btn-lg btn-primary">쉽배송 재포장 대상</button>
+        </div>
+
+        <div class="bg-white rounded-2 table-full table-responsive overflow-y-auto">
+          <table class="table mb-0">
+            <tbody>
+            <tr>
+              <th>주문번호</th>
+              <td>D20241119001858</td>
+            </tr>
+            <tr>
+              <th>튼튼포장</th>
+              <td><span class="badge badge-lg badge-primary text-capitalize">신청</span></td>
+            </tr>
+            <tr>
+              <th>CS 처리중</th>
+              <td><span class="badge badge-lg badge-notice text-capitalize">CS 처리중</span></td>
+            </tr>
+            <tr>
+              <th>추가 신청번호</th>
+              <td>
+                <div class="fs-26">총 입고예정 픽업 배송신청 건수: [n]</div>
+                <div class="bg-f7 rounded-2 mt-3">
+                  <div class="fs-18 fw-medium px-32 py-10">*픽업 배송신청 배송ID 정보</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                  <div class="px-32 py-10">D20241108001822</div>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- / 쉽배송 재포장 대상 -->
+
+        <!-- / 컨텐츠 -->
+      </main>
+      <!-- / 메인 -->
+    </section>
+  </div>
+</div>
+
+</body>
+
+</html>

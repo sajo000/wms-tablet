@@ -51,7 +51,7 @@
 
     <section class="right-side">
       <!-- 메인 -->
-      <main>
+      <main class="overflow-y-auto">
         <!-- 타이틀 -->
         <div class="bg-white pt-4 px-4 pb-10">
           <h2 class="fs-32 fw-bold lh-145">타이틀</h2>
@@ -225,6 +225,13 @@
             <button class="btn btn-sm btn-outline-primary">primary</button>
             <button class="btn btn-xs btn-outline-primary">primary</button>
             <button class="btn btn-xs btn-outline-primary" disabled>primary</button>
+          </div>
+
+          <div class="mt-4">
+            <button class="btn btn btn-gray">primary</button>
+            <button class="btn btn-sm btn-gray">primary</button>
+            <button class="btn btn-xs btn-gray">primary</button>
+            <button class="btn btn-xs gray" disabled>primary</button>
           </div>
         </div>
 
@@ -415,8 +422,10 @@
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-body">
-                    body<br/>
-                    body
+                    <div class="modal-body-inner">
+                      body<br/>
+                      body
+                    </div>
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-xs btn-outline-black" data-bs-dismiss="modal">text123</button>
@@ -490,7 +499,6 @@
             </table>
           </div>
         </div>
-
         <!-- / 테이블 풀 -->
         <!-- / 컨텐츠 -->
       </main>

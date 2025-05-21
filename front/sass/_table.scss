@@ -4,8 +4,17 @@
 */
 .table-full {
   background-color: $white;
+  border: 1px solid $gray-e6;
   border-radius: $border-radius;
   overflow: hidden;
+
+  tr {
+    border-top: 1px solid $gray-e6;
+
+    &:first-child {
+      border-top: none;
+    }
+  }
 
   th {
     width: 214px;
@@ -23,7 +32,8 @@
     vertical-align: middle;
   }
 
-  tr {
-    border-top: 1px solid $gray-e6;
+  // * border-bottom 초기화
+  .table > :not(caption) > * > * {
+    border-bottom: none;
   }
 }

@@ -7,6 +7,10 @@
   --bs-modal-header-border-color: #e6e6e6;
 }
 
+.modal-lg {
+  max-width: 1000px;
+}
+
 .modal-content {
   --bs-modal-border-radius: 20px;
   border: 0;
@@ -50,6 +54,14 @@
   padding: 30px;
   font-size: map-get($custom-font-size, 22);
   font-weight: 500;
+  height: 100%;
+}
+
+.modal-body-inner {
+  min-height: 110px;
+  align-content: center;
+  text-align: center;
+  height: 100%;
 }
 
 .modal-footer {
@@ -67,3 +79,7 @@
   width: 90px;
   height: 90px;
 }
+
+/* ========================================================================
+ * 로케이션 조회 모달 안에 있는 작업자명, 작업 상태등 모달 안에 카테고리 형식 스타일
+ */
