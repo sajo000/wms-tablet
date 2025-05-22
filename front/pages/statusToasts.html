@@ -61,29 +61,396 @@
         <!-- 컨텐츠 -->
         <div class="bg-white flex-grow-1 rounded-bottom-2 p-4">
 
-          <!-- 반영되었습니다 토스트 팝업 -->
+          <!-- 송장검증성공 토스트 팝업 -->
           <div class="d-flex gap-3 flex-wrap">
-            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState1">토스트 상태 팝업 warning</button>
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState1">송장검증성공</button>
           </div>
 
           <!-- Toast -->
-          <div class="toast-state toast-state-warning" id="toastState1" style="display: none;">
+          <div class="toast-state toast-state-success" id="toastState1" style="display: none;">
             <div class="toast-body">
-              <i class="icon-state-warning icon-for-state mx-auto"></i>
+              <i class="icon-state-success icon-for-state mx-auto"></i>
               <div class="fs-38 toast-body__title fw-bold mt-3">
-                Title<br/>
-                Title
+                No.1<br/>
+                DHL JD014600011475393993<br/>
               </div>
               <div class="fs-32 toast-body__body fw-medium mt-3">
-                Body<br/>
-                Body<br/>
-                Body<br/>
+                검증 성공<br/>
               </div>
             </div>
           </div>
-          <!-- / 반영되었습니다 토스트 팝업 -->
+          <!-- / 송장검증성공 토스트 팝업 -->
 
           <hr>
+
+          <!-- 송장검증실패 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState2">송장검증실패</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState2" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                No.2<br/>
+                DHL JD014600011475393993<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                검증 실패 -유효하지 않은 송장<br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 송장검증실패 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 송장검증중복 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState3">송장검증중복</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState3" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                No.3<br/>
+                DHL JD014600011475393993<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                검증 실패 -중복<br/>
+                (No.1 / 00:23 전)<br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 송장검증중복 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 하단 검증리스트에 중복건이 포함되어 있지 않고, 중복건 검증 후 24시간 초과하는 경우 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState4">하단 검증리스트에 중복건이 포함되어 있지 않고, 중복건 검증
+              후 24시간 초과하는 경우
+            </button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState4" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                DHL<br/>
+                JD014600011475393993<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                검증 실패 -중복<br/>
+                (47:23:06 전)<br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 하단 검증리스트에 중복건이 포함되어 있지 않고, 중복건 검증 후 24시간 초과하는 경우 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 유효성 검사 미통과 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState5">유효성 검사 미통과</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-warning" id="toastState5" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-warning icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3" style="min-height: 110px">
+                DHL<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3" style="min-height: 138px">
+                출고마감 작업중인 배송사입니다.<br/>
+                해당 배송사를 작업하시겠습니까?<br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-outline-black" data-bs-dismiss="toast">취소</button>
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">작업 시작</button>
+            </div>
+          </div>
+          <!-- / 유효성 검사 미통과 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 유효성 검사 통과 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState6">유효성 검사 통과</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast-state toast-state-success" id="toastState6" style="display: none;">
+            <div class="toast-body">
+              <i class="icon-state-success icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                No.1<br/>
+                DHL JD014600011475393993<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                검증 성공<br/>
+              </div>
+            </div>
+          </div>
+          <!-- / 유효성 검사 통과 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 검증 실패-출고검증 미완료 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState7">검증 실패-출고검증 미완료</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState7" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                No.2<br/>
+                DHL JD014600011475393993<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                검증 실패 - 출고검증 미완료<br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 검증 실패-출고검증 미완료 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 검증 실패(중복) 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState8">검증 실패(중복)</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState8" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                No.3<br/>
+                DHL JD014600011475393993<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                검증 실패 -중복<br/>
+                (No.1 / 00:23 전)<br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 검증 실패(중복) 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 출고마감 확인 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState9">출고마감 확인</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-success" id="toastState9" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-success icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                2024-06-07 DHL 1차 출고마감<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                • 출고마감 대상건 : 467건<br/>
+                • 검증 미완료건 : 0건<br/>
+                • <span class="text-danger">검증 미완료건 : 0건</span><br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-outline-black" data-bs-dismiss="toast">취소</button>
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">출고 마감하기</button>
+            </div>
+          </div>
+          <!-- / 출고마감 확인 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 박스적치성공 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState10">박스적치성공</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast-state toast-state-success" id="toastState10" style="display: none;">
+            <div class="toast-body">
+              <i class="icon-state-success icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                A00-0212<br/>
+                IN2025020701869<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                박스적치 성공<br/>
+              </div>
+            </div>
+          </div>
+          <!-- / 박스적치성공 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 박스적치 에러 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState11">박스적치 에러 토스트 팝업</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState11" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                존재하지 않는 배송요청 주문번호입니다. (null)<br/>
+
+                박스적치 할수 있는 입고 상태가 아닙니다.<br/>
+
+                존재하지 않는 작업라벨번호 / 송장번호입니다.<br/>
+
+                존재하지 않는 로케이션입니다. [DT_CT, A00-0212]<br/>
+
+                로케이션을 입력해 주세요.<br/>
+
+                작업라벨번호 / 송장번호를 입력해 주세요.<br/>
+                <br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 박스적치 에러 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 재고이동성공 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState12">재고이동성공</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast-state toast-state-success" id="toastState12" style="display: none;">
+            <div class="toast-body">
+              <i class="icon-state-success icon-for-state mx-auto"></i>
+              <div class="fs-38 toast-body__title fw-bold mt-3">
+                수량:100<br/>
+              </div>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                재고이동 성공<br/>
+              </div>
+            </div>
+          </div>
+          <!-- / 재고이동성공 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 재고이동 에러 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState13">재고이동 에러 토스트 팝업</button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState13" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                존재하지 않는 상품입니다. [exp0001]<br/>
+
+                재고 이동이 불가능 합니다.<br/>
+                이동가능 수량을 다시 확인해 주세요.<br/>
+
+                이동가능한 수량을 초과했습니다.<br/>
+                [재고고유번호=12,214, 재고상세고유번호=12,275<br/>
+                총 재고이동 요청수량=0]<br/>
+                <br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 재고이동 에러 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 재고실사 시작 - 작업중,완료된 로케이션 바코드를 스캔한 경우 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState14">
+              재고실사 시작 - 작업중,완료된 로케이션 바코드를 스캔한 경우 토스트 팝업
+            </button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState14" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                A00-0000<br/>
+                작업중이거나 완료된 로케이션입니다.<br/>
+                다른 로케이션을 조사해 주세요.<br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 재고실사 시작 - 작업중,완료된 로케이션 바코드를 스캔한 경우 토스트 팝업 -->
+
+          <hr>
+
+          <!-- 재고실사 시작 - 유효하지 않은 로케이션 바코드를 스캔한 경우 토스트 팝업 -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="btn btn-primary showToastButtonState" data-toast-target="toastState15">
+              재고실사 시작 - 유효하지 않은 로케이션 바코드를 스캔한 경우 토스트 팝업
+            </button>
+          </div>
+
+          <!-- Toast -->
+          <div class="toast toast-state-btn toast-state-error" id="toastState15" data-bs-autohide="false" role="alert"
+               aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="icon-state-error icon-for-state mx-auto"></i>
+              <div class="fs-32 toast-body__body fw-medium mt-3">
+                A00-0001<br/>
+                유효하지 않은 로케이션입니다.<br/>
+                로케이션 바코드를 확인해 주세요.<br/>
+              </div>
+            </div>
+            <div class="toast-footer">
+              <button type="button" class="btn btn-sm btn-black" data-bs-dismiss="toast">확인</button>
+            </div>
+          </div>
+          <!-- / 재고실사 시작 - 유효하지 않은 로케이션 바코드를 스캔한 경우 토스트 팝업 -->
+
 
         </div>
         <!-- / 컨텐츠 -->

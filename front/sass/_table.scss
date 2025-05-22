@@ -1,4 +1,14 @@
 /* ========================================================================
+* 내용만 있는 테이블.
+*/
+.table {
+  th,
+  td {
+    padding: 16px;
+  }
+}
+
+/* ========================================================================
 * 테이블 자체에 border-radius 있고,
 * tr, td간 border 가 패딩 안쪽까지 다 생기는 테이블.
 */
@@ -37,3 +47,32 @@
     border-bottom: none;
   }
 }
+
+
+// * test
+//.test {
+//  li {
+//    border: 1px solid red;
+//    display: flex;
+//    align-content: center;
+//
+//    > div {
+//      display: flex;
+//      align-items: center;
+//    }
+//
+//    > div:first-child {
+//      width: 214px;
+//      flex-shrink: 0;
+//      font-size: 26px;
+//      font-weight: 700;
+//      padding: 20px 24px;
+//    }
+//
+//    > div:last-child {
+//      font-size: 32px;
+//      font-weight: 700;
+//      padding: 20px 32px;
+//    }
+//  }
+//}

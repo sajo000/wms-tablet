@@ -54,13 +54,127 @@
       <main>
         <!-- 타이틀 -->
         <div class="bg-white pt-4 px-4 pb-10">
-          <h2 class="fs-32 fw-bold lh-145">송장검증</h2>
+          <div class="d-flex">
+            <h2 class="fs-32 fw-bold lh-145">송장검증</h2>
+            <div class="d-flex align-items-end gap-4 lh-121 ms-auto">
+              <div>
+                <div class="fs-22 fw-bold">2025-04-09 송장검증 결과</div>
+                <div>
+                  <span class="fs-20 fw-medium fc-555">00:00 </span>
+                  <span class="fs-20 fw-bold fc-notice">14:03:07 </span>
+                  <span class="fs-20 fw-medium fc-555">~ 결과 누적중</span>
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-xs btn-outline-dark">검증목록 초기화</button>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- / 타이틀 -->
 
         <!-- 컨텐츠 -->
-        <div class="bg-primary2 flex-grow-1 rounded-bottom-2 p-4">
-          컨텐츠 전체높이 / 높이 1/n으로 나누려면 감싼 div(div class="bg-white <b>flex-grow-1</b> rounded-2 p-4 mt-3" 등) flex-grow-1 클래스 추가하면 됨.
+        <div class="bg-white rounded-bottom-2 p-4">
+          <div class="d-flex gap-4 validation-status">
+            <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
+              <span class="badge badge-lg badge-primary">검증 성공</span>
+              <b class="fs-32 ms-3">467</b>
+            </div>
+            <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
+              <span class="badge badge-lg badge-danger">검증 실패</span>
+              <b class="fs-32 ms-3">20</b>
+            </div>
+            <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
+              <span class="badge badge-lg badge-gray">검증 실패-중복</span>
+              <b class="fs-32 ms-3">3</b>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-top-2 px-4 pt-4 pb-10 mt-3">
+          <div class="d-flex align-items-center gap-4">
+            <label for="" class="fs-26 fw-bold">송장번호</label>
+            <div class="form-group flex-grow-1 mb-0">
+              <div class="position-relative">
+                <input type="" class="form-control form-search">
+                <div class="form-group-append">
+                  <button class="btn-clear" type="button">
+                    <i class="icon icon-search is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white flex-grow-1 rounded-bottom-2 overflow-y-auto px-4 pb-4">
+          <table class="fs-20 table mb-0">
+            <colgroup>
+              <col width="5%">
+              <col width="20%">
+              <col width="20%">
+              <col width="45%">
+              <col width="10%">
+            </colgroup>
+            <thead>
+            <tr>
+              <th>No.</th>
+              <th>배송사</th>
+              <th>송장번호</th>
+              <th>고객사</th>
+              <th class="text-center">검증결과</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>464</td>
+              <td>DHL</td>
+              <td>JD014600011475393995</td>
+              <td>엔와이국제물류주식회사_풀필먼트</td>
+              <td class="text-center"><span class="badge badge-sm badge-primary">검증 성공</span></td>
+            </tr>
+            <tr>
+              <td>464</td>
+              <td>EMS국제우편</td>
+              <td>JD014600011475393995</td>
+              <td>주식회사 박스오블리스</td>
+              <td class="text-center"><span class="badge badge-sm badge-danger">유효하지 않은 송장</span></td>
+            </tr>
+            <tr>
+              <td>464</td>
+              <td>GSPostbox택배</td>
+              <td>커뮤니티 클럽 (Community Club)</td>
+              <td>엔와이국제물류주식회사_풀필먼트</td>
+              <td class="text-center"><span class="badge badge-sm badge-gray">검증 실패-중복</span></td>
+            </tr>
+            <tr>
+              <td>464</td>
+              <td>DHL</td>
+              <td>JD014600011475393995</td>
+              <td>에스티엠컴퍼니 주식회사 에스티엠컴퍼니 주식회사 에스티엠컴퍼니 주식회사</td>
+              <td class="text-center"><span class="badge badge-sm badge-primary">검증 성공</span></td>
+            </tr>
+            <tr>
+              <td>464</td>
+              <td>DHL</td>
+              <td>JD014600011475393995</td>
+              <td>엔와이국제물류주식회사_풀필먼트</td>
+              <td class="text-center"><span class="badge badge-sm badge-primary">검증 성공</span></td>
+            </tr>
+            <tr>
+              <td>464</td>
+              <td>DHL</td>
+              <td>JD014600011475393995</td>
+              <td>엔와이국제물류주식회사_풀필먼트</td>
+              <td class="text-center"><span class="badge badge-sm badge-primary">검증 성공</span></td>
+            </tr>
+            <tr>
+              <td>464</td>
+              <td>DHL</td>
+              <td>JD014600011475393995</td>
+              <td>엔와이국제물류주식회사_풀필먼트</td>
+              <td class="text-center"><span class="badge badge-sm badge-primary">검증 성공</span></td>
+            </tr>
+            </tbody>
+          </table>
         </div>
         <!-- / 컨텐츠 -->
       </main>

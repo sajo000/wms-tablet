@@ -211,33 +211,25 @@ $(document).ready(function () {
 $(document).ready(function () {
   // 각 버튼에 클릭 이벤트를 바인딩
   $('.showToastButtonState').on('click', function () {
-    // 버튼의 data-toast-target 속성에서 대상 토스트의 ID를 가져옴
     const toastId = $(this).data('toast-target');
     const $toast = $('#' + toastId);
 
     // 토스트 팝업이 존재하는지 확인
     if ($toast.length) {
-      $toast.fadeIn(200).addClass('show'); // 토스트 팝업을 페이드인으로 표시
-      setTimeout(function () {
-        $toast.fadeOut(200).removeClass('show'); // 2초 후 페이드아웃으로 숨김
-      }, 1500); // 1.5초 동안 보여줌
-    }
-  });
-});
-
-/**
- * 상태별 버튼 있는 토스트 팝업
- */
-$(document).ready(function () {
-  // 모든 토스트 트리거 버튼에 이벤트 바인딩
-  $('.showToastBtn').on('click', function () {
-    const toastId = $(this).data('toast-target');
-    const $toastEl = $('#' + toastId);
-
-    if ($toastEl.length) {
-      const toast = bootstrap.Toast.getOrCreateInstance($toastEl,
-          {autohide: false});
-      toast.show();
+      // "toast-state-btn" 클래스가 있으면 자동 닫힘 X
+      if ($toast.hasClass('toast-state-btn')) {
+        $toast.fadeIn(200).addClass('show');
+        // 닫기는 버튼(data-bs-dismiss="toast")을 누를 때만
+        $toast.find('[data-bs-dismiss="toast"]').on('click', function () {
+          $toast.fadeOut(200).removeClass('show');
+        });
+      } else {
+        // 버튼 없는 토스트는 1.5초 후 자동 닫힘
+        $toast.fadeIn(200).addClass('show');
+        setTimeout(function () {
+          $toast.fadeOut(200).removeClass('show');
+        }, 1500);
+      }
     }
   });
 });

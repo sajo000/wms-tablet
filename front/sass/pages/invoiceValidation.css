@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* ========================================================================
+ * 송장검증 검증상태
+*/
+.invoice-validation-status-item {
+  border: 1px solid red;
+  flex: 1 1 33.333%;
+}
+
+/*# sourceMappingURL=invoiceValidation.css.map */

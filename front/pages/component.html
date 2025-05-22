@@ -335,9 +335,12 @@
 
           <div class="mt-4">
             <!-- 버튼 있는 토스트 팝업 -->
-            <button type="button" class="btn btn-primary showToastBtn" data-toast-target="myToast1">버튼 있는 토스트 팝업 warning</button>
-            <button type="button" class="btn btn-primary showToastBtn" data-toast-target="myToast2">버튼 있는 토스트 팝업 error</button>
-            <button type="button" class="btn btn-primary showToastBtn" data-toast-target="myToast3">버튼 있는 토스트 팝업 success</button>
+            <button type="button" class="btn btn-primary showToastButtonState" data-toast-target="myToast1">버튼 있는 토스트 팝업 warning
+            </button>
+            <button type="button" class="btn btn-primary showToastButtonState" data-toast-target="myToast2">버튼 있는 토스트 팝업 error
+            </button>
+            <button type="button" class="btn btn-primary showToastButtonState" data-toast-target="myToast3">버튼 있는 토스트 팝업 success
+            </button>
 
             <!-- warning -->
             <div class="toast toast-state-btn toast-state-warning" id="myToast1" data-bs-autohide="false" role="alert"
@@ -500,6 +503,38 @@
           </div>
         </div>
         <!-- / 테이블 풀 -->
+
+        <!-- 바깥 보더 없는 테이블 -->
+        <div class="bg-white rounded-2 p-4 mt-3 mb-3">
+          <table class="fs-20 table">
+            <thead>
+            <tr>
+              <th>No.</th>
+              <th>배송사</th>
+              <th>송장번호</th>
+              <th>고객사</th>
+              <th>검증결과</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>464</td>
+              <td>DHL</td>
+              <td>JD014600011475393995</td>
+              <td>엔와이국제물류주식회사_풀필먼트</td>
+              <td><span class="badge badge-sm badge-primary">검증 성공</span></td>
+            </tr>
+            <tr>
+              <td>464</td>
+              <td>DHL</td>
+              <td>JD014600011475393995</td>
+              <td>엔와이국제물류주식회사_풀필먼트</td>
+              <td><span class="badge badge-sm badge-primary">검증 성공</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- / 바깥 보더 없는 테이블 -->
         <!-- / 컨텐츠 -->
       </main>
       <!-- / 메인 -->
