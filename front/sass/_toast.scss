@@ -3,7 +3,8 @@
 */
 .toast {
   visibility: hidden;
-  width: 274px;
+  width: calc(100% - 24px);
+  max-width: 274px;
   height: auto;
   background-color: $white;
   border-radius: 10px;
@@ -25,7 +26,8 @@
 
 // * 토스트 팝업 - 상태
 .toast-state {
-  width: 890px;
+  width: calc(100% - 24px);
+  max-width: 890px;
   height: auto;
   background-color: #ffffff;
   border-radius: 20px;
@@ -47,7 +49,8 @@
 
 // * 버튼 있는 토스트 팝업 - 상태
 .toast-state-btn {
-  width: 890px;
+  width: calc(100% - 24px);
+  max-width: 890px;
   height: auto;
   background-color: #ffffff;
   border-radius: 20px;

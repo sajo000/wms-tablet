@@ -1,4 +1,23 @@
 @charset "UTF-8";
+.menu-row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  --bs-gutter-x: 20px;
+  background-color: #6f42c1;
+}
+.menu-row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
 .fs-44 {
   font-size: 2.75rem !important;
 }
@@ -18000,6 +18019,8 @@ html, body, * {
   --bs-modal-width: 580px;
   --bs-modal-inner-border-radius: 20px;
   --bs-modal-header-border-color: #e6e6e6;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .modal-lg {
@@ -18073,6 +18094,7 @@ html, body, * {
  */
 .modal-category-btn-wrap {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
 }
 .modal-category-btn-wrap .btn-category {
@@ -18114,7 +18136,8 @@ html, body, * {
 */
 .toast {
   visibility: hidden;
-  width: 274px;
+  width: calc(100% - 24px);
+  max-width: 274px;
   height: auto;
   background-color: #ffffff;
   border-radius: 10px;
@@ -18134,7 +18157,8 @@ html, body, * {
 }
 
 .toast-state {
-  width: 890px;
+  width: calc(100% - 24px);
+  max-width: 890px;
   height: auto;
   background-color: #ffffff;
   border-radius: 20px;
@@ -18153,7 +18177,8 @@ html, body, * {
 }
 
 .toast-state-btn {
-  width: 890px;
+  width: calc(100% - 24px);
+  max-width: 890px;
   height: auto;
   background-color: #ffffff;
   border-radius: 20px;
@@ -18209,11 +18234,19 @@ html, body, * {
 }
 
 /* ========================================================================
-* 내용만 있는 테이블.
+* 테이블 재정의
 */
 .table th,
 .table td {
   padding: 16px;
+}
+
+/* ========================================================================
+* 오른쪽 컨텐츠 영역 조회된 내용 등 페이지의 테이블 너비
+*/
+.right-side__list-table {
+  min-width: 1162px;
+  border: 2px dashed #FF3558;
 }
 
 /* ========================================================================
@@ -18270,4 +18303,28 @@ html, body, * {
 */
 .invoice-validation-status-item {
   flex: 1 1 33.333%;
+}
+
+/* ========================================================================
+ * 출고마감 상태
+*/
+.shipping-close-status-wrap {
+  flex-wrap: nowrap;
+}
+
+.shipping-close-status {
+  border: 1px solid #E6E6E6;
+  border-radius: 0.625rem !important;
+}
+
+.shipping-close-status-item {
+  flex-grow: 1;
+  flex: 1 1 50%;
+  border-top: 1px solid #E6E6E6;
+}
+.shipping-close-status-item:first-child, .shipping-close-status-item:nth-child(2) {
+  border-top: 0;
+}
+.shipping-close-status-item:nth-child(odd) {
+  border-right: 1px solid #E6E6E6;
 }

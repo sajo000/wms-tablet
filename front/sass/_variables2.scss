@@ -30,8 +30,24 @@ $gray-33: #333333;
 $gray-1e: #1E1E1E;
 $gray-35: #353535;
 $gray-9a: #9a9c9c;
-
 // 색상 변수 지정
+
+// 페이지별 상단 메뉴영역 .menu-row 설정
+.menu-row {
+  @include make-row();
+  --bs-gutter-x: 20px;
+  background-color: #6f42c1;
+
+  > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+  }
+}
+
+// 페이지별 상단 메뉴영역 .menu-row 설정
 
 // 박스 섀도우
 $custom-shadow: 0px 16px 44px 0px rgba(0, 0, 0, 0.07); // 피그마에서 이름 -> shadow1

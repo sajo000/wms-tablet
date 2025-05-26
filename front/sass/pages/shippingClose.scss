@@ -1,0 +1,35 @@
+/* ========================================================================
+ * 출고마감 상태
+*/
+.shipping-close-status-wrap {
+  //flex-wrap: wrap;
+  //@include media-breakpoint-up(lg) {
+  flex-wrap: nowrap;
+  //}
+}
+
+.shipping-close-status {
+  border: 1px solid $gray-e6;
+  border-radius: $border-radius;
+}
+
+.shipping-close-status-item {
+  flex-grow: 1;
+  flex: 1 1 50%;
+  border-top: 1px solid $gray-e6;
+
+  &:first-child,
+  &:nth-child(2) {
+    border-top: 0;
+  }
+
+  &:nth-child(odd) {
+    border-right: 1px solid $gray-e6;
+  }
+}
+
+.shipping-close-query {
+  @include media-breakpoint-up(lg) {
+    //width: 452px;
+  }
+}
