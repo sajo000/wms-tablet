@@ -32,7 +32,7 @@
     font-weight: 700;
     padding: 20px 24px;
     border-right: 1px solid $gray-e6;
-    vertical-align: middle;
+    vertical-align: top;
   }
 
   td {
@@ -47,32 +47,3 @@
     border-bottom: none;
   }
 }
-
-
-// * test
-//.test {
-//  li {
-//    border: 1px solid red;
-//    display: flex;
-//    align-content: center;
-//
-//    > div {
-//      display: flex;
-//      align-items: center;
-//    }
-//
-//    > div:first-child {
-//      width: 214px;
-//      flex-shrink: 0;
-//      font-size: 26px;
-//      font-weight: 700;
-//      padding: 20px 24px;
-//    }
-//
-//    > div:last-child {
-//      font-size: 32px;
-//      font-weight: 700;
-//      padding: 20px 32px;
-//    }
-//  }
-//}

@@ -81,5 +81,46 @@
 }
 
 /* ========================================================================
- * 로케이션 조회 모달 안에 있는 작업자명, 작업 상태등 모달 안에 카테고리 형식 스타일
+ * 로케이션 조회 모달 안에 있는 작업자명, 작업 상태등 모달 안에 카테고리 버튼 스타일
  */
+.modal-category-btn-wrap {
+  display: flex;
+  gap: 16px;
+
+  .btn-category {
+    width: 101px;
+    height: auto;
+    padding: 8px 16px;
+    font-size: map-get($custom-font-size, 18);
+    font-weight: normal;
+    border-radius: $border-radius-sm;
+
+    &.active {
+      font-weight: 700;
+    }
+  }
+}
+
+/* ========================================================================
+ * 로케이션 조회 모달 스타일
+ */
+.location-search-modal {
+  height: 325px;
+
+  .table .badge {
+    width: 91px;
+  }
+}
+
+/* ========================================================================
+ * 상품 목록(바코드) 모달 스타일
+ */
+.barcode-product-list {
+  height: 361px;
+
+  .empty-td {
+    height: 299px;
+    padding: 0;
+    border-bottom: 0;
+  }
+}

@@ -359,6 +359,192 @@
 
           <hr>
 
+          <!-- 로케이션 조희 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#test">
+            로케이션 조회 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="test" tabindex="-1" aria-labelledby="alertAndConfirmModalLabel"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content modal-content-has-header">
+                <div class="modal-header">
+                  <h5 class="modal-title">로케이션 조회</h5>
+                  <button type="button" class="btn-close is-32 p-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="border-bottom px-30 py-4">
+                  <!-- 작업자명 -->
+                  <div>
+                    <div class="fs-18 fw-medium">작업자명</div>
+                    <div class="modal-category-btn-wrap mt-2">
+                      <button class="btn btn-category active">전체</button>
+                      <button class="btn btn-category">내 작업</button>
+                    </div>
+                  </div>
+                  <!-- / 작업자명 -->
+
+                  <!-- 작업상태 -->
+                  <div class="mt-20">
+                    <div class="fs-18 fw-medium">작업상태</div>
+                    <div class="modal-category-btn-wrap mt-2">
+                      <button class="btn btn-category active">전체</button>
+                      <button class="btn btn-category">작업완료</button>
+                      <button class="btn btn-category">작업중</button>
+                      <button class="btn btn-category">작업예정</button>
+                    </div>
+                  </div>
+                  <!-- / 작업상태 -->
+                </div>
+                <div class="modal-body custom-shadow2 rounded-bottom-4">
+                  <div class="location-search-modal overflow-y-auto">
+                    <table class="fs-20 table align-middle mb-0">
+                      <colgroup>
+                        <col width="5%">
+                        <col width="20%">
+                        <col width="10%">
+                        <col width="20%">
+                        <col width="45%">
+                      </colgroup>
+                      <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th class="text-center">Loc 명</th>
+                        <th class="text-center">차수</th>
+                        <th class="text-center">작업상태</th>
+                        <th class="text-center">작업자명</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>464</td>
+                        <td class="text-center">A00-0000</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center"><span class="badge badge-sm badge-primary">작업완료</span></td>
+                        <td class="text-center">델레오</td>
+                      </tr>
+                      <tr>
+                        <td>464</td>
+                        <td class="text-center">A00-0000</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center"><span class="badge badge-sm badge-notice">작업중</span></td>
+                        <td class="text-center">델레오</td>
+                      </tr>
+                      <tr>
+                        <td>464</td>
+                        <td class="text-center">A00-0000</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center"><span class="badge badge-sm badge-gray">작업예정</span></td>
+                        <td class="text-center">델레오</td>
+                      </tr>
+                      <tr>
+                        <td>464</td>
+                        <td class="text-center">A00-0000</td>
+                        <td class="text-center">2</td>
+                        <td class="text-center"><span class="badge badge-sm badge-notice">작업중</span></td>
+                        <td class="text-center">델레오</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 로케이션 조희 모달 -->
+
+          <hr>
+
+          <!-- 아이템 목록 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#testtest">
+            아이템 목록 모달
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="testtest" tabindex="-1" aria-labelledby="alertAndConfirmModalLabel"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content modal-content-has-header">
+                <div class="modal-header">
+                  <h5 class="modal-title">상품 목록(바코드)</h5>
+                  <button type="button" class="btn-close is-32 p-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="pt-4 px-30">
+                  <div class="d-flex gap-20">
+                    <div class="form-group w-50 mb-0">
+                      <label for="" class="form-label">바코드</label>
+                      <div class="position-relative">
+                        <input type="" class="form-control form-search" placeholder="바코드">
+                        <div class="form-group-append">
+                          <button class="btn-clear" type="button">
+                            <i class="icon icon-search is-32 bg-666"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group w-50 mb-0">
+                      <label for="" class="form-label">상품명</label>
+                      <div class="position-relative">
+                        <input type="" class="form-control form-search" placeholder="상품명">
+                        <div class="form-group-append">
+                          <button class="btn-clear" type="button">
+                            <i class="icon icon-search is-32 bg-666"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <div class="barcode-product-list overflow-y-auto">
+                    <table class="fs-20 table align-middle mb-0">
+                      <colgroup>
+                        <col width="5%">
+                        <col width="15%">
+                        <col width="15%">
+                        <col width="70%">
+                      </colgroup>
+                      <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th class="text-center">상품코드</th>
+                        <th class="text-center">바코드</th>
+                        <th class="text-center">상품명</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <!-- 검색 결과 없을때 -->
+                      <tr style="display: none;">
+                        <td colspan="4" class="empty-td">
+                          <div class="fs-22 fw-medium h-100 bg-f7 text-center align-content-center">검색 결과가 없습니다.</div>
+                        </td>
+                      </tr>
+                      <!-- / 검색 결과 없을때 -->
+                      <tr>
+                        <td>464</td>
+                        <td class="text-center"><a href="" class="fc-notice text-decoration-underline">24101501</a></td>
+                        <td class="text-center">8801117109103</td>
+                        <td class="text-center">[GioClavis] GIO KIDS MAT</td>
+                      </tr>
+                      <tr>
+                        <td>464</td>
+                        <td class="text-center"><a href="" class="fc-notice text-decoration-underline">24101501</a></td>
+                        <td class="text-center">8801117109103</td>
+                        <td class="text-center">[GioClavis] GIO KIDS MAT SF IUOP[GioClavis] GIO KIDS MAT SF IUOP[GioClavis] GIO
+                          KIDS MAT SF IUOP
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 아이템 목록 모달 -->
+
+          <hr>
+
           <!-- 반영되었습니다 토스트 팝업 -->
           <div class="d-flex gap-3 flex-wrap">
             <button class="btn btn-dark-blue showToastButton" data-toast-target="updateSuccessToast">반영되었습니다 토스트 팝업</button>
