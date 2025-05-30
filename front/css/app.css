@@ -16899,22 +16899,22 @@ textarea.form-control-lg {
 
 .btn-xs,
 .btn-group-xs > .btn {
-  height: 62px;
-  font-size: 1.375rem;
+  height: 62px !important;
+  font-size: 1.375rem !important;
   font-weight: 700;
 }
 
 .btn-sm,
 .btn-group-sm > .btn {
-  height: 66px;
-  font-size: 1.625rem;
+  height: 66px !important;
+  font-size: 1.625rem !important;
   font-weight: 700;
 }
 
 .btn-lg,
 .btn-group-lg > .btn {
-  height: 88px;
-  font-size: 2.375rem;
+  height: 88px !important;
+  font-size: 2.375rem !important;
   font-weight: 700;
 }
 
@@ -17628,6 +17628,10 @@ html, body, * {
   border-bottom-right-radius: 0 !important;
 }
 
+.form-select-selected.default {
+  color: #949494;
+}
+
 .form-select-list-wrap {
   display: none;
   position: absolute;
@@ -18246,6 +18250,7 @@ html, body, * {
 */
 .right-side__list-table {
   min-width: 1162px;
+  font-weight: 500;
   border: 2px dashed #FF3558;
 }
 

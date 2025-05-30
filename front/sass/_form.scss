@@ -104,6 +104,15 @@
   }
 }
 
+.form-select-selected.default {
+  color: $gray-94;
+}
+
+//.form-select-selected {
+//  color: #222; /* 기본 선택 색상 */
+//}
+
+
 .form-select-list-wrap {
   display: none;
   position: absolute;

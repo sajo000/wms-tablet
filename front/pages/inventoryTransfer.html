@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <title>재고이동</title>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="../node_modules/axios/dist/axios.min.js"></script>
+
+  <link rel="stylesheet" href="../css/app.css">
+
+  <script type="text/javascript" src="../layout.js"></script>
+  <script type="text/javascript" src="../function.js"></script>
+</head>
+
+<body>
+<div class="vh-100 container-fluid p-3">
+  <div class="layout-wrap">
+    <section class="left-side"> <!-- 접기: collapse -->
+      <!-- 사이드바 -->
+      <div id="sidebar"></div>
+      <!-- / 사이드바 -->
+    </section>
+
+    <!-- 사이드바 하단 센터명 클릭시 나타나는 메뉴 -->
+    <ul class="global-dropdown-menu">
+      <li>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#sideBarMyAccountModal">
+          <i class="icon-user-circle is-24 bg-1e"></i>
+          My account
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="icon-exit is-24 bg-1e"></i>
+          Log out
+        </a>
+      </li>
+    </ul>
+    <!-- / 사이드바에 센터명 클릭시 나타나는 메뉴 -->
+
+    <section class="right-side">
+      <!-- 메인 -->
+      <main>
+        <!-- 타이틀 -->
+        <div class="bg-white pt-4 px-4  rounded-bottom-2 pb-10">
+          <div class="d-flex">
+            <h2 class="fs-32 fw-bold lh-145">재고이동</h2>
+            <div class="d-flex align-items-center gap-4 lh-121 ms-auto">
+              <div class="form-group mb-0">
+                <label for="" class="form-label">고객사</label>
+                <div class="form-select-wrap">
+                  <div class="form-select" tabindex="0">
+                    <span class="form-select-selected">DHL</span>
+                    <i class="icon icon-arrow-bottom is-32 bg-666"></i>
+                  </div>
+                  <div class="form-select-list-wrap">
+                    <ul class="form-select-list">
+                      <li data-value="">선택</li>
+                      <li data-value="DHL">DHL</li>
+                      <li data-value="FedEx">FeDex</li>
+                      <li data-value="UPS">UPS</li>
+                      <li data-value="GSPostbox">GSPostbox택배</li>
+                      <li data-value="CanadaPost">Canada Post</li>
+                      <li data-value="AMS">AMS</li>
+                      <li data-value="GSPostbox">GSPostbox택배</li>
+                      <li data-value="GSPostbox">GSPostbox택배</li>
+                      <li data-value="GSPostbox">GSPostbox택배</li>
+                      <li data-value="GSPostbox">GSPostbox택배</li>
+                      <li data-value="GSPostbox">GSPostbox택배</li>
+                      <li data-value="GSPostbox">GSPostbox택배</li>
+                    </ul>
+                  </div>
+                  <input type="hidden" name="client-company" id="client-company" value="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- / 타이틀 -->
+
+        <!-- 컨텐츠 -->
+        <div class="bg-white rounded-2 px-4 pt-4 pb-10 mt-3">
+          <div>
+            <div class="form-group">
+              <div class="position-relative">
+                <input type="text" class="form-control form-input-only" placeholder="FROM 로케이션">
+                <div class="form-group-append" style="display:none;">
+                  <button class="btn-clear" type="button" tabindex="-1">
+                    <i class="icon icon-close is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="position-relative">
+                <input type="text" class="form-control form-input-only" placeholder="상품코드/상품바코드">
+                <div class="form-group-append" style="display:none;">
+                  <button class="btn-clear" type="button" tabindex="-1">
+                    <i class="icon icon-close is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-select-wrap">
+                <div class="form-select" tabindex="0">
+                  <span class="form-select-selected">상품정보</span>
+                  <i class="icon icon-arrow-bottom is-32 bg-666"></i>
+                </div>
+                <div class="form-select-list-wrap">
+                  <ul class="form-select-list">
+                    <li data-value="">상품정보</li>
+                    <li data-value="DHL">DHL</li>
+                    <li data-value="FedEx">FeDex</li>
+                    <li data-value="UPS">UPS</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="CanadaPost">Canada Post</li>
+                    <li data-value="AMS">AMS</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                  </ul>
+                </div>
+                <input type="hidden" name="client-company" id="client-company" value="">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="position-relative">
+                <input type="text" class="form-control form-input-only" placeholder="수량">
+                <div class="form-group-append" style="display:none;">
+                  <button class="btn-clear" type="button" tabindex="-1">
+                    <i class="icon icon-close is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="position-relative">
+                <input type="text" class="form-control form-input-only" placeholder="TO 로케이션">
+                <div class="form-group-append" style="display:none;">
+                  <button class="btn-clear" type="button" tabindex="-1">
+                    <i class="icon icon-close is-32 bg-666"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-primary">재고이동</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-top-2 px-4 pt-4 pb-10 mt-3">
+          <div class="d-flex align-items-center gap-4">
+            <label for="" class="fs-26 fw-bold">재고이동</label>
+            <div class="bg-f7 rounded-2 flex-grow-1 gap-1 px-32 py-3">
+              <span class="fs-26 fc-notice fw-bold">2</span>
+              <span class="fs-26">건</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white flex-grow-1 rounded-bottom-2 overflow-y-auto">
+          <div class="px-4 pb-4">
+            <div class="table-responsive">
+              <table class="fs-20 table right-side__list-table mb-0">
+                <colgroup>
+                  <col width="20%">
+                  <col width="30%">
+                  <col width="15%">
+                  <col width="10%">
+                  <col width="25%">
+                </colgroup>
+                <thead>
+                <tr>
+                  <th>날짜</th>
+                  <th>고객사</th>
+                  <th>상품코드</th>
+                  <th>수량</th>
+                  <th class="text-center">로케이션</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>2025-04-14 15:35:07</td>
+                  <td>엔와이국제물류주식회사_풀필먼트</td>
+                  <td>200401001</td>
+                  <td>1(개)</td>
+                  <td class="text-center">C00-0102 => A03-0305</td>
+                </tr>
+                <tr>
+                  <td>2025-04-14 15:35:07</td>
+                  <td>주식회사 화이브칼라푸드솔루션</td>
+                  <td>DI0018</td>
+                  <td>10000(개)</td>
+                  <td class="text-center">B00-0101 => A03-0305</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- / 컨텐츠 -->
+      </main>
+      <!-- / 메인 -->
+    </section>
+  </div>
+</div>
+
+</body>
+
+</html>

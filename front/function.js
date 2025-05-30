@@ -78,12 +78,21 @@ $(function () {
     const $wrap = $(this).closest('.form-select-wrap');
     const value = $(this).data('value');
     const text = $(this).text();
-    $wrap.find('.form-select-selected').text(text);
+    const $selected = $wrap.find('.form-select-selected');
+    const $listItems = $wrap.find('.form-select-list li');
+    $selected.text(text);
     $wrap.find('input[type="hidden"]').val(value);
-    $wrap.find('.form-select-list li').removeClass('selected');
+    $listItems.removeClass('selected');
     $(this).addClass('selected');
     $wrap.find('.form-select').removeClass('open');
     $wrap.find('.form-select-list-wrap').hide();
+
+    // 첫 번째 li가 선택됐을 때만 .default 클래스 추가
+    if ($(this).is($listItems.first())) {
+      $selected.addClass('default');
+    } else {
+      $selected.removeClass('default');
+    }
     e.stopPropagation();
   });
 
@@ -91,6 +100,18 @@ $(function () {
   $(document).on('click', function () {
     $('.form-select').removeClass('open');
     $('.form-select-list-wrap').hide();
+  });
+
+  // 페이지 로드 시 초기 상태 적용
+  $('.form-select-wrap').each(function () {
+    const $selected = $(this).find('.form-select-selected');
+    const $listItems = $(this).find('.form-select-list li');
+    // 초기 선택된 텍스트가 첫 번째 li와 같으면 .default 클래스 추가
+    if ($selected.text() === $listItems.first().text()) {
+      $selected.addClass('default');
+    } else {
+      $selected.removeClass('default');
+    }
   });
 });
 

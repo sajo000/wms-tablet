@@ -22,22 +22,22 @@
 
 .btn-xs,
 .btn-group-xs > .btn {
-  height: 62px;
-  font-size: map-get($custom-font-size, 22);
+  height: 62px !important;
+  font-size: map-get($custom-font-size, 22)!important;
   font-weight: 700;
 }
 
 .btn-sm,
 .btn-group-sm > .btn {
-  height: 66px;
-  font-size: map-get($custom-font-size, 26);
+  height: 66px!important;
+  font-size: map-get($custom-font-size, 26)!important;
   font-weight: 700;
 }
 
 .btn-lg,
 .btn-group-lg > .btn {
-  height: 88px;
-  font-size: map-get($custom-font-size, 38);
+  height: 88px !important;
+  font-size: map-get($custom-font-size, 38) !important;
   font-weight: 700;
 }
 
