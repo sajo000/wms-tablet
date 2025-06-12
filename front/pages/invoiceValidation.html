@@ -54,10 +54,10 @@
       <main>
         <!-- 타이틀 -->
         <div class="bg-white pt-4 px-4 pb-10">
-          <div class="d-flex">
+          <div class="d-flex flex-column flex-lg-row">
             <h2 class="fs-32 fw-bold lh-145">송장검증</h2>
-            <div class="d-flex align-items-end gap-4 lh-121 ms-auto">
-              <div>
+            <div class="d-flex align-items-lg-center flex-column flex-lg-row gap-4 lh-121 ms-lg-auto">
+              <div class="d-block">
                 <div class="fs-22 fw-bold">2025-04-09 송장검증 결과</div>
                 <div>
                   <span class="fs-20 fw-medium fc-555">00:00 </span>
@@ -75,18 +75,24 @@
 
         <!-- 컨텐츠 -->
         <div class="bg-white rounded-bottom-2 p-4">
-          <div class="d-flex gap-4 validation-status">
-            <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
-              <span class="badge badge-lg badge-primary">검증 성공</span>
-              <b class="fs-32 ms-3">467</b>
+          <div class="menu-row gap-4 gap-lg-0">
+            <div class="col-12 col-lg-4">
+              <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
+                <span class="badge badge-lg badge-primary">검증 성공</span>
+                <b class="fs-32 ms-3">467</b>
+              </div>
             </div>
-            <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
-              <span class="badge badge-lg badge-danger">검증 실패</span>
-              <b class="fs-32 ms-3">20</b>
+            <div class="col-12 col-lg-4">
+              <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
+                <span class="badge badge-lg badge-danger">검증 실패</span>
+                <b class="fs-32 ms-3">20</b>
+              </div>
             </div>
-            <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
-              <span class="badge badge-lg badge-gray">검증 실패-중복</span>
-              <b class="fs-32 ms-3">3</b>
+            <div class="col-12 col-lg-4">
+              <div class="invoice-validation-status-item d-flex align-items-center border rounded-2 px-18 py-3">
+                <span class="badge badge-lg badge-gray">검증 실패-중복</span>
+                <b class="fs-32 ms-3">3</b>
+              </div>
             </div>
           </div>
         </div>
@@ -108,7 +114,7 @@
         <div class="bg-white flex-grow-1 rounded-bottom-2 overflow-y-auto">
           <div class="px-4 pb-4">
             <div class="table-responsive">
-              <table class="fs-20 table right-side__list-table mb-0">
+              <table class="fs-20 table right-side__list-table-lg mb-0">
                 <colgroup>
                   <col width="5%">
                   <col width="20%">

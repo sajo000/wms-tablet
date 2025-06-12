@@ -7,8 +7,7 @@
   margin-top: calc(-1 * var(--bs-gutter-y));
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
-  --bs-gutter-x: 20px;
-  background-color: #6f42c1;
+  --bs-gutter-x: 24px;
 }
 .menu-row > * {
   flex-shrink: 0;
@@ -16749,6 +16748,9 @@ textarea.form-control-lg {
   border-radius: 50rem;
   padding: 0;
 }
+.btn-sidebar-toggle:hover, .btn-sidebar-toggle:active {
+  background-color: #efefef !important;
+}
 .btn-sidebar-toggle .icon-sidebar-toggle {
   width: 10px;
   height: 16px;
@@ -17555,12 +17557,13 @@ html, body, * {
 
 .form-control,
 .form-select {
-  height: 70px;
+  min-height: 70px;
   padding: 16px 32px;
   border: 1px solid #f7f7f7;
   background-color: #f7f7f7;
   font-size: 1.625rem;
   border-radius: var(--bs-border-radius-sm);
+  line-height: 1.21;
 }
 .form-control::placeholder,
 .form-select::placeholder {
@@ -17595,8 +17598,14 @@ html, body, * {
   box-shadow: none;
 }
 
+.form-search,
+.form-input-only {
+  padding-right: 64px;
+}
+
 .form-search-lg {
-  height: 80px;
+  min-height: 80px;
+  padding-right: 64px;
 }
 
 /* ========================================================================
@@ -17605,8 +17614,7 @@ html, body, * {
 .form-select-wrap {
   position: relative;
 }
-
-.form-select {
+.form-select-wrap .form-select {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -17615,15 +17623,15 @@ html, body, * {
   border-radius: 0.625rem !important;
   padding: 16px 32px;
   cursor: pointer;
-  height: 70px;
+  min-height: 70px;
   font-size: 1.625rem;
   transition: border 0.2s;
 }
-.form-select.open, .form-select:focus, .form-select:hover {
+.form-select-wrap .form-select.open, .form-select-wrap .form-select:focus, .form-select-wrap .form-select:hover {
   border: 1px solid #00c2de;
   outline: none;
 }
-.form-select.open {
+.form-select-wrap .form-select.open {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
@@ -18240,18 +18248,26 @@ html, body, * {
 /* ========================================================================
 * 테이블 재정의
 */
-.table th,
+.table th {
+  line-height: 1.45;
+  padding: 16px;
+}
 .table td {
+  line-height: 1.21;
   padding: 16px;
 }
 
 /* ========================================================================
 * 오른쪽 컨텐츠 영역 조회된 내용 등 페이지의 테이블 너비
 */
-.right-side__list-table {
+.right-side__list-table-sm {
+  min-width: 660px;
+  font-weight: 500;
+}
+
+.right-side__list-table-lg {
   min-width: 1162px;
   font-weight: 500;
-  border: 2px dashed #FF3558;
 }
 
 /* ========================================================================
@@ -18262,7 +18278,6 @@ html, body, * {
   background-color: #ffffff;
   border: 1px solid #E6E6E6;
   border-radius: 0.625rem !important;
-  overflow: hidden;
 }
 .table-full tr {
   border-top: 1px solid #E6E6E6;
@@ -18271,18 +18286,19 @@ html, body, * {
   border-top: none;
 }
 .table-full th {
-  width: 214px;
   font-size: 1.625rem;
   font-weight: 700;
   padding: 20px 24px;
   border-right: 1px solid #E6E6E6;
   vertical-align: top;
+  line-height: 1.45;
 }
 .table-full td {
   padding: 16px 32px;
   font-size: 2rem;
   font-weight: 700;
   vertical-align: middle;
+  line-height: 1.21;
 }
 .table-full .table > :not(caption) > * > * {
   border-bottom: none;
@@ -18306,10 +18322,6 @@ html, body, * {
 /* ========================================================================
  * 송장검증 검증상태
 */
-.invoice-validation-status-item {
-  flex: 1 1 33.333%;
-}
-
 /* ========================================================================
  * 출고마감 상태
 */
@@ -18327,9 +18339,14 @@ html, body, * {
   flex: 1 1 50%;
   border-top: 1px solid #E6E6E6;
 }
-.shipping-close-status-item:first-child, .shipping-close-status-item:nth-child(2) {
+.shipping-close-status-item:first-child {
   border-top: 0;
 }
-.shipping-close-status-item:nth-child(odd) {
-  border-right: 1px solid #E6E6E6;
+@media (min-width: 992px) {
+  .shipping-close-status-item:first-child, .shipping-close-status-item:nth-child(2) {
+    border-top: 0;
+  }
+  .shipping-close-status-item:nth-child(odd) {
+    border-right: 1px solid #E6E6E6;
+  }
 }

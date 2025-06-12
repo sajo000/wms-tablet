@@ -60,6 +60,12 @@
 
         <!-- 컨텐츠 -->
         <div class="bg-white flex-grow-1 rounded-bottom-2 p-4">
+          <!-- 사이드 바에서 my account 클릭하면 시 모달 -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sideBarMyAccountModal">
+            사이드 바에서 my account 클릭하면 시 모달
+          </button>
+
+          <hr>
 
           <!-- 입고분류-유효하지 않은 송장번호 입력 조회 시 모달 -->
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#inboundInvalidInvoiceModal">
@@ -145,6 +151,37 @@
           <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#continueClosingModal">
             기존 출고마감 작업 이어서 진행 여부 확인 모달
           </button>
+
+          <!-- 사이드 바에서 my account 클릭하면 나타나는 모달 -->
+          <div class="modal fade" id="sideBarMyAccountModal" tabindex="-1" aria-labelledby="sideBarMyAccountModal"
+               aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content modal-content-has-header">
+                <div class="modal-header">
+                  <h5 class="modal-title">내 정보</h5>
+                  <button type="button" class="btn-close is-32 p-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label class="form-label">아이디</label>
+                    <div class="position-relative">
+                      <input type="text" class="form-control form-input-only" placeholder="아이디" value="deleo">
+                      <div class="form-group-append" style="display:none;">
+                        <button class="btn-clear" type="button" tabindex="-1">
+                          <i class="icon icon-close is-32 bg-666"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-6">
+                    <label for="" class="form-label">센터</label>
+                    <input type="text" value="청라센터" class="form-control" readonly>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / 사이드 바에서 my account 클릭하면 나타나는 모달 -->
 
           <!-- Modal -->
           <div class="modal fade" id="continueClosingModal" tabindex="-1" aria-labelledby="continueClosingModal"

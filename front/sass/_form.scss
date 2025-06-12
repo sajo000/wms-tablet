@@ -26,12 +26,13 @@
 
 .form-control,
 .form-select {
-  height: 70px;
+  min-height: 70px;
   padding: 16px 32px;
   border: 1px solid $gray-f7;
   background-color: $gray-f7;
   font-size: map-get($custom-font-size, 26);
   border-radius: var(--bs-border-radius-sm);
+  line-height: 1.21;
 
   &::placeholder {
     color: $gray-94;
@@ -66,8 +67,14 @@
   }
 }
 
+.form-search,
+.form-input-only {
+  padding-right: 64px;
+}
+
 .form-search-lg {
-  height: 80px;
+  min-height: 80px;
+  padding-right: 64px;
 }
 
 
@@ -76,42 +83,37 @@
 */
 .form-select-wrap {
   position: relative;
-}
 
-.form-select {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: $gray-f7;
-  border: 1px solid $gray-f7;
-  border-radius: $border-radius;
-  padding: 16px 32px;
-  cursor: pointer;
-  height: 70px;
-  font-size: map-get($custom-font-size, 26);
-  transition: border 0.2s;
 
-  &.open,
-  &:focus,
-  &:hover {
-    border: 1px solid $primary;
-    outline: none;
+  .form-select {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $gray-f7;
+    border: 1px solid $gray-f7;
+    border-radius: $border-radius;
+    padding: 16px 32px;
+    cursor: pointer;
+    min-height: 70px;
+    font-size: map-get($custom-font-size, 26);
+    transition: border 0.2s;
+
+    &.open,
+    &:focus,
+    &:hover {
+      border: 1px solid $primary;
+      outline: none;
+    }
+
+    &.open {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
   }
-
-  &.open {
-    border-bottom-left-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-  }
 }
-
 .form-select-selected.default {
   color: $gray-94;
 }
-
-//.form-select-selected {
-//  color: #222; /* 기본 선택 색상 */
-//}
-
 
 .form-select-list-wrap {
   display: none;

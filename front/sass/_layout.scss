@@ -42,6 +42,11 @@
   border-radius: $border-radius-pill;
   padding: 0;
 
+  &:hover,
+  &:active {
+    background-color: $gray-ef !important;
+  }
+
   .icon-sidebar-toggle {
     width: 10px;
     height: 16px;

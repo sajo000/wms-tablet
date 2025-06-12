@@ -2,8 +2,13 @@
 * 테이블 재정의
 */
 .table {
-  th,
+  th {
+    line-height: 1.45;
+    padding: 16px;
+  }
+
   td {
+    line-height: 1.21;
     padding: 16px;
   }
 }
@@ -11,10 +16,14 @@
 /* ========================================================================
 * 오른쪽 컨텐츠 영역 조회된 내용 등 페이지의 테이블 너비
 */
-.right-side__list-table {
+.right-side__list-table-sm {
+  min-width: 660px;
+  font-weight: 500;
+}
+
+.right-side__list-table-lg {
   min-width: 1162px;
   font-weight: 500;
-  border: 2px dashed #FF3558;
 }
 
 /* ========================================================================
@@ -25,7 +34,7 @@
   background-color: $white;
   border: 1px solid $gray-e6;
   border-radius: $border-radius;
-  overflow: hidden;
+  //overflow: hidden;
 
   tr {
     border-top: 1px solid $gray-e6;
@@ -36,12 +45,13 @@
   }
 
   th {
-    width: 214px;
+    //width: 214px;
     font-size: map-get($custom-font-size, 26);
     font-weight: 700;
     padding: 20px 24px;
     border-right: 1px solid $gray-e6;
     vertical-align: top;
+    line-height: 1.45;
   }
 
   td {
@@ -49,6 +59,7 @@
     font-size: map-get($custom-font-size, 32);
     font-weight: 700;
     vertical-align: middle;
+    line-height: 1.21;
   }
 
   // * border-bottom 초기화

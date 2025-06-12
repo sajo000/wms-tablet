@@ -54,101 +54,127 @@
       <main>
         <!-- 타이틀 -->
         <div class="bg-white pt-4 px-4 pb-10">
-          <div class="d-flex">
+          <div class="d-flex flex-column flex-lg-row">
             <h2 class="fs-32 fw-bold lh-145">재고실사</h2>
-            <div class="d-flex align-items-center gap-4 lh-121 ms-auto">
-              <div class="fs-22 fw-bold">2025-04-09_B2C 풀필먼트 TEST</div>
-              <button class="btn btn-xs btn-outline-dark">조사 종료</button>
+            <div class="d-flex align-items-lg-center flex-column flex-lg-row gap-4 lh-121 mt-10 mt-lg-0 ms-lg-auto">
+              <span class="fs-22 fw-bold">2025-04-09_B2C 풀필먼트 TEST</span>
+              <div>
+                <button class="btn btn-xs btn-outline-dark w-100">조사 종료</button>
+              </div>
             </div>
           </div>
         </div>
         <!-- / 타이틀 -->
 
         <!-- 컨텐츠 -->
-        <div class="bg-white rounded-bottom-2 p-4">
-          <div class="form-group">
-            <label for="" class="form-label">재고실사명*</label>
-            <div class="form-select-wrap">
-              <div class="form-select" tabindex="0">
-                <span class="form-select-selected">선택</span>
-                <i class="icon icon-arrow-bottom is-32 bg-666"></i>
-              </div>
-              <div class="form-select-list-wrap">
-                <ul class="form-select-list">
-                  <li data-value="">선택</li>
-                  <li data-value="20250428_델레오 B2C 풀필먼트 테스트">20250428_델레오 B2C 풀필먼트 테스트</li>
-                  <li data-value="20250425_델레오 B2C 풀필먼트 테스트">20250425_델레오 B2C 풀필먼트 테스트</li>
-                  <li data-value="UPS">UPS</li>
-                  <li data-value="GSPostbox">GSPostbox택배</li>
-                  <li data-value="CanadaPost">Canada Post</li>
-                  <li data-value="AMS">AMS</li>
-                </ul>
-              </div>
-              <input type="hidden" name="client-company" id="client-company" value="">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="" class="form-label">실사 작업자명*</label>
-            <div class="position-relative">
-              <input type="text" class="form-control form-input-only" placeholder="이름을 입력해 주세요 (공백X)">
-              <div class="form-group-append" style="display:none;">
-                <button class="btn-clear" type="button" tabindex="-1">
-                  <i class="icon icon-close is-32 bg-666"></i>
-                </button>
+        <div class="bg-white rounded-bottom-2 p-4" style="display: block;">
+          <!-- 재고실사 def -->
+          <div class="menu-row">
+            <div class="col-12">
+              <div class="form-group">
+                <label for="" class="form-label">재고실사명*</label>
+                <div class="form-select-wrap">
+                  <div class="form-select" tabindex="0">
+                    <span class="form-select-selected">선택</span>
+                    <i class="icon icon-arrow-bottom is-32 bg-666"></i>
+                  </div>
+                  <div class="form-select-list-wrap">
+                    <ul class="form-select-list">
+                      <li data-value="">선택</li>
+                      <li data-value="20250428_델레오 B2C 풀필먼트 테스트">20250428_델레오 B2C 풀필먼트 테스트</li>
+                      <li data-value="20250425_델레오 B2C 풀필먼트 테스트">20250425_델레오 B2C 풀필먼트 테스트</li>
+                      <li data-value="UPS">UPS</li>
+                      <li data-value="GSPostbox">GSPostbox택배</li>
+                      <li data-value="CanadaPost">Canada Post</li>
+                      <li data-value="AMS">AMS</li>
+                    </ul>
+                  </div>
+                  <input type="hidden" name="client-company" id="client-company" value="">
+                </div>
               </div>
             </div>
+            <div class="col-12">
+              <div class="form-group">
+                <label for="" class="form-label">실사 작업자명*</label>
+                <div class="position-relative">
+                  <input type="text" class="form-control form-input-only" placeholder="이름을 입력해 주세요 (공백X)">
+                  <div class="form-group-append" style="display:none;">
+                    <button class="btn-clear" type="button" tabindex="-1">
+                      <i class="icon icon-close is-32 bg-666"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div>
+                <button class="btn btn-primary w-100" disabled>조사 시작하기</button>
+              </div>
+            </div>
           </div>
-          <div>
-            <button class="btn btn-primary" disabled>조사 시작하기</button>
-          </div>
+          <!-- / 재고실사 def -->
         </div>
 
-        <div class="bg-white rounded-bottom-2 p-4">
-          <div class="form-group">
-            <div class="position-relative">
-              <input type="text" class="form-control form-input-only" placeholder="로케이션 바코드">
-              <div class="form-group-append" style="display:none;">
-                <button class="btn-clear" type="button" tabindex="-1">
-                  <i class="icon icon-close is-32 bg-666"></i>
+        <div class="bg-white rounded-bottom-2 p-4" style="display: block;">
+          <!-- 재고실사 작업중 -->
+          <div class="menu-row">
+            <div class="col-12 col-lg-6">
+              <div class="form-group">
+                <div class="position-relative">
+                  <input type="text" class="form-control form-input-only" placeholder="로케이션 바코드">
+                  <div class="form-group-append" style="display:none;">
+                    <button class="btn-clear" type="button" tabindex="-1">
+                      <i class="icon icon-close is-32 bg-666"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-3">
+              <div>
+                <button class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-10 w-100">
+                  <i class="icon icon-search is-32 bg-primary"></i>
+                  로케이션 조회
                 </button>
               </div>
             </div>
           </div>
-          <div>
-            <button class="btn btn-outline-primary d-flex align-items-center gap-10">
-              <i class="icon icon-search is-32 bg-primary"></i>
-              로케이션 조회
-            </button>
-          </div>
+          <!-- / 재고실사 작업중 -->
         </div>
 
         <div class="bg-white rounded-top-2 px-4 pt-4 pb-10 mt-3">
-          <div class="form-group">
-            <div class="position-relative">
-              <input type="text" class="form-control form-input-only" placeholder="아이템 바코드">
-              <div class="form-group-append" style="display:none;">
-                <button class="btn-clear" type="button" tabindex="-1">
-                  <i class="icon icon-close is-32 bg-666"></i>
-                </button>
+          <div class="menu-row">
+            <div class="col-12 col-lg-6">
+              <div class="form-group">
+                <div class="position-relative">
+                  <input type="text" class="form-control form-input-only" placeholder="아이템 바코드">
+                  <div class="form-group-append" style="display:none;">
+                    <button class="btn-clear" type="button" tabindex="-1">
+                      <i class="icon icon-close is-32 bg-666"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div>
-            <button class="btn btn-outline-dark d-flex align-items-center gap-10">
-              <i class="icon icon-plus is-32 bg-1e"></i>
-              상품 추가
-            </button>
-            <button class="btn btn-primary d-flex align-items-center gap-10">
-              <i class="icon icon-save is-32 bg-white"></i>
-              조사결과 반영
-            </button>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <button class="btn btn-outline-dark d-flex align-items-center justify-content-center w-100 gap-10">
+                <i class="icon icon-plus is-32 bg-1e"></i>
+                상품 추가
+              </button>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-3">
+              <button class="btn btn-primary d-flex align-items-center justify-content-center w-100 gap-10">
+                <i class="icon icon-save is-32 bg-white"></i>
+                조사결과 반영
+              </button>
+            </div>
           </div>
         </div>
 
         <div class="bg-white flex-grow-1 rounded-bottom-2 overflow-y-auto">
           <div class="px-4 pb-4">
             <div class="table-responsive">
-              <table class="fs-20 table right-side__list-table mb-0">
+              <table class="fs-20 table right-side__list-table-lg mb-0">
                 <colgroup>
                   <col width="5%">
                   <col width="35%">

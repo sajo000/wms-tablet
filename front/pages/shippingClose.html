@@ -54,11 +54,15 @@
       <main>
         <!-- 타이틀 -->
         <div class="bg-white pt-4 px-4 pb-10">
-          <div class="d-flex">
+          <div class="d-flex flex-column flex-lg-row">
             <h2 class="fs-32 fw-bold lh-145">출고마감</h2>
-            <div class="d-flex align-items-center gap-4 lh-121 ms-auto">
-              <div>
-                <div class="fs-22 fw-bold">• DHL 1차 2025-04-09</div>
+            <div class="d-flex align-items-center gap-4 lh-121 ms-lg-auto">
+              <div class="d-flex gap-10 align-items-center">
+                <span class="fs-22 fw-bold">• DHL 1차</span>
+                <span>
+                  <button class="btn-clear fs-20 fw-bold fc-primary text-decoration-underline">작업 완료 내역</button>
+                </span>
+                <span class="fs-22 fw-bold"> 2025-04-09</span>
               </div>
             </div>
           </div>
@@ -66,118 +70,71 @@
         <!-- / 타이틀 -->
 
         <!-- 컨텐츠 -->
-        <div class="bg-white rounded-bottom-2 p-4">
+        <div class="bg-white rounded-bottom-2 px-4">
           <div class="menu-row">
             <div class="col-12 col-lg-7">
               <div class="d-flex flex-wrap shipping-close-status">
                 <div class="shipping-close-status-item d-flex align-items-center px-18 py-3">
-                  <span class="badge badge-lg badge-notice">출고검증 완료</span>
+                  <!-- @relay: 버튼이 선택되면 .text-decoration-underline 추가 -->
+                  <button class="badge badge-lg badge-notice text-decoration-underline">출고검증 완료</button>
                   <b class="fs-32 ms-3">467</b>
                 </div>
                 <div class="shipping-close-status-item d-flex align-items-center px-18 py-3">
-                  <span class="badge badge-lg badge-primary">출고마감 대상</span>
+                  <!-- @relay: 버튼이 선택되면 .text-decoration-underline 추가 -->
+                  <button class="badge badge-lg badge-primary">출고마감 대상</button>
                   <b class="fs-32 ms-3">367</b>
                 </div>
                 <div class="shipping-close-status-item d-flex align-items-center px-18 py-3">
-                  <span class="badge badge-lg badge-gray">검증 실패-중복</span>
+                  <!-- @relay: 버튼이 선택되면 .text-decoration-underline 추가 -->
+                  <button class="badge badge-lg badge-gray">검증 실패-중복</button>
                   <b class="fs-32 ms-3">3</b>
                 </div>
                 <div class="shipping-close-status-item d-flex align-items-center px-18 py-3">
-                  <span class="badge badge-lg badge-danger">실패-보류/미검증</span>
+                  <!-- @relay: 버튼이 선택되면 .text-decoration-underline 추가 -->
+                  <button class="badge badge-lg badge-danger">실패-보류/미검증</button>
                   <b class="fs-32 ms-3">20</b>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-lg-5">
-              <div class="form-group">
-                <div class="form-select-wrap">
-                  <div class="form-select" tabindex="0">
-                    <span class="form-select-selected">DHL</span>
-                    <i class="icon icon-arrow-bottom is-32 bg-666"></i>
-                  </div>
-                  <div class="form-select-list-wrap">
-                    <ul class="form-select-list">
-                      <li data-value="">선택</li>
-                      <li data-value="DHL">DHL</li>
-                      <li data-value="FedEx">FeDex</li>
-                      <li data-value="UPS">UPS</li>
-                      <li data-value="GSPostbox">GSPostbox택배</li>
-                      <li data-value="CanadaPost">Canada Post</li>
-                      <li data-value="AMS">AMS</li>
-                      <li data-value="GSPostbox">GSPostbox택배</li>
-                      <li data-value="GSPostbox">GSPostbox택배</li>
-                      <li data-value="GSPostbox">GSPostbox택배</li>
-                      <li data-value="GSPostbox">GSPostbox택배</li>
-                      <li data-value="GSPostbox">GSPostbox택배</li>
-                      <li data-value="GSPostbox">GSPostbox택배</li>
-                    </ul>
-                  </div>
-                  <input type="hidden" name="courier" id="courier-select" value="">
+            <div class="col-12 col-lg-5 mt-4 mt-lg-0">
+              <div class="form-select-wrap">
+                <div class="form-select" tabindex="0">
+                  <span class="form-select-selected">DHL</span>
+                  <i class="icon icon-arrow-bottom is-32 bg-666"></i>
                 </div>
-                <div>
-                  <button class="btn btn-primary">출고 마감</button>
+                <div class="form-select-list-wrap">
+                  <ul class="form-select-list">
+                    <li data-value="">선택</li>
+                    <li data-value="DHL">DHL</li>
+                    <li data-value="FedEx">FeDex</li>
+                    <li data-value="UPS">UPS</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="CanadaPost">Canada Post</li>
+                    <li data-value="AMS">AMS</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                    <li data-value="GSPostbox">GSPostbox택배</li>
+                  </ul>
                 </div>
+                <input type="hidden" name="courier" id="courier-select" value="">
+              </div>
+              <div class="mt-4 mt-lg-20">
+                <button class="btn btn-primary w-100">출고 마감</button>
+                <button class="btn btn-primary w-100" disabled>작업 시작</button>
+                <button class="btn btn-outline-dark w-100">출고 마감</button>
               </div>
             </div>
           </div>
-          <!--          <div class="d-flex shipping-close-status-wrap gap-4">-->
-          <!--            <div class="d-flex flex-wrap shipping-close-status">-->
-          <!--              <div class="shipping-close-status-item d-flex align-items-center px-18 py-3">-->
-          <!--                <span class="badge badge-lg badge-notice">출고검증 완료</span>-->
-          <!--                <b class="fs-32 ms-3">467</b>-->
-          <!--              </div>-->
-          <!--              <div class="shipping-close-status-item d-flex align-items-center px-18 py-3">-->
-          <!--                <span class="badge badge-lg badge-primary">출고마감 대상</span>-->
-          <!--                <b class="fs-32 ms-3">367</b>-->
-          <!--              </div>-->
-          <!--              <div class="shipping-close-status-item d-flex align-items-center px-18 py-3">-->
-          <!--                <span class="badge badge-lg badge-gray">검증 실패-중복</span>-->
-          <!--                <b class="fs-32 ms-3">3</b>-->
-          <!--              </div>-->
-          <!--              <div class="shipping-close-status-item d-flex align-items-center px-18 py-3">-->
-          <!--                <span class="badge badge-lg badge-danger">실패-보류/미검증</span>-->
-          <!--                <b class="fs-32 ms-3">20</b>-->
-          <!--              </div>-->
-          <!--            </div>-->
-          <!--            <div class="shipping-close-query flex-shrink-0">-->
-          <!--              <div class="form-group">-->
-          <!--                <div class="form-select-wrap">-->
-          <!--                  <div class="form-select" tabindex="0">-->
-          <!--                    <span class="form-select-selected">DHL</span>-->
-          <!--                    <i class="icon icon-arrow-bottom is-32 bg-666"></i>-->
-          <!--                  </div>-->
-          <!--                  <div class="form-select-list-wrap">-->
-          <!--                    <ul class="form-select-list">-->
-          <!--                      <li data-value="">선택</li>-->
-          <!--                      <li data-value="DHL">DHL</li>-->
-          <!--                      <li data-value="FedEx">FeDex</li>-->
-          <!--                      <li data-value="UPS">UPS</li>-->
-          <!--                      <li data-value="GSPostbox">GSPostbox택배</li>-->
-          <!--                      <li data-value="CanadaPost">Canada Post</li>-->
-          <!--                      <li data-value="AMS">AMS</li>-->
-          <!--                      <li data-value="GSPostbox">GSPostbox택배</li>-->
-          <!--                      <li data-value="GSPostbox">GSPostbox택배</li>-->
-          <!--                      <li data-value="GSPostbox">GSPostbox택배</li>-->
-          <!--                      <li data-value="GSPostbox">GSPostbox택배</li>-->
-          <!--                      <li data-value="GSPostbox">GSPostbox택배</li>-->
-          <!--                      <li data-value="GSPostbox">GSPostbox택배</li>-->
-          <!--                    </ul>-->
-          <!--                  </div>-->
-          <!--                  <input type="hidden" name="courier" id="courier-select" value="">-->
-          <!--                </div>-->
-          <!--                <div>-->
-          <!--                  <button class="btn btn-primary">출고 마감</button>-->
-          <!--                </div>-->
-          <!--              </div>-->
-          <!--            </div>-->
-          <!--          </div>-->
         </div>
         <div class="bg-white rounded-top-2 px-4 pt-4 pb-10 mt-3">
           <div class="d-flex align-items-center gap-4">
             <label for="" class="fs-26 fw-bold">송장번호</label>
             <div class="form-group flex-grow-1 mb-0">
               <div class="position-relative">
-                <input type="" class="form-control form-search">
+                <input type="" class="form-control form-search" placeholder="송장번호" disabled>
                 <div class="form-group-append">
                   <button class="btn-clear" type="button">
                     <i class="icon icon-search is-32 bg-666"></i>
@@ -190,7 +147,7 @@
         <div class="bg-white flex-grow-1 rounded-bottom-2 overflow-y-auto">
           <div class="px-4 pb-4">
             <div class="table-responsive">
-              <table class="fs-20 table right-side__list-table mb-0">
+              <table class="fs-20 table right-side__list-table-lg mb-0">
                 <colgroup>
                   <col width="5%">
                   <col width="20%">
