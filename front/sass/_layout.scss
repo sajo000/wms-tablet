@@ -113,6 +113,7 @@
     gap: 0 !important;
     justify-content: center;
 
+
     // * 센터명 숨김
     > div {
       opacity: 0;
@@ -124,8 +125,13 @@
 
   // * 센터명 말줄임
   .sidebar-center-truncate {
-    background-color: red;
+    //background-color: red;
   }
+}
+
+// * 센터명 클릭했을때 배경 색 변경 유지
+.sidebar-center-active {
+  background: $gray-ef !important;
 }
 
 // * 사이드바 아이콘 사이즈

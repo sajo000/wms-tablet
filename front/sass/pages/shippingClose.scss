@@ -11,8 +11,7 @@
 }
 
 .shipping-close-status-item {
-  flex-grow: 1;
-  flex: 1 1 50%;
+  flex: 1 1 100%;
   border-top: 1px solid $gray-e6;
 
   &:first-child {
@@ -20,13 +19,15 @@
   }
 
   @include media-breakpoint-up(lg) {
-    &:first-child,
-    &:nth-child(2) {
-      border-top: 0;
+    flex: 1 1 50%;
+    flex-wrap: wrap;
+    border-top: 0;
+    &:nth-child(even) {
+      border-left: 1px solid $gray-e6;
     }
-
-    &:nth-child(odd) {
-      border-right: 1px solid $gray-e6;
+    &:nth-child(4n+1),
+    &:nth-child(4n+2) {
+      border-bottom: 1px solid $gray-e6;
     }
   }
 }

@@ -1,59 +1,78 @@
 /**
  * SIDEBAR 스크립트
  */
-// $(document).on('click', '.btn-sidebar-toggle', function () {
+// $(document).ready(function () {
 //   const $leftSide = $('.left-side');
-//   const $icon = $(this).find('.icon-sidebar-toggle');
 //
-//   if ($leftSide.length === 0 || $icon.length === 0) {
-//     console.warn('필요한 요소를 찾을 수 없습니다.');
-//     return;
-//   }
-//
-//   $leftSide.toggleClass('collapsed');
-//
-//   if ($icon.hasClass('icon-sidebar-arrow-left')) {
-//     $icon.removeClass('icon-sidebar-arrow-left').addClass(
-//         'icon-sidebar-arrow-right');
-//   } else {
+//   // 페이지 진입 시 펼침/닫힘 상태 세팅
+//   const currentPage = window.location.pathname.split('/').pop();
+//   const $icon = $('.btn-sidebar-toggle').find('.icon-sidebar-toggle');
+//   if (currentPage === 'dashBoard.html') {
+//     $leftSide.removeClass('collapsed');
 //     $icon.removeClass('icon-sidebar-arrow-right').addClass(
 //         'icon-sidebar-arrow-left');
+//   } else {
+//     $leftSide.addClass('collapsed');
+//     $icon.removeClass('icon-sidebar-arrow-left').addClass(
+//         'icon-sidebar-arrow-right');
 //   }
+//
+//   // 토글 버튼 클릭 이벤트
+//   $(document).on('click', '.btn-sidebar-toggle', function () {
+//     const $icon = $(this).find('.icon-sidebar-toggle'); // 클릭할 때마다 새로 잡기!
+//
+//     if ($leftSide.length === 0 || $icon.length === 0) {
+//       console.warn('필요한 요소를 찾을 수 없습니다.');
+//       return;
+//     }
+//
+//     $leftSide.toggleClass('collapsed');
+//
+//     if ($icon.hasClass('icon-sidebar-arrow-left')) {
+//       $icon.removeClass('icon-sidebar-arrow-left').addClass(
+//           'icon-sidebar-arrow-right');
+//     } else {
+//       $icon.removeClass('icon-sidebar-arrow-right').addClass(
+//           'icon-sidebar-arrow-left');
+//     }
+//   });
 // });
+
 $(document).ready(function () {
   const $leftSide = $('.left-side');
-
-  // 페이지 진입 시 펼침/닫힘 상태 세팅 (이전 답변 참고해서 추가)
   const currentPage = window.location.pathname.split('/').pop();
-  const $icon = $('.btn-sidebar-toggle').find('.icon-sidebar-toggle');
+
+  // 사이드바 토글 아이콘을 동적으로 잡아야 fetch 이후에도 정상 동작!
+  function setSidebarState(isCollapsed) {
+    const $icon = $('.btn-sidebar-toggle').find('.icon-sidebar-toggle');
+    if ($icon.length === 0) {
+      return;
+    }
+
+    if (isCollapsed) {
+      $leftSide.addClass('collapsed');
+      $icon
+      .removeClass('icon-sidebar-arrow-left')
+      .addClass('icon-sidebar-arrow-right');
+    } else {
+      $leftSide.removeClass('collapsed');
+      $icon
+      .removeClass('icon-sidebar-arrow-right')
+      .addClass('icon-sidebar-arrow-left');
+    }
+  }
+
+  // 페이지 진입 시 상태 세팅
   if (currentPage === 'dashBoard.html') {
-    $leftSide.removeClass('collapsed');
-    $icon.removeClass('icon-sidebar-arrow-right').addClass(
-        'icon-sidebar-arrow-left');
+    setSidebarState(false); // 펼침
   } else {
-    $leftSide.addClass('collapsed');
-    $icon.removeClass('icon-sidebar-arrow-left').addClass(
-        'icon-sidebar-arrow-right');
+    setSidebarState(true); // 닫힘
   }
 
   // 토글 버튼 클릭 이벤트
   $(document).on('click', '.btn-sidebar-toggle', function () {
-    const $icon = $(this).find('.icon-sidebar-toggle'); // 클릭할 때마다 새로 잡기!
-
-    if ($leftSide.length === 0 || $icon.length === 0) {
-      console.warn('필요한 요소를 찾을 수 없습니다.');
-      return;
-    }
-
-    $leftSide.toggleClass('collapsed');
-
-    if ($icon.hasClass('icon-sidebar-arrow-left')) {
-      $icon.removeClass('icon-sidebar-arrow-left').addClass(
-          'icon-sidebar-arrow-right');
-    } else {
-      $icon.removeClass('icon-sidebar-arrow-right').addClass(
-          'icon-sidebar-arrow-left');
-    }
+    const isCollapsed = $leftSide.hasClass('collapsed');
+    setSidebarState(!isCollapsed);
   });
 });
 
@@ -81,10 +100,12 @@ $(document).on('click', '.sidebar-center-name', function (e) {
   if ($menu.data('opened')) {
     $menu.hide();
     $menu.data('opened', false);
+    $toggle.removeClass('sidebar-center-active'); // 배경 복원
     return;
   }
 
   $menu.data('opened', true);
+  $toggle.addClass('sidebar-center-active'); // 배경 빨간색
 
   // 바깥 클릭 시 닫기
   $(document).one('mousedown.dropdownMenu', function (event) {
@@ -92,6 +113,7 @@ $(document).on('click', '.sidebar-center-name', function (e) {
         '.global-dropdown-menu, .sidebar-center-name').length) {
       $menu.hide();
       $menu.data('opened', false);
+      $toggle.removeClass('sidebar-center-active'); // 배경 복원
     }
   });
 });
@@ -107,6 +129,15 @@ $(function () {
     $(this).next('.form-select-list-wrap').toggle();
     $(this).toggleClass('open');
     e.stopPropagation();
+
+    // 선택된 값 동기화
+    const $wrap = $(this).closest('.form-select-wrap');
+    const selectedText = $wrap.find('.form-select-selected').text();
+    const $listItems = $wrap.find('.form-select-list li');
+    $listItems.removeClass('selected');
+    $listItems.filter(function () {
+      return $(this).text() === selectedText;
+    }).addClass('selected');
   });
 
   // 옵션 선택
@@ -155,52 +186,55 @@ $(function () {
  * SEARCH INPUT ICON 바뀌는 스크립트
  */
 $(document).ready(function () {
-  // (1) form-control + form-select (검색 input)
+  // 상태 저장용 플래그
+  let isSearched = false;
+
   $('.form-search').each(function () {
     const $input = $(this);
     const $group = $input.closest('.position-relative');
-    const $icon = $group.find('.form-group-append i');
     const $btn = $group.find('.btn-clear');
+    const $icon = $btn.find('i');
 
-    // --- [추가] 페이지 로드시 value가 있으면 icon-close, 없으면 icon-search ---
-    if ($input.val().length > 0) {
-      $icon.removeClass('icon-search').addClass('icon-close').show();
-    } else {
-      $icon.removeClass('icon-close').addClass('icon-search').show();
-    }
+    // 초기 상태
+    $icon.removeClass('icon-close').addClass('icon-search');
 
-    $input.on('input', function () {
-      if ($input.val().length > 0) {
-        $icon.removeClass('icon-search').addClass('icon-close').show();
-      } else {
-        // 입력 내용 없을 때 포커스 여부에 따라 아이콘 변경
-        if ($input.is(':focus')) {
-          $icon.removeClass('icon-search').addClass('icon-close').show();
-        } else {
-          $icon.removeClass('icon-close').addClass('icon-search').show();
-        }
-      }
-    });
-
-    $input.on('focus', function () {
-      // 포커스 시 무조건 icon-close
-      $icon.removeClass('icon-search').addClass('icon-close').show();
-    });
-
-    $input.on('blur', function () {
-      // 포커스 해제 시 내용이 없으면 icon-search, 있으면 icon-close 유지
-      if ($input.val().length === 0) {
-        $icon.removeClass('icon-close').addClass('icon-search').show();
-      }
-    });
-
+    // 버튼 클릭 이벤트
     $btn.on('click', function () {
-      $input.val('').trigger('input').focus();
-      $icon.removeClass('icon-close').addClass('icon-search').show();
+      if (!isSearched && $input.val().length > 0) {
+        // 검색 상태로 변경
+        $icon.removeClass('icon-search').addClass('icon-close');
+        isSearched = true;
+        // 여기에 검색 실행 함수 호출해도 됨!
+      } else {
+        // 검색 상태일 때(x버튼 역할)
+        $input.val('').focus();
+        $icon.removeClass('icon-close').addClass('icon-search');
+        isSearched = false;
+      }
+    });
+
+    // 인풋 값 바뀌면 다시 검색상태 해제
+    $input.on('input', function () {
+      if (!isSearched) {
+        $icon.removeClass('icon-close').addClass('icon-search');
+      }
+    });
+
+    // 엔터로도 검색 가능하게!
+    $input.on('keydown', function (e) {
+      if (e.key === 'Enter' && $input.val().length > 0) {
+        $icon.removeClass('icon-search').addClass('icon-close');
+        isSearched = true;
+        // 여기에 검색 실행 함수 호출해도 됨!
+      }
     });
   });
+});
 
-  // (2) form-control만 있는 경우
+/**
+ * form-control에 내용이 있거나 입력할때 icon-close 노출
+ */
+$(document).ready(function () {
   $('.form-input-only').each(function () {
     const $input = $(this);
     const $group = $input.closest('.position-relative');

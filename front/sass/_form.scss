@@ -111,6 +111,7 @@
     }
   }
 }
+
 .form-select-selected.default {
   color: $gray-94;
 }
@@ -142,6 +143,7 @@
 }
 
 .form-select-list li {
+  height: 52px;
   padding: 10px 54px 10px 32px;
   cursor: pointer;
   transition: background 0.2s;
