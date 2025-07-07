@@ -1,48 +1,11 @@
 /**
  * SIDEBAR 스크립트
  */
-// $(document).ready(function () {
-//   const $leftSide = $('.left-side');
-//
-//   // 페이지 진입 시 펼침/닫힘 상태 세팅
-//   const currentPage = window.location.pathname.split('/').pop();
-//   const $icon = $('.btn-sidebar-toggle').find('.icon-sidebar-toggle');
-//   if (currentPage === 'dashBoard.html') {
-//     $leftSide.removeClass('collapsed');
-//     $icon.removeClass('icon-sidebar-arrow-right').addClass(
-//         'icon-sidebar-arrow-left');
-//   } else {
-//     $leftSide.addClass('collapsed');
-//     $icon.removeClass('icon-sidebar-arrow-left').addClass(
-//         'icon-sidebar-arrow-right');
-//   }
-//
-//   // 토글 버튼 클릭 이벤트
-//   $(document).on('click', '.btn-sidebar-toggle', function () {
-//     const $icon = $(this).find('.icon-sidebar-toggle'); // 클릭할 때마다 새로 잡기!
-//
-//     if ($leftSide.length === 0 || $icon.length === 0) {
-//       console.warn('필요한 요소를 찾을 수 없습니다.');
-//       return;
-//     }
-//
-//     $leftSide.toggleClass('collapsed');
-//
-//     if ($icon.hasClass('icon-sidebar-arrow-left')) {
-//       $icon.removeClass('icon-sidebar-arrow-left').addClass(
-//           'icon-sidebar-arrow-right');
-//     } else {
-//       $icon.removeClass('icon-sidebar-arrow-right').addClass(
-//           'icon-sidebar-arrow-left');
-//     }
-//   });
-// });
-
 $(document).ready(function () {
   const $leftSide = $('.left-side');
   const currentPage = window.location.pathname.split('/').pop();
 
-  // 사이드바 토글 아이콘을 동적으로 잡아야 fetch 이후에도 정상 동작!
+  // 사이드바 토글 아이콘을 동적으로 잡아야 fetch 이후에도 정상 동작
   function setSidebarState(isCollapsed) {
     const $icon = $('.btn-sidebar-toggle').find('.icon-sidebar-toggle');
     if ($icon.length === 0) {
@@ -105,7 +68,7 @@ $(document).on('click', '.sidebar-center-name', function (e) {
   }
 
   $menu.data('opened', true);
-  $toggle.addClass('sidebar-center-active'); // 배경 빨간색
+  $toggle.addClass('sidebar-center-active'); // 배경색 추가
 
   // 바깥 클릭 시 닫기
   $(document).one('mousedown.dropdownMenu', function (event) {
